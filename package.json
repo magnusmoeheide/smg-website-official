@@ -1,7 +1,7 @@
 {
   "name": "smg-website-2",
   "version": "0.1.0",
-  "homepage": "https://magnusmoe01.github.io/smg-website-official",
+  "homepage": "https://magnusmoeheide.github.io/smg-website-official",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
