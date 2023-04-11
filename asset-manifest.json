@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/smg-website-official/static/css/main.44fac71e.css",
-    "main.js": "/smg-website-official/static/js/main.9f3dca50.js",
+    "main.js": "/smg-website-official/static/js/main.4586574b.js",
     "static/media/teacher.png": "/smg-website-official/static/media/teacher.aa07709390a234c7f2eb.png",
     "static/media/smg-logo-en.png": "/smg-website-official/static/media/smg-logo-en.1db340e6f1fd5076901d.png",
     "static/media/privacy.png": "/smg-website-official/static/media/privacy.24080e432899635d629c.png",
@@ -12,10 +12,10 @@
     "static/media/rocket.png": "/smg-website-official/static/media/rocket.b58a9096fceb35409309.png",
     "index.html": "/smg-website-official/index.html",
     "main.44fac71e.css.map": "/smg-website-official/static/css/main.44fac71e.css.map",
-    "main.9f3dca50.js.map": "/smg-website-official/static/js/main.9f3dca50.js.map"
+    "main.4586574b.js.map": "/smg-website-official/static/js/main.4586574b.js.map"
   },
   "entrypoints": [
     "static/css/main.44fac71e.css",
-    "static/js/main.9f3dca50.js"
+    "static/js/main.4586574b.js"
   ]
 }
