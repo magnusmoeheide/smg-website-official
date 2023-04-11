@@ -8,6 +8,7 @@ const AcceptableUse = () => {
       <Navbar />
 
       <h2>Acceptable Use Policy ✔️</h2>
+      <p>Hello</p>
     </div>
   );
 };
