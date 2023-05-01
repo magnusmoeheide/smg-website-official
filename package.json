@@ -1,7 +1,7 @@
 {
   "name": "smg-website-official",
   "version": "0.1.0",
-  "homepage": "https://magnusmoeheide.github.io/smg-website-official",
+  "homepage": "https://klassekartgenerator.no",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
