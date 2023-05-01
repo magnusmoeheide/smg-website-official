@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(253,253,251);
+}
+
 .orange {
   color: rgb(255, 120, 1);
 }
@@ -198,7 +202,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: rgb(253,253,251);
   font-weight: 400;
 }
 #timeline .demo-card .head .number-box {
@@ -237,7 +241,7 @@ img {
  }
 }
 #timeline .demo-card .body {
-  background: #fff;
+  background:rgb(253,253,251);
   border: 1px solid rgba(191, 191, 191, 0.4);
   border-top: 0;
   padding: 15px;

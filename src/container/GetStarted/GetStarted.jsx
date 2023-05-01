@@ -10,7 +10,7 @@ const GetStarted = () => {
       <section id="timeline">
         <h1>How does a subscription work?</h1>
         <p class="leader">
-          Don't worry, we won't make you read a lot, but please go though how a
+          Hello there! We won't make you read a lot, but please go though how a
           subscription works :)
         </p>
         <div class="demo-card-wrapper">
@@ -95,14 +95,14 @@ const GetStarted = () => {
                 <span>04</span>
               </div>
               <h2>
-                <span class="small">Subtitle</span> Invoice
+                <span class="small">One week before</span> Invoice
               </h2>
             </div>
             <div class="body">
               <p>
                 We will send you an invoice latest 1 week before the end of the
                 subscription period. That gives you the chance to terminate the
-                subscription before a new one is starting.
+                subscription before a new one starts.
               </p>
               <p>
                 Once a new period is started, the subscription will run for 6
@@ -113,7 +113,7 @@ const GetStarted = () => {
         </div>
         <div className="center">
           <div className="reason-text">
-            <a href="app.klassekartgenerator.no/signup">
+            <a href="app.klassekartgenerator.no/signup" target="_blank">
               <button className="hero-button start">
                 <p>Start free trial</p>
               </button>

@@ -18,16 +18,16 @@ const Header = () => {
             <a href="/" className="link">
               Home
             </a>
-            <a href="/" className="link">
+            <a href="#about" className="link">
               About
             </a>
-            <a href="/" className="link">
+            <a href="#pricing" className="link">
               Pricing
             </a>
-            <a href="/" className="link">
+            <a href="#testimonials" className="link">
               Testimonials
             </a>
-            <a href="/" className="link">
+            <a href="#q&a" className="link">
               Q&A
             </a>
           </div>
@@ -37,7 +37,7 @@ const Header = () => {
               href="app.klassekartgenerator.no"
               target="_blank"
             >
-              Log in <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              Log in
             </a>
           </div>
         </div>

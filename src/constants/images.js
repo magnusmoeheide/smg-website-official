@@ -7,7 +7,12 @@ import clock from '../assets/clock.png'
 import profits from '../assets/profits.png'
 import battery from '../assets/battery.png'
 import rocket from '../assets/rocket.png'
+import classroom from '../assets/classroom.jpg'
+import student from '../assets/student.jpg'
+import graduation from '../assets/graduation-hat.png'
+import videoAd from '../assets/video-ad.png'
 
 export default {
-    easyToUse, algorithm, privacy, logoEn, teacher, clock, profits, battery, rocket
+    easyToUse, algorithm, privacy, logoEn, teacher, clock, profits, battery, 
+    rocket, classroom, student, graduation, videoAd
 }

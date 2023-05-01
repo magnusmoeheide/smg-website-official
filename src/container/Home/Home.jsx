@@ -17,7 +17,7 @@ const Home = () => {
     <div>
       <Header />
 
-      <section className="hero">
+      <section className="hero" id="/">
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -33,12 +33,13 @@ const Home = () => {
             </Link>
           </div>
           <div className="hero-image">
-            <img src="https://via.placeholder.com/600x400" alt="Hero Image" />
+            <img src={images.videoAd} alt="Hero Image" />
+            <img src={images.easyToUse} alt="" />
           </div>
         </div>
       </section>
 
-      <section className="features-section">
+      <section className="features-section" id="about">
         <h2 className="features-title">
           About The <span className="orange">Generator</span>
         </h2>
@@ -137,7 +138,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="pricing-section">
+      <section className="pricing-section" id="pricing">
         <div className="container">
           <h2 className="pricing-title">
             Our <span className="orange">Pricing</span> Plan
@@ -165,7 +166,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>All conditions and arrangements</span>
@@ -181,7 +182,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Unlimited classes and maps</span>
@@ -197,7 +198,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
 
@@ -214,7 +215,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>See other teachers' maps</span>
@@ -230,7 +231,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Reports and school stats</span>
@@ -246,7 +247,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Excellent support</span>
@@ -285,7 +286,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>All conditions and arrangements</span>
@@ -301,7 +302,7 @@ const Home = () => {
                     fill="red"
                     fill-rule="evenodd"
                     d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Unlimited classes and maps</span>
@@ -317,7 +318,7 @@ const Home = () => {
                     fill="red"
                     fill-rule="evenodd"
                     d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
 
@@ -334,7 +335,7 @@ const Home = () => {
                     fill="red"
                     fill-rule="evenodd"
                     d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>See other teachers' maps</span>
@@ -350,7 +351,7 @@ const Home = () => {
                     fill="red"
                     fill-rule="evenodd"
                     d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Reports and school stats</span>
@@ -366,7 +367,7 @@ const Home = () => {
                     fill="rgb(255, 120, 1)"
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
                 <span>Excellent support</span>
@@ -384,7 +385,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="testimonials-section">
+      <section className="testimonials-section" id="testimonials">
         <h2 className="testimonials-title">
           What The <span className="orange">Schools</span> Say
         </h2>
@@ -392,7 +393,7 @@ const Home = () => {
         <div className="container">
           <div className="testimonial">
             <img
-              src="https://via.placeholder.com/150"
+              src={images.graduation}
               alt="Testimonial image"
               className="testimonial-image"
             />
@@ -407,7 +408,7 @@ const Home = () => {
           </div>
           <div className="testimonial">
             <img
-              src="https://via.placeholder.com/150"
+              src={images.graduation}
               alt="Testimonial image"
               className="testimonial-image"
             />
@@ -445,11 +446,11 @@ const Home = () => {
         </a>
       </div>
 
-      <section className="qa-section">
+      <section className="qa-section" id="q&a">
         <h2 className="qa-title">
           Frequently asked <span className="orange">Q&A</span>
         </h2>
-        <div className="container">
+        <div className="qa-container">
           <div className="qa" onClick={() => toggleAnswer("qa1")}>
             <h3 className="qa-question">What is the Seat Map Generator?</h3>
             <div
@@ -540,22 +541,23 @@ const Home = () => {
 
       <section className="article-section">
         <h2 className="section-heading">
-          Latest <span className="orange">Articles</span>
+          Research <span className="orange">Articles</span>
         </h2>
-        <div className="container">
+        <div className="article-container">
           <div className="article-preview">
             <a href="#">
-              <img src="https://via.placeholder.com/300x200" alt="Article 1" />
+              <img src={images.classroom} alt="Article 1" />
               <h3 className="article-title">
-                Why you should change classroom seats frequently
+                The importance of frequent classroom seats changes
               </h3>
             </a>
           </div>
           <div className="article-preview">
             <a href="#">
-              <img src="https://via.placeholder.com/300x200" alt="Article 2" />
+              <img src={images.student} alt="Article 2" />
               <h3 className="article-title">
-                The Benefits of Yoga for Stress Relief
+                What is the relationship between classroom seating arrangement
+                and maximized academic and social development of students?
               </h3>
             </a>
           </div>
@@ -564,23 +566,24 @@ const Home = () => {
 
       <footer className="footer">
         <div className="footer-container">
-          <div className="footer-copy">
-            © 2023 SeatMapGenerator.com |{" "}
-            <a
-              href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=824325952"
-              className="footer-business"
-            >
-              Magnus Heide ENK
-            </a>
-            . All rights reserved.
-          </div>
           <div className="footer-links-container">
             <a href="mailto:hei@klassekartgenerator.no" className="footer-link">
               Contact Us
             </a>
             <Link to="/terms">
-              <a className="footer-link">Terms of Service | Policies</a>
+              <a className="footer-link">Terms of Service & Policies</a>
             </Link>
+          </div>
+          <div className="footer-copy">
+            © 2023 SeatMapGenerator.com |{" "}
+            <a
+              href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=824325952"
+              className="footer-business"
+              target="_blank"
+            >
+              Magnus Heide ENK.
+            </a>{" "}
+            All rights reserved.
           </div>
         </div>
       </footer>
