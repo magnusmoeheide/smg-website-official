@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 
 const GetStarted = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, []);
+
   return (
     <div>
       <Header />

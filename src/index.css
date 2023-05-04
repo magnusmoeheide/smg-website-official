@@ -307,6 +307,7 @@ a {
   background-color: #f2f2f2;
 
   border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .reason-title {
@@ -553,6 +554,10 @@ a {
   }
 
   .testimonials-container {
+    padding: 0rem 2rem;
+  }
+
+  .testimonial-text {
     padding: 0rem 2rem;
   }
 }
