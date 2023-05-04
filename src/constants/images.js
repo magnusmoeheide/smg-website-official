@@ -8,7 +8,7 @@ import profits from '../assets/profits.png'
 import battery from '../assets/battery.png'
 import rocket from '../assets/rocket.png'
 import classroom from '../assets/classroom.jpg'
-import student from '../assets/student.jpg'
+import student from '../assets/student.png'
 import graduation from '../assets/graduation-hat.png'
 import youtube from '../assets/youtube.png'
 
