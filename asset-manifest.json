@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.bd030538.css",
-    "main.js": "/static/js/main.713dc138.js",
-    "static/media/classroom.jpg": "/static/media/classroom.f3e3a87d3e2e20e608b9.jpg",
-    "static/media/student.png": "/static/media/student.f15876a8b82e972cde7e.png",
+    "main.js": "/static/js/main.615fa47f.js",
     "static/media/teacher.png": "/static/media/teacher.aa07709390a234c7f2eb.png",
+    "static/media/classroom.jpeg": "/static/media/classroom.2d734e925bc92d44f3ed.jpeg",
     "static/media/youtube.png": "/static/media/youtube.b6be557012e7c0413ff2.png",
+    "static/media/student.jpeg": "/static/media/student.21b2b1cf1cdae7005240.jpeg",
     "static/media/smg-logo-en.png": "/static/media/smg-logo-en.1db340e6f1fd5076901d.png",
     "static/media/privacy.png": "/static/media/privacy.24080e432899635d629c.png",
     "static/media/profits.png": "/static/media/profits.04b1c71302fe9737a061.png",
@@ -16,10 +16,10 @@
     "static/media/graduation-hat.png": "/static/media/graduation-hat.b7ea4c3d423768c5938d.png",
     "index.html": "/index.html",
     "main.bd030538.css.map": "/static/css/main.bd030538.css.map",
-    "main.713dc138.js.map": "/static/js/main.713dc138.js.map"
+    "main.615fa47f.js.map": "/static/js/main.615fa47f.js.map"
   },
   "entrypoints": [
     "static/css/main.bd030538.css",
-    "static/js/main.713dc138.js"
+    "static/js/main.615fa47f.js"
   ]
 }
