@@ -18,7 +18,7 @@ const Home = () => {
       <Header />
 
       <section className="hero" id="/">
-        <div className="container">
+        <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
               Seat Map Made <span className="orange">Easy</span>
@@ -86,7 +86,9 @@ const Home = () => {
       </section>
 
       <section className="reasons-section">
-        <h2 className="reasons-title">Why use our Generator?</h2>
+        <h2 className="reasons-title">
+          Why use our <span className="orange">Generator?</span>
+        </h2>
         <div className="reasons">
           <div className="reasons-container">
             <div className="reason">
@@ -138,7 +140,7 @@ const Home = () => {
       </section>
 
       <section className="pricing-section" id="pricing">
-        <div className="container">
+        <div className="pricing-container">
           <h2 className="pricing-title">
             Our <span className="orange">Pricing</span> Plan
           </h2>
@@ -389,7 +391,7 @@ const Home = () => {
           What The <span className="orange">Schools</span> Say
         </h2>
 
-        <div className="container">
+        <div className="testimonials-container">
           <div className="testimonial">
             <img
               src={images.graduation}
@@ -457,8 +459,11 @@ const Home = () => {
               style={{ display: answersVisible["qa1"] ? "block" : "none" }}
             >
               <p>
-                We accept all major credit cards, including Visa, MasterCard,
-                and American Express. We also accept PayPal and bank transfers.
+                The Seat Map Generator is an app that takes your class'
+                students, allowes you to select the conditions you want and then
+                get a map with your conditions and the rest is randomized. This
+                removes the struggle of having you manually make everything work
+                and finds the best solution for you in a matter of seconds.
               </p>
             </div>
             <button
@@ -474,8 +479,18 @@ const Home = () => {
               style={{ display: answersVisible["qa2"] ? "block" : "none" }}
             >
               <p>
-                We have a 30-day return policy. If you are not satisfied with
-                your purchase, you can return it for a full refund.
+                First you register your class with your students. Then your
+                class is saved for future use. To create a map you select your
+                class, then what configuration they are supposed to sit. You can
+                choose between our defualt '1 and 1', '2 and 2' etc. or you can
+                create your own. After that, you select the conditions such as
+                who should sit in front or back of the classroom, who should or
+                should not sit together, and you can manually place students.
+                The algorithm makes sure the conditions are met and the rest is
+                randomized. From there you can download and export your map
+                however you like. The map is registered to your school and other
+                teachers in your school can see your most recent maps, which is
+                beneficial for when the class has a substitute teacher.
               </p>
             </div>
             <button
@@ -484,6 +499,8 @@ const Home = () => {
               {answersVisible["qa2"] ? "-" : "+"}
             </button>
           </div>
+
+          {/*
           <div className="qa" onClick={() => toggleAnswer("qa3")}>
             <h3 className="qa-question">
               What are the benefits of the generator?
@@ -492,11 +509,7 @@ const Home = () => {
               className="qa-answer"
               style={{ display: answersVisible["qa3"] ? "block" : "none" }}
             >
-              <p>
-                You can cancel your subscription at any time by logging into
-                your account and going to the subscription section. Click the
-                "Cancel Subscription" button and follow the prompts.
-              </p>
+              <p></p>
             </div>
             <button
               className={`qa-button ${answersVisible["qa3"] ? "active" : ""}`}
@@ -504,6 +517,7 @@ const Home = () => {
               {answersVisible["qa3"] ? "-" : "+"}
             </button>
           </div>
+          */}
           <div className="qa" onClick={() => toggleAnswer("qa4")}>
             <h3 className="qa-question">
               How does the 90 days free trial and payment work?

@@ -34,8 +34,7 @@ const Header = () => {
           <div className="button-container">
             <a
               className="login-button"
-              href="app.klassekartgenerator.no"
-              target="_blank"
+              href="http://app.klassekartgenerator.no/login"
             >
               Log in
             </a>

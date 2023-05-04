@@ -10,7 +10,7 @@ const GetStarted = () => {
       <section id="timeline">
         <h1>How does a subscription work?</h1>
         <p class="leader">
-          Hello there! We won't make you read a lot, but please go though how a
+          Hello there! We won't make you read a lot, but please go through how a
           subscription works :)
         </p>
         <div class="demo-card-wrapper">
@@ -113,7 +113,7 @@ const GetStarted = () => {
         </div>
         <div className="center">
           <div className="reason-text">
-            <a href="app.klassekartgenerator.no/signup" target="_blank">
+            <a href="http://app.klassekartgenerator.no/signup">
               <button className="hero-button start">
                 <p>Start free trial</p>
               </button>
