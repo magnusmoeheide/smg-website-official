@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 
 const SeatingArrangement = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0); // Scroll to top of the page
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, []);
 
   return (
     <div>
