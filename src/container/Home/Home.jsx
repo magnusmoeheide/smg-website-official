@@ -151,7 +151,7 @@ const Home = () => {
               over 100 teachers, kindly get in touch with us.
             </p>
             <h3 className="plan-cost">
-              €300<span className="plan-cost-period"> /year</span>
+              €100<span className="plan-cost-period"> /year</span>
             </h3>
             <p className="plan-description">Per year or semester payment</p>
             <p className="plan-title-included">What's included:</p>
@@ -566,13 +566,13 @@ const Home = () => {
             </a>
           </div>
           <div className="article-preview">
-            <a href="#">
+            <Link to="/articles/seatingarrangement">
               <img src={images.student} alt="Article 2" />
               <h3 className="article-title">
-                What is the relationship between classroom seating arrangement
-                and maximized academic and social development of students?
+                The relationship between classroom seating arrangement and
+                maximized academic and social development of students
               </h3>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

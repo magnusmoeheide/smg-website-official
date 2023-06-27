@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 
 import {
-  Home, About, Privacy, Terms, Cookies, Return, Disclaimer, AcceptableUse, Eula, GetStarted
+  Home, About, Privacy, Terms, Cookies, Return, Disclaimer, AcceptableUse, Eula, 
+  GetStarted, SeatingArrangement
 } from './container';
 
 import {Routes, Route} from 'react-router-dom';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/use" element={<AcceptableUse/>}/> 
             <Route path="/eula" element={<Eula />}/> 
             <Route path="/getstarted" element={<GetStarted />}/> 
+            <Route path="/articles/seatingarrangement" element={<SeatingArrangement />}/> 
         </Routes>
     </div>
   );

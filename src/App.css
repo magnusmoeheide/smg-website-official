@@ -301,3 +301,31 @@ img {
 #timeline .demo-card--step5 .head::after {
   border-color: #46b8e9;
 }
+
+
+.flex-image-text {
+  display: flex;
+  align-items: center;
+}
+
+.flex-image-text img {
+  max-width: 50%;
+  margin-left: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 0.2rem;
+}
+
+
+@media all and (max-width: 799px) {
+  .flex-image-text {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+
+  .flex-image-text img {
+    max-height:none;
+    max-width: 100%;
+    margin: 0;
+  }
+
+}

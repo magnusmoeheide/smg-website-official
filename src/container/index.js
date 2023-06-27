@@ -9,9 +9,10 @@ import Disclaimer from './Legal/Disclaimer';
 import AcceptableUse from './Legal/AcceptableUse';
 import Eula from './Legal/Eula';
 import GetStarted from './GetStarted/GetStarted'
-import Header from './Header/Header'
+import Header from './Header/Header';
+import SeatingArrangement from './Articles/SeatingArrangement';
 
 export {
     Home, About, Privacy, Terms, Navbar, Cookies, Return, 
-    Disclaimer, AcceptableUse, Eula, GetStarted, Header
+    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement
 }
