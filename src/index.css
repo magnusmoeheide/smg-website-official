@@ -8,6 +8,8 @@ body {
  
   overflow-x:hidden;
   -webkit-overflow-scrolling: touch;
+
+  min-width: 305px;
 }
 
 p:hover, li:hover, h1:hover, h2:hover, h3:hover {
@@ -75,6 +77,14 @@ a {
 
   margin: 0em 1em;
   text-decoration: none;
+
+  border-bottom: 0.18em solid #1ba0f220;
+  border-bottom-style: groove;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  font-size: 1.3rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -130,6 +140,14 @@ a {
   border-radius: 0.3em;
   font-size: 1.2rem;
   cursor: pointer;
+
+  border-bottom: 0.18em solid #1ba0f220;
+  border-bottom-style: groove;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  font-size: 1.3rem;
 }
 
 .hero-image {
@@ -199,6 +217,7 @@ a {
   margin-bottom: 2rem;
   
   width: 100%;
+  padding: 0rem 1rem;
 }
 
 .feature {
@@ -263,16 +282,17 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 3rem 0;
 }
 
 .reasons-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   
   margin-top: 4rem;
   margin-bottom: 2rem;
+
   width: 100%;
 }
 
@@ -303,7 +323,7 @@ a {
 }
 
 .reason-text {
-  padding: 20px;
+  padding: 1.2rem 0.5rem;
   background-color: #f2f2f2;
 
   border-radius: 5px;
@@ -316,6 +336,8 @@ a {
   font-weight: bold;
   display: flex;
   align-items: center;
+
+  padding: 0rem 1rem;
 }
 
 .reason-title img {
@@ -330,6 +352,7 @@ a {
   margin: 0.8rem 0 0 0;
   line-height: 1.5;
   color: #666;
+  padding: 0 1rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -384,10 +407,11 @@ a {
 .pricing-title {
   font-size: 2rem;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   margin-bottom: 2rem;
 
   width: 100%;
+  padding: 0rem 1rem;
 }
 
 .pricing-plan {
@@ -457,10 +481,14 @@ a {
   font-size: 1.2rem;
   cursor: pointer;
   text-decoration:none;
+
+  border-bottom: 0.18em solid #1ba0f220;
+  border-bottom-style: groove;
+  transition: all 0.3s ease-in-out;
 }
 
 .start-now-button:hover {
-  background-color: rgb(255, 120, 1);
+  font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -493,6 +521,7 @@ a {
   margin-bottom: 2rem;
   
   width: 100%;
+  padding: 0rem 1rem;
 }
 
 .testimonials-container {
@@ -588,6 +617,7 @@ a {
   margin-bottom: 2rem;
   
   width: 100%;
+  padding: 0rem 1rem;
 }
 
 .qa-container {
@@ -617,6 +647,8 @@ a {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #333;
+  margin: auto;
+  padding: 0.3rem;
 }
 
 .qa-answer {
@@ -675,6 +707,7 @@ a {
 
 .article-preview {
   margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
 
@@ -702,10 +735,18 @@ a {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   text-align: left;
+
+  padding: 0rem 1rem;
 }
 
 .article-title:hover {
   cursor: pointer;
+}
+
+.article-preview:hover {
+  cursor: pointer;
+  font-size: 1.3rem;
+  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 768px) {
@@ -846,6 +887,18 @@ a {
   margin-top: 4rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .article {
+    margin: 1.5rem;
+  }
+
+  .article h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+}
+
 .references p, h3 {
   margin-top: 0rem;
 }
@@ -854,6 +907,8 @@ a {
   color: black;
   text-decoration-line:underline;
   text-decoration-color: rgba(128, 128, 128, 0.4);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .quote {

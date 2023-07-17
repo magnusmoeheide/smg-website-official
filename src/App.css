@@ -19,13 +19,18 @@ img {
 }
 
 .legal button {
-  padding: 0.5rem;
+  padding: 0.8rem;
   margin: 0rem 0.3rem;
   border-radius: 3px;
+  border: 1px;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .legal button:hover {
   cursor: pointer;
+  background-color: #66666634;
+
 }
 
 .legal h3 {
@@ -39,6 +44,17 @@ img {
 
 .legalImg {
   width: 15rem;
+}
+
+@media (max-width: 800px) {
+  .legal {
+    padding: 2rem;
+ }
+
+ .legal button {
+  margin-bottom: 1rem;
+  border: 1px;
+ }
 }
 
 .center {
@@ -316,7 +332,7 @@ img {
 }
 
 
-@media all and (max-width: 799px) {
+@media all and (max-width: 1000px) {
   .flex-image-text {
     flex-flow: column wrap;
     padding: 0;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const SeatingArrangement = () => {
   useEffect(() => {
@@ -12,7 +13,6 @@ const SeatingArrangement = () => {
     <div>
       <Header />
       <div className="article">
-        <i>A study by Magnus Heide, 10.06.2023.</i>
         <h1>
           What is the relationship between classroom seating arrangement and
           maximized social and academic development of students?
@@ -72,9 +72,9 @@ const SeatingArrangement = () => {
           <img src={images.socialAdacemic} />
         </div>
 
-        <h2>What is the ideal seating configuration?</h2>
         <div className="flex-image-text">
           <div>
+            <h2>What is the ideal seating configuration?</h2>
             <p>
               The study “Considerations for classroom seating arrangements and
               the role of teacher characteristics and beliefs” found that the
@@ -208,12 +208,13 @@ const SeatingArrangement = () => {
           more beneficial for the students’ social development, than if they
           were to choose them themselves.
         </p>
-        <h2>
-          How do partner rotations affect students socially and academically?
-        </h2>
 
         <div className="flex-image-text">
           <div>
+            <h2>
+              How do partner rotations affect students socially and
+              academically?
+            </h2>
             <p>
               A very important part in figuring out the academic and social
               development of students based on seating arrangement is to find
@@ -302,6 +303,10 @@ const SeatingArrangement = () => {
           and the ideal student partner rotation is so that everyone gets to sit
           with everyone throughout the year.
         </p>
+        <br />
+        <br />
+        <i>A study by Magnus Heide, 10.06.2023.</i>
+        <br />
         <br />
         <br />
         <div className="references">
@@ -547,6 +552,7 @@ const SeatingArrangement = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

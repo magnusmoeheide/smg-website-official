@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -557,49 +558,27 @@ const Home = () => {
           Research <span className="orange">Articles</span>
         </h2>
         <div className="article-container">
-          <div className="article-preview">
+          {/* <div className="article-preview">
             <a href="#">
               <img src={images.classroom} alt="Article 1" />
               <h3 className="article-title">
                 The importance of frequent classroom seats changes
               </h3>
             </a>
-          </div>
+          </div> */}
           <div className="article-preview">
             <Link to="/articles/seatingarrangement">
               <img src={images.student} alt="Article 2" />
               <h3 className="article-title">
                 The relationship between classroom seating arrangement and
-                maximized academic and social development of students
+                maximized academic and social development of students.
               </h3>
             </Link>
           </div>
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-links-container">
-            <a href="mailto:hei@klassekartgenerator.no" className="footer-link">
-              Contact Us
-            </a>
-            <Link to="/terms">
-              <a className="footer-link">Terms of Service & Policies</a>
-            </Link>
-          </div>
-          <div className="footer-copy">
-            © 2023 SeatMapGenerator.com |{" "}
-            <a
-              href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=824325952"
-              className="footer-business"
-              target="_blank"
-            >
-              Magnus Heide ENK.
-            </a>{" "}
-            All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

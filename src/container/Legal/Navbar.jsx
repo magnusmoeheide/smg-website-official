@@ -20,7 +20,9 @@ const Navbar = () => {
       </p>
 
       <Link to="/">
-        <button>👈🏾 Back to page</button>
+        <button>
+          👈🏾 <b>Back to page</b>
+        </button>
       </Link>
 
       <Link to="/terms">

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const GetStarted = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const GetStarted = () => {
         <h1>How does a subscription work?</h1>
         <p class="leader">
           Hello there! We won't make you read a lot, but please go through how a
-          subscription works :)
+          subscription works.
         </p>
         <div class="demo-card-wrapper">
           <div class="demo-card demo-card--step1">
@@ -129,6 +130,7 @@ const GetStarted = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
