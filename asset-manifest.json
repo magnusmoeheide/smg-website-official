@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.08d37d7b.css",
-    "main.js": "/static/js/main.ecba00f4.js",
+    "main.css": "/static/css/main.19bf602e.css",
+    "main.js": "/static/js/main.50c2fdbd.js",
     "static/media/teacher.png": "/static/media/teacher.aa07709390a234c7f2eb.png",
     "static/media/classroom.jpeg": "/static/media/classroom.2d734e925bc92d44f3ed.jpeg",
     "static/media/youtube.png": "/static/media/youtube.b6be557012e7c0413ff2.png",
@@ -20,11 +20,11 @@
     "static/media/rocket.png": "/static/media/rocket.b58a9096fceb35409309.png",
     "static/media/graduation-hat.png": "/static/media/graduation-hat.b7ea4c3d423768c5938d.png",
     "index.html": "/index.html",
-    "main.08d37d7b.css.map": "/static/css/main.08d37d7b.css.map",
-    "main.ecba00f4.js.map": "/static/js/main.ecba00f4.js.map"
+    "main.19bf602e.css.map": "/static/css/main.19bf602e.css.map",
+    "main.50c2fdbd.js.map": "/static/js/main.50c2fdbd.js.map"
   },
   "entrypoints": [
-    "static/css/main.08d37d7b.css",
-    "static/js/main.ecba00f4.js"
+    "static/css/main.19bf602e.css",
+    "static/js/main.50c2fdbd.js"
   ]
 }
