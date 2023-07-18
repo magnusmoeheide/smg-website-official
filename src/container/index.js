@@ -12,7 +12,8 @@ import GetStarted from './GetStarted/GetStarted'
 import Header from './Header/Header';
 import SeatingArrangement from './Articles/SeatingArrangement';
 
+
 export {
     Home, About, Privacy, Terms, Navbar, Cookies, Return, 
-    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement
+    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement,
 }

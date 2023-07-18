@@ -9,7 +9,7 @@ body {
   overflow-x:hidden;
   -webkit-overflow-scrolling: touch;
 
-  min-width: 305px;
+  min-width: 472px;
 }
 
 p:hover, li:hover, h1:hover, h2:hover, h3:hover {
@@ -44,19 +44,18 @@ a {
 
 .logo-container img {
   max-width: 60%;
-  margin: 0.2em 1em;
-  margin-top: 0.4em;
+  margin-top: 0.2em;
 }
 
 .links-container {
   flex: 2;
   display: none;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .link {
-  display: inline-block;
-  margin: 0 1rem;
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
   text-decoration: none;
   color: #333;
@@ -64,35 +63,57 @@ a {
 
 .button-container {
   flex: 1;
+  justify-content: space-between;
   text-align: right;
+}
+
+.child {
+  display: flex;
+  justify-content: right;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .login-button {
   background-color: rgb(255, 120, 1);
   color: white;
   padding: 0.5rem 1.4rem;
+  margin-left: 0.3rem;
   border: none;
   border-radius: 0.3em;
   cursor: pointer;
 
-  margin: 0em 1em;
   text-decoration: none;
-
   border-bottom: 0.18em solid #1ba0f220;
   border-bottom-style: groove;
-  transition: all 0.3s ease-in-out;
 }
 
 .login-button:hover {
   font-size: 1.3rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 950px) {
   .links-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
+
+.langBtn {
+  border: 0;
+  margin: 0 0.1em;
+
+  font-size: 1.5em;
+  border-radius: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.langBtn:hover {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.4);
+  transform: scale(1.05);
+}
+
 
 
 /* ------------------------ */
@@ -433,10 +454,11 @@ a {
 .plan-description {
   font-size: 1rem;
   color: #666;
+  line-height: 1.4em;
 }
 
 .plan-description.mva {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 
@@ -491,7 +513,7 @@ a {
   font-size: 1.3rem;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
   .pricing-plan {
     width: 100%;
   }
@@ -919,6 +941,5 @@ a {
   padding: 10px;
   margin: 10px 0;
 }
-
 
 

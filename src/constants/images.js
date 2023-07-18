@@ -2,6 +2,7 @@ import easyToUse from '../assets/easy-to-use.png';
 import algorithm from '../assets/algorithm.png';
 import privacy from '../assets/privacy.png'
 import logoEn from '../assets/smg-logo-en.png'
+import logoNo from '../assets/smg-logo-no.png'
 import teacher from '../assets/teacher.png'
 import clock from '../assets/clock.png'
 import profits from '../assets/profits.png'
@@ -18,7 +19,7 @@ import rotations from '../assets/rotations.jpeg'
 import arrangements from '../assets/arrangements.jpeg'
 
 export default {
-    easyToUse, algorithm, privacy, logoEn, teacher, clock, profits, battery, 
+    easyToUse, algorithm, privacy, logoEn, logoNo, teacher, clock, profits, battery, 
     rocket, classroom, student, graduation, youtube, klassekart, socialAdacemic,
     teacherStudents, rotations, arrangements
 }

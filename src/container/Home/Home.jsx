@@ -3,6 +3,7 @@ import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -14,6 +15,8 @@ const Home = () => {
     });
   }
 
+  const { t, i18n } = useTranslation();
+
   return (
     <div>
       <Header />
@@ -22,16 +25,16 @@ const Home = () => {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Seat Map Made <span className="orange">Easy</span>
+              {t("heroTitle")}{" "}
+              <span className="orange">{t("heroTitleOrange")}</span>
             </h1>
-            <p className="hero-text">
-              Say goodbye to the headache of creating classroom seating
-              arrangements with our seat map generator. With just a few clicks,
-              you have a fully generated map with all your conditions met.
-            </p>
-            <Link to="/getstarted">
-              <button className="hero-button">Get Started</button>
-            </Link>
+            <p className="hero-text">{t("heroText")}</p>
+            <a href="http://app.klassekartgenerator.no/signup">
+              <button className="hero-button">{t("startBtn")}</button>
+            </a>
+            {/* <Link to="/getstarted">
+              <button className="hero-button">{t("startBtn")}</button>
+            </Link> */}
           </div>
           <div className="hero-image">
             <img src={images.youtube} alt="Hero Image" />
@@ -41,54 +44,38 @@ const Home = () => {
 
       <section className="features-section" id="about">
         <h2 className="features-title">
-          About The <span className="orange">Generator</span>
+          {t("featuresTitle")}{" "}
+          <span className="orange">{t("featuresTitleOrange")}</span>
         </h2>
         <div className="features-container">
           <div className="feature">
             <div className="feature-icon">
               <img src={images.easyToUse} alt="" />
             </div>
-            <h3 className="feature-header">Simple and easy</h3>
-            <p className="feature-text">
-              Our Seat Map Generator is the perfect solution for creating a
-              classroom seat map in just minutes. We have designed it with a
-              particular focus on user-friendliness and intuitive design. This
-              means that anyone can use it with ease, regardless of their
-              technical expertise.
-            </p>
+            <h3 className="feature-header">{t("feature1Title")}</h3>
+            <p className="feature-text">{t("feature1Text")}</p>
           </div>
           <div className="feature">
             <div className="feature-icon">
               <img src={images.algorithm} alt="" />
             </div>
-            <h3 className="feature-header">We have thought of everything</h3>
-            <p className="feature-text">
-              Our algorithm allows you to specify who should or should not sit
-              together, who should sit in front or back of the classroom, who
-              should sit in a specific place, and it allows you to assign
-              everyone a new partner and seat from previous maps. You can also
-              choose between our many seat configurations or design your own.
-            </p>
+            <h3 className="feature-header">{t("feature2Title")}</h3>
+            <p className="feature-text">{t("feature2Text")}</p>
           </div>
           <div className="feature">
             <div className="feature-icon">
               <img src={images.privacy} alt="" />
             </div>
-            <h3 className="feature-header">Data privacy</h3>
-            <p className="feature-text">
-              We only store students' first names. All data is stored on
-              European servers, which are subject to strict EU data protection
-              regulations. Our policies and procedures have been thoroughly
-              vetted and assessed by leading industry experts, and we
-              continually review and update them.
-            </p>
+            <h3 className="feature-header">{t("feature3Title")}</h3>
+            <p className="feature-text">{t("feature3Text")}</p>
           </div>
         </div>
       </section>
 
       <section className="reasons-section">
         <h2 className="reasons-title">
-          Why use our <span className="orange">Generator?</span>
+          {t("reasonsTitle")}{" "}
+          <span className="orange">{t("reasonsTitleOrange")}</span>
         </h2>
         <div className="reasons">
           <div className="reasons-container">
@@ -96,38 +83,25 @@ const Home = () => {
               <div className="reason-text">
                 <h3 className="reason-title">
                   <img src={images.clock} />
-                  <span>Save Time</span>
+                  <span>{t("reason1Title")}</span>
                 </h3>
-                <p className="reason-description">
-                  On average, to make a manual map takes around 30 minutes. To
-                  use the generator takes less than 2 minutes. You simply select
-                  one of your classes, choose your conditions, and there you
-                  have a generated map, fully customizable and exportable.
-                </p>
+                <p className="reason-description">{t("reason1Text")}</p>
               </div>
 
               <div className="reason-text">
                 <h3 className="reason-title">
                   <img src={images.profits} />
-                  <span>Save Money</span>
+                  <span>{t("reason2Title")}</span>
                 </h3>
-                <p className="reason-description">
-                  A new map is on average made every 3-4 weeks. A teacher in
-                  Norway has an average salary of €30 per hour. To make seat
-                  maps manually costs your school on average €400 per teacher
-                  per year. Saved time is saved money!
-                </p>
+                <p className="reason-description">{t("reason2Text")}</p>
               </div>
 
               <div className="reason-text">
                 <h3 className="reason-title">
                   <img src={images.battery} />
-                  <span>Save Energy</span>
+                  <span>{t("reason3Title")}</span>
                 </h3>
-                <p className="reason-description">
-                  Being a teacher can be stressful enough. Save your patience to
-                  where it is needed, don't waste it on paperwork.
-                </p>
+                <p className="reason-description">{t("reason3Text")}</p>
               </div>
             </div>
 
@@ -143,19 +117,19 @@ const Home = () => {
       <section className="pricing-section" id="pricing">
         <div className="pricing-container">
           <h2 className="pricing-title">
-            Our <span className="orange">Pricing</span> Plan
+            {t("pricingTitle1")}
+            <span className="orange"> {t("pricingTitleOrange")}</span>{" "}
+            {t("pricingTitle2")}
           </h2>
           <div className="pricing-plan">
-            <h2 className="plan-title">School Plan</h2>
-            <p className="plan-description">
-              Schools up to 100 teachers should opt for this plan. For schools
-              over 100 teachers, kindly get in touch with us.
-            </p>
+            <h2 className="plan-title">{t("plan1Title")}</h2>
+            <p className="plan-description">{t("plan1Description")}</p>
             <h3 className="plan-cost">
-              €100<span className="plan-cost-period"> /year</span>
+              {t("plan1Price")}
+              <span className="plan-cost-period"> {t("plan1PricePeriod")}</span>
             </h3>
-            <p className="plan-description">Per year or semester payment</p>
-            <p className="plan-title-included">What's included:</p>
+            <p className="plan-description">{t("plan1PriceDescription")}</p>
+            <p className="plan-title-included">{t("plan1IncludedTitle")}</p>
             <ul className="plan-details">
               <li>
                 <svg
@@ -171,7 +145,7 @@ const Home = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>All conditions and arrangements</span>
+                <span>{t("plan1Included1")}</span>
               </li>
               <li>
                 <svg
@@ -187,7 +161,7 @@ const Home = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Unlimited classes and maps</span>
+                <span>{t("plan1Included2")}</span>
               </li>
               <li>
                 <svg
@@ -204,7 +178,7 @@ const Home = () => {
                   />
                 </svg>
 
-                <span>Save your classes and conditions</span>
+                <span>{t("plan1Included3")}</span>
               </li>
               <li>
                 <svg
@@ -220,7 +194,7 @@ const Home = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>See other teachers' maps</span>
+                <span>{t("plan1Included4")}</span>
               </li>
               <li>
                 <svg
@@ -236,7 +210,7 @@ const Home = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Reports and school stats</span>
+                <span>{t("plan1Included5")}</span>
               </li>
               <li>
                 <svg
@@ -252,23 +226,26 @@ const Home = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Excellent support</span>
+                <span>{t("plan1Included6")}</span>
               </li>
             </ul>
-            <br />
-            <Link to="/getstarted">
+
+            <a href="http://app.klassekartgenerator.no/signup">
+              <button className="start-now-button">{t("startBtn")}</button>
+            </a>
+            {/* <Link to="/getstarted">
               <a
                 href="app.klassekartgenerator.no"
                 target="_blank"
                 className="start-now-button"
               >
-                Start Now
+                {t("startBtn")}
               </a>
-            </Link>
-            <p className="plan-description mva">Price is VAT excluded.</p>
+            </Link> */}
+            <p className="plan-description mva">{t("plan1Comment")}</p>
           </div>
 
-          <div className="pricing-plan">
+          {/* <div className="pricing-plan">
             <h2 className="plan-title">Demo</h2>
             <p className="plan-description">
               Our demo version is meant for testing purposes only. It will not
@@ -383,13 +360,15 @@ const Home = () => {
             >
               Try Demo
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <section className="testimonials-section" id="testimonials">
         <h2 className="testimonials-title">
-          What The <span className="orange">Schools</span> Say
+          {t("testimonialsTitle1")}{" "}
+          <span className="orange">{t("testimonialsTitleOrange")}</span>{" "}
+          {t("testimonialsTitle2")}
         </h2>
 
         <div className="testimonials-container">
@@ -399,13 +378,7 @@ const Home = () => {
               alt="Testimonial image"
               className="testimonial-image"
             />
-            <p className="testimonial-text">
-              "One of the standout features of the app is its ability to
-              accommodate a wide range of classroom sizes and seating
-              arrangements. Whether you're dealing with a 1 and 1 or 3 and 3
-              configuration, the app provides a variety of customization options
-              to help you create the perfect seating plan for your needs."
-            </p>
+            <p className="testimonial-text">{t("testimonial1Text")}</p>
             <p className="testimonial-name">John Smith</p>
           </div>
           <div className="testimonial">
@@ -414,14 +387,7 @@ const Home = () => {
               alt="Testimonial image"
               className="testimonial-image"
             />
-            <p className="testimonial-text">
-              "After testing the app, I found it to be a highly useful tool for
-              schools looking to create custom seating arrangements for their
-              classrooms or other events. The app is user-friendly and
-              intuitive, with a simple interface that makes it easy for teachers
-              and administrators to create detailed seating plans in a matter of
-              minutes."
-            </p>
+            <p className="testimonial-text">{t("testimonial2Text")}</p>
             <p className="testimonial-name">Jane Doe</p>
           </div>
         </div>
@@ -450,22 +416,16 @@ const Home = () => {
 
       <section className="qa-section" id="q&a">
         <h2 className="qa-title">
-          Frequently asked <span className="orange">Q&A</span>
+          {t("qaTitle")} <span className="orange">{t("qaTitleOrange")}</span>
         </h2>
         <div className="qa-container">
           <div className="qa" onClick={() => toggleAnswer("qa1")}>
-            <h3 className="qa-question">What is the Seat Map Generator?</h3>
+            <h3 className="qa-question">{t("qaQuestion1")}</h3>
             <div
               className="qa-answer"
               style={{ display: answersVisible["qa1"] ? "block" : "none" }}
             >
-              <p>
-                The Seat Map Generator is an app that takes your class'
-                students, allowes you to select the conditions you want and then
-                get a map with your conditions and the rest is randomized. This
-                removes the struggle of having you manually make everything work
-                and finds the best solution for you in a matter of seconds.
-              </p>
+              <p>{t("qaAnswer1")}</p>
             </div>
             <button
               className={`qa-button ${answersVisible["qa1"] ? "active" : ""}`}
@@ -474,25 +434,12 @@ const Home = () => {
             </button>
           </div>
           <div className="qa" onClick={() => toggleAnswer("qa2")}>
-            <h3 className="qa-question">How does the app work?</h3>
+            <h3 className="qa-question">{t("qaQuestion2")}</h3>
             <div
               className="qa-answer"
               style={{ display: answersVisible["qa2"] ? "block" : "none" }}
             >
-              <p>
-                First you register your class with your students. Then your
-                class is saved for future use. To create a map you select your
-                class, then what configuration they are supposed to sit. You can
-                choose between our defualt '1 and 1', '2 and 2' etc. or you can
-                create your own. After that, you select the conditions such as
-                who should sit in front or back of the classroom, who should or
-                should not sit together, and you can manually place students.
-                The algorithm makes sure the conditions are met and the rest is
-                randomized. From there you can download and export your map
-                however you like. The map is registered to your school and other
-                teachers in your school can see your most recent maps, which is
-                beneficial for when the class has a substitute teacher.
-              </p>
+              <p>{t("qaAnswer2")}</p>
             </div>
             <button
               className={`qa-button ${answersVisible["qa2"] ? "active" : ""}`}
@@ -520,29 +467,12 @@ const Home = () => {
           </div>
           */}
           <div className="qa" onClick={() => toggleAnswer("qa4")}>
-            <h3 className="qa-question">
-              How does the 90 days free trial and payment work?
-            </h3>
+            <h3 className="qa-question">{t("qaQuestion3")}</h3>
             <div
               className="qa-answer"
               style={{ display: answersVisible["qa4"] ? "block" : "none" }}
             >
-              <p>
-                We are so confident in our generator that we give you a free 90
-                day trial! You can cancel within those 90 days and pay nothing
-                for the use of the generator.
-              </p>
-              <p>
-                One week before your trial expires, we will send you an email,
-                reminding you to cancel if you do not wish to continue with the
-                subscription.
-              </p>
-              <p>
-                If you do wish to continue, you will receive an invoice every
-                semester end by default. However, we can of course tailor the
-                subscription to your needs and they payments can be structured
-                to your preference.
-              </p>
+              <p>{t("qaAnswer3")}</p>
             </div>
             <button
               className={`qa-button ${answersVisible["qa4"] ? "active" : ""}`}
