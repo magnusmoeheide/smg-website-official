@@ -9,7 +9,7 @@ body {
   overflow-x:hidden;
   -webkit-overflow-scrolling: touch;
 
-  min-width: 472px;
+  min-width: 350px;
 }
 
 p:hover, li:hover, h1:hover, h2:hover, h3:hover {
@@ -114,6 +114,15 @@ a {
   transform: scale(1.05);
 }
 
+
+@media only screen and (max-width: 500px) {
+  .button-container {
+    flex: 2;
+  }
+  .logo-container img {
+    max-width: 100%;
+  }
+}
 
 
 /* ------------------------ */
@@ -286,8 +295,8 @@ a {
 
     flex-direction: column;
   }
-
 }
+
 
 /* --------------------- */
 

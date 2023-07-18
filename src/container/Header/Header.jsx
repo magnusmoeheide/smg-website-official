@@ -13,16 +13,6 @@ const Header = () => {
     i18n.changeLanguage(code);
   };
 
-  // Get the domain from the URL
-  const domain = window.location.hostname;
-
-  // Check if the domain contains "no" or "en"
-  if (domain.includes("no")) {
-    handleTrans("no"); // Change to Norwegian language
-  } else if (domain.includes("en")) {
-    handleTrans("en"); // Change to English language
-  }
-
   return (
     <div>
       <header className="header">
