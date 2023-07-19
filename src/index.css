@@ -109,6 +109,8 @@ a {
   font-size: 1.3em;
   border-radius: 0.3em;
   transition: all 0.3s ease-in-out;
+  text-align: center;
+  justify-content: center;
 }
 
 .langBtn:hover {
@@ -124,10 +126,6 @@ a {
   }
   .logo-container img {
     max-width: 100%;
-  }
-
-  .langBtn {
-    font-size: 1.3em;
   }
 
   .login-button {
