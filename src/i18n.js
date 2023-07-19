@@ -51,8 +51,8 @@ i18n
           reason3Text: "Å være lærer kan være slitsomt nok. Spar tålmodigheten til der du trenger den, ikke kast den bort på kontorarbeid.",
 
           // ------------- PRICING SECTION ---------------- //
-          pricingTitle1: "Vår",
-          pricingTitleOrange: "abonnementsløsning",
+          pricingTitle1: "Vårt",
+          pricingTitleOrange: "abonnement",
           pricingTitle2: "",
           plan1Title: "For skoler",
           plan1Description: "Vi tester ut vår nyutviklede app og den gis gratis til skoler for hele 2023. På slutten av året vil du få informasjon om appen har vært lønnsom for din skole og kan deretter bestemme om du ønsker å fortsette på betalt versjon eller stoppe abonnementet.",

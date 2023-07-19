@@ -8,8 +8,9 @@ body {
  
   overflow-x:hidden;
   -webkit-overflow-scrolling: touch;
+  min-width: 300px;
 
-  min-width: 350px;
+
 }
 
 p:hover, li:hover, h1:hover, h2:hover, h3:hover {
@@ -121,6 +122,14 @@ a {
   }
   .logo-container img {
     max-width: 100%;
+  }
+
+  .langBtn {
+    font-size: 1.3em;
+  }
+
+  .login-button {
+    padding: 0.2rem 0.8rem;
   }
 }
 
