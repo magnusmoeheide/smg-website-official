@@ -52,7 +52,7 @@ const Header = () => {
                       className="langBtn"
                       onClick={() => handleTrans(code)}
                     >
-                      {native}
+                      <span>{native}</span>
                     </button>
                   );
                 })}

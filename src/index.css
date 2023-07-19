@@ -109,14 +109,16 @@ a {
   font-size: 1.3em;
   border-radius: 0.3em;
   transition: all 0.3s ease-in-out;
-  text-align: center;
-  justify-content: center;
 }
 
 .langBtn:hover {
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.4);
   transform: scale(1.05);
+}
+
+.langBtn span {
+  display: flex;
 }
 
 
