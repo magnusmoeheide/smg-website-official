@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.58b3bd3e.css",
+    "main.css": "/static/css/main.384b1458.css",
     "main.js": "/static/js/main.da8795c2.js",
     "static/media/teacher.png": "/static/media/teacher.aa07709390a234c7f2eb.png",
     "static/media/classroom.jpeg": "/static/media/classroom.2d734e925bc92d44f3ed.jpeg",
@@ -21,11 +21,11 @@
     "static/media/rocket.png": "/static/media/rocket.b58a9096fceb35409309.png",
     "static/media/graduation-hat.png": "/static/media/graduation-hat.b7ea4c3d423768c5938d.png",
     "index.html": "/index.html",
-    "main.58b3bd3e.css.map": "/static/css/main.58b3bd3e.css.map",
+    "main.384b1458.css.map": "/static/css/main.384b1458.css.map",
     "main.da8795c2.js.map": "/static/js/main.da8795c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.58b3bd3e.css",
+    "static/css/main.384b1458.css",
     "static/js/main.da8795c2.js"
   ]
 }
