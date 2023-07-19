@@ -119,6 +119,8 @@ a {
 
 .langBtn span {
   display: flex;
+  border: 1px solid red;
+  margin: auto;
 }
 
 
