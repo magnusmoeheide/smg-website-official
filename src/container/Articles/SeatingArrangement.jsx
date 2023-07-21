@@ -13,6 +13,7 @@ const SeatingArrangement = () => {
     <div>
       <Header />
       <div className="article">
+        <i>A study by Magnus Heide, 10.06.2023.</i>
         <h1>
           What is the relationship between classroom seating arrangement and
           maximized social and academic development of students?
@@ -303,9 +304,6 @@ const SeatingArrangement = () => {
           and the ideal student partner rotation is so that everyone gets to sit
           with everyone throughout the year.
         </p>
-        <br />
-        <br />
-        <i>A study by Magnus Heide, 10.06.2023.</i>
         <br />
         <br />
         <br />
