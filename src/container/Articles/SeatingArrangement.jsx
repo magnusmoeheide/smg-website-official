@@ -11,7 +11,7 @@ const SeatingArrangement = () => {
 
   return (
     <div>
-      <Header />
+      <Header showAllLinks={false} />
       <div className="article">
         <i>A study by Magnus Heide, 10.06.2023.</i>
         <h1>

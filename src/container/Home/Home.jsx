@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <Header showAllLinks={true} />
 
       <section className="hero" id="/">
         <div className="hero-container">

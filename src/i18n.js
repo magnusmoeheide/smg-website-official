@@ -1,15 +1,18 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+
+export const localStorageKey = 'preferredLanguage';
+const defaultLanguage = 'en'; // Set your default language here
+
+const storedLanguage = localStorage.getItem(localStorageKey);
+
 i18n
   .use(initReactI18next)
   .init({
     debug: true,
     fallbackLng: 'no',
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-
+    lng: storedLanguage || defaultLanguage,
 
     resources: {
       no: {

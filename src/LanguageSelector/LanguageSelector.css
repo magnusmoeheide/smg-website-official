@@ -1,0 +1,19 @@
+
+.languageSelect {
+    font-size: 1.5em;
+    padding: 0.2em;
+
+    border: solid #ff990085 0.05em;
+    border-radius: 0.3em;
+}
+
+@media only screen and (max-width: 500px) {
+  .languageSelect {
+    padding: 0.1em;
+    font-size: 1.3em;
+  }
+}
+
+.languageSelect:focus {
+  outline: none;
+}

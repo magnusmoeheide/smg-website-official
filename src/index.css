@@ -76,17 +76,21 @@ a {
 }
 
 .login-button {
+  display: flex;
+  justify-content: center;
   background-color: rgb(255, 120, 1);
-  color: white;
-  padding: 0.5rem 1.4rem;
-  margin-left: 0.3rem;
+  color: rgb(253,253,251);
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 0.3em;
+  margin-left: 0.4em;
+  font-size: 1.2rem;
   cursor: pointer;
+  text-decoration:none;
 
-  text-decoration: none;
   border-bottom: 0.18em solid #1ba0f220;
   border-bottom-style: groove;
+  transition: all 0.3s ease-in-out;
 }
 
 .login-button:hover {
@@ -133,7 +137,7 @@ a {
   }
 
   .login-button {
-    padding: 0.2rem 0.8rem;
+    padding: 0.6rem 1.5rem;
   }
 }
 
