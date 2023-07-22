@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.794b6185.css",
-    "main.js": "/static/js/main.7a6315ce.js",
+    "main.css": "/static/css/main.7e4a2a87.css",
+    "main.js": "/static/js/main.7ac9a7a1.js",
     "static/media/teacher.png": "/static/media/teacher.aa07709390a234c7f2eb.png",
     "static/media/classroom.jpeg": "/static/media/classroom.2d734e925bc92d44f3ed.jpeg",
     "static/media/smg-logo-no.png": "/static/media/smg-logo-no.516133ce6412829966b1.png",
+    "static/media/smg-logo-en.png": "/static/media/smg-logo-en.7bfd9e0d4a01e4d47ecb.png",
     "static/media/youtube.png": "/static/media/youtube.b6be557012e7c0413ff2.png",
     "static/media/student.jpeg": "/static/media/student.21b2b1cf1cdae7005240.jpeg",
-    "static/media/smg-logo-en.png": "/static/media/smg-logo-en.1db340e6f1fd5076901d.png",
     "static/media/rotations.jpeg": "/static/media/rotations.46c5b1b31c062855c025.jpeg",
     "static/media/klassekart.jpeg": "/static/media/klassekart.43ab5368932d1ac6e67a.jpeg",
     "static/media/social-academic.jpeg": "/static/media/social-academic.a0da675999e1312736ef.jpeg",
@@ -21,11 +21,11 @@
     "static/media/rocket.png": "/static/media/rocket.b58a9096fceb35409309.png",
     "static/media/graduation-hat.png": "/static/media/graduation-hat.b7ea4c3d423768c5938d.png",
     "index.html": "/index.html",
-    "main.794b6185.css.map": "/static/css/main.794b6185.css.map",
-    "main.7a6315ce.js.map": "/static/js/main.7a6315ce.js.map"
+    "main.7e4a2a87.css.map": "/static/css/main.7e4a2a87.css.map",
+    "main.7ac9a7a1.js.map": "/static/js/main.7ac9a7a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.794b6185.css",
-    "static/js/main.7a6315ce.js"
+    "static/css/main.7e4a2a87.css",
+    "static/js/main.7ac9a7a1.js"
   ]
 }
