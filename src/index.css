@@ -60,6 +60,11 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: #333;
+  transition: transform 0.2s ease-in-out;
+}
+
+.link.clicked {
+  transform: scale(0.9);
 }
 
 .button-container {
