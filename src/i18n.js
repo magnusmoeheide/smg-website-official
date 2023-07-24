@@ -76,7 +76,7 @@ i18n
           testimonialsTitleOrange: "skolene",
           testimonialsTitle2: "sier",
           testimonial1Text: "Det jeg liker best med appen er at den passer for alle typer klasserom. Enten om elevene skal sitte 2 og 2 eller i hestesko, så klarer appen å anbefale hvordan de best bør sitte sammen basert på kravene mine. Super generator!",
-          testimonial2Text: "Etter å ha testet appen syntes jeg at det er et flott verktøy for lærere som ønsker å lage gode klassekart for klasserommene eller andre arrangementer. Appen er enkel å bruke, og det er flott at man kan se klassekartene i andre klasser hvis man tar vikartimer der og ikke vet hvor elevene skal sitte.",
+          testimonial2Text: "Et flott verktøy for lærere som ønsker å lage gode klassekart for klasserommene eller andre arrangementer. Appen er enkel å bruke, og det er flott at man kan se klassekartene i andre klasser hvis man tar vikartimer der og ikke vet hvor elevene skal sitte.",
         
           // ------------- Q&A ---------------- //
           qaTitle: "Ofte spurte",
