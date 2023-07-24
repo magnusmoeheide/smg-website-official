@@ -49,7 +49,7 @@ const Navbar = () => {
         <button>Disclaimer 📜</button>
       </Link>
 
-      <Link to="/use">
+      <Link to="/acceptableuse">
         <button>Acceptable Use Policy ✔️</button>
       </Link>
 

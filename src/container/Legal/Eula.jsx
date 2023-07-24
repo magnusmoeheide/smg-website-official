@@ -12,7 +12,7 @@ const Eula = () => {
       <Navbar />
 
       <h2>EULA 🧑‍🏫</h2>
-      <i>Last updated April 07, 2023</i>
+      <i>Last updated April 7, 2023</i>
       <h3>END USER LICENSE AGREEMENT</h3>
       <p>
         Klassekartgenerator.no is licensed to You (End-User) by Magnus Heide
@@ -52,9 +52,8 @@ const Eula = () => {
       <h3>1. THE APPLICATION</h3>
       <p>
         Klassekartgenerator.no ('Licensed Application') is a piece of software
-        created to generate seat maps for teachers in schools.&mdash;and
-        customised for desktop devices ('Devices'). It is used to generate seat
-        maps.
+        created to generate seat maps for teachers in schools, and customised
+        for desktop devices ('Devices'). It is used to generate seat maps.
       </p>
       <h3>2. SCOPE OF LICENCE</h3>
       <p>
@@ -334,28 +333,19 @@ const Eula = () => {
         legislation. <br />
       </ul>
 
-      <h3>11. LEGAL COMPLIANCE</h3>
-      <p>
-        You represent and warrant that You are not located in a country that is
-        subject to a US Government embargo, or that has been designated by the
-        US Government as a 'terrorist supporting' country; and that You are not
-        listed on any US Government list of prohibited or restricted parties.
-      </p>
-
-      <h3>12. CONTACT INFORMATION</h3>
+      <h3>11. CONTACT INFORMATION</h3>
       <p>
         For general inquiries, complaints, questions or claims concerning the
         Licensed Application, please contact:
       </p>
       <ul>
-        Magnus Heide <br />
+        c/o Magnus Heide <br />
         Manglebergveien 8E <br />
-        Oslo,______0678 <br />
-        Norway <br />
+        0678 Oslo, Norway <br />
         magnus@klassekartgenerator.no
       </ul>
 
-      <h3>13. TERMINATION</h3>
+      <h3>12. TERMINATION</h3>
       <p>
         The licence is valid until terminated by Magnus Heide ENK or by You.
         Your rights under this licence will terminate automatically and without
@@ -365,7 +355,7 @@ const Eula = () => {
         Licensed Application.
       </p>
 
-      <h3>14. THIRD-PARTY TERMS OF AGREEMENTS AND BENEFICIARY</h3>
+      <h3>13. THIRD-PARTY TERMS OF AGREEMENTS AND BENEFICIARY</h3>
       <p>
         Magnus Heide ENK represents and warrants that Magnus Heide ENK will
         comply with applicable third-party terms of agreement when using
@@ -381,7 +371,7 @@ const Eula = () => {
         third-party beneficiary thereof.
       </p>
 
-      <h3>15. INTELLECTUAL PROPERTY RIGHTS</h3>
+      <h3>14. INTELLECTUAL PROPERTY RIGHTS</h3>
       <p>
         Magnus Heide ENK and the End-User acknowledge that, in the event of any
         third- party claim that the Licensed Application or the End-User's
@@ -392,21 +382,21 @@ const Eula = () => {
         claims.
       </p>
 
-      <h3>16. APPLICABLE LAW</h3>
+      <h3>15. APPLICABLE LAW</h3>
       <p>
         This Licence Agreement is governed by the laws of Norway excluding its
         conflicts of law rules.
       </p>
 
-      <h3>17. MISCELLANEOUS</h3>
+      <h3>16. MISCELLANEOUS</h3>
       <p>
-        17.1 If any of the terms of this agreement should be or become invalid,
+        16.1 If any of the terms of this agreement should be or become invalid,
         the validity of the remaining provisions shall not be affected. Invalid
         terms will be replaced by valid ones formulated in a way that will
         achieve the primary purpose.
       </p>
       <p>
-        17.2 Collateral agreements, changes and amendments are only valid if
+        16.2 Collateral agreements, changes and amendments are only valid if
         laid down in writing. The preceding clause can only be waived in
         writing.
       </p>

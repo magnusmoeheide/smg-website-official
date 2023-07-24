@@ -12,15 +12,13 @@ const Cookies = () => {
       <Navbar />
 
       <h2>Cookie Policy 🍪</h2>
-      <i>Last updated April 07, 2023</i>
+      <i>Last updated April 7, 2023</i>
       <h3>AGREEMENT TO USE OF COOKIES</h3>
       <p>
         This Cookie Policy explains how Magnus Heide ENK ("Company," "we," "us,"
         and "our") uses cookies and similar technologies to recognize you when
         you visit our website at{" "}
-        <a href="http://klassekartgenerator.no">
-          http://klassekartgenerator.no
-        </a>{" "}
+        <a href="http://klassekartgenerator.no">Klassekartgenerator.no</a>{" "}
         ("Website"). It explains what these technologies are and why we use
         them, as well as your rights to control our use of them.
       </p>
@@ -61,19 +59,8 @@ const Cookies = () => {
 
       <h3>How can I control cookies?</h3>
       <p>
-        You have the right to decide whether to accept or reject cookies. You
-        can exercise your cookie rights by setting your preferences in the
-        Cookie Consent Manager. The Cookie Consent Manager allows you to select
-        which categories of cookies you accept or reject. Essential cookies
-        cannot be rejected as they are strictly necessary to provide you with
-        services.
-      </p>
-      <p>
-        The Cookie Consent Manager can be found in the notification banner and
-        on our website. If you choose to reject cookies, you may still use our
-        website though your access to some functionality and areas of our
-        website may be restricted. You may also set or amend your web browser
-        controls to accept or refuse cookies.
+        If you do not accept the use of cookies you are prohibited from using
+        the services.
       </p>
       <p>
         The specific types of first- and third-party cookies served through our

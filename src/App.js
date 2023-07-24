@@ -20,7 +20,7 @@ function App() {
         <Route path="/cookies" element={<Cookies/>}/> 
         <Route path="/return" element={<Return/>}/> 
         <Route path="/disclaimer" element={<Disclaimer/>}/> 
-        <Route path="/use" element={<AcceptableUse/>}/> 
+        <Route path="/acceptableuse" element={<AcceptableUse/>}/> 
         <Route path="/eula" element={<Eula />}/> 
         <Route path="/getstarted" element={<GetStarted />}/> 
         <Route path="/articles/seatingarrangement" element={<SeatingArrangement />}/> 

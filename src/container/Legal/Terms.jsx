@@ -77,9 +77,9 @@ const Terms = () => {
         trademarks, service marks, and logos contained therein (the 'Marks').
         Our Content and Marks are protected by copyright and trademark laws (and
         various other intellectual property rights and unfair competition laws)
-        and treaties in the United States and around the world. The Content and
-        Marks are provided in or through the Services 'AS IS' for your internal
-        business purpose only.
+        and treaties in Norway and around the world. The Content and Marks are
+        provided in or through the Services 'AS IS' for your internal business
+        purpose only.
       </p>
       <b>Your use of our Services</b>
       <p>
@@ -159,8 +159,8 @@ const Terms = () => {
 
       <h3>4. USER REGISTRATION </h3>
       <p>
-        You may be required to register to use the Services. You agree to keep
-        your password confidential and will be responsible for all use of your
+        You are required to register to use the Services. You agree to keep your
+        password confidential and will be responsible for all use of your
         account and password. We reserve the right to remove, reclaim, or change
         a username you select if we determine, in our sole discretion, that such
         username is inappropriate, obscene, or otherwise objectionable.
@@ -168,32 +168,32 @@ const Terms = () => {
 
       <h3> 5. PURCHASES AND PAYMENT</h3>
       <p>
-        We accept the following forms of payment: Visa or Invoice. You agree to
-        provide current, complete, and accurate purchase and account information
-        for all purchases made via the Services. Sales tax will be added to the
-        price of purchases as deemed required by us. We may change prices at any
-        time. All payments shall be in NOK. You agree to pay all charges at the
-        prices then in effect for your purchases and any applicable shipping
-        fees, and you authorise us to charge your chosen payment provider for
-        any such amounts upon placing your order. If your order is subject to
-        recurring charges, then you consent to our charging your payment method
-        on a recurring basis without requiring your prior approval for each
-        recurring charge, until such time as you cancel the applicable order. We
-        reserve the right to correct any errors or mistakes in pricing, even if
-        we have already requested or received payment. We reserve the right to
-        refuse any order placed through the Services. We may, in our sole
-        discretion, limit or cancel quantities purchased per person, per
-        business, or per order. These restrictions may include orders placed by
-        or under the same customer account, the same payment method, and/or
-        orders that use the same billing or shipping address. We reserve the
-        right to limit or prohibit orders that, in our sole judgement, appear to
-        be placed by dealers, resellers, or distributors.
+        We accept the following forms of payment: Invoice. You agree to provide
+        current, complete, and accurate purchase and account information for all
+        purchases made via the Services. Sales tax will be added to the price of
+        purchases as deemed required by us. We may change prices at any time.
+        All payments shall be in NOK. You agree to pay all charges at the prices
+        then in effect for your purchases and any applicable shipping fees, and
+        you authorise us to charge your chosen payment provider for any such
+        amounts upon placing your order. If your order is subject to recurring
+        charges, then you consent to our charging your payment method on a
+        recurring basis without requiring your prior approval for each recurring
+        charge, until such time as you cancel the applicable order. We reserve
+        the right to correct any errors or mistakes in pricing, even if we have
+        already requested or received payment. We reserve the right to refuse
+        any order placed through the Services. We may, in our sole discretion,
+        limit or cancel quantities purchased per person, per business, or per
+        order. These restrictions may include orders placed by or under the same
+        customer account, the same payment method, and/or orders that use the
+        same billing or shipping address. We reserve the right to limit or
+        prohibit orders that, in our sole judgement, appear to be placed by
+        dealers, resellers, or distributors.
       </p>
 
       <h3>6. FREE TRIAL</h3>
       <p>
-        We offer a 90-day free trial to new users who register with the
-        Services. The account will be charged according to the user's chosen
+        We offer a free trial for the entire 2023 to new users who register with
+        the Services. The account will be charged according to the user's chosen
         subscription at the end of the free trial.
       </p>
 
@@ -322,15 +322,14 @@ const Terms = () => {
 
       <h3>9. USER GENERATED CONTRIBUTIONS</h3>
       <p>
-        The Services does not offer users to submit or post content. We may
-        provide you with the opportunity to create, submit, post, display,
-        transmit, perform, publish, distribute, or broadcast content and
-        materials to us or on the Services, including but not limited to text,
-        writings, video, audio, photographs, graphics, comments, suggestions, or
-        personal information or other material (collectively, 'Contributions').
-        Contributions may be viewable by other users of the Services and through
-        third-party websites. When you create or make available any
-        Contributions, you thereby represent and warrant that:
+        The Services offers users to submit or post content within their school.
+        We provide you with the opportunity to create, submit, post, display,
+        and publish content and materials to other users on the Services,
+        including but not limited to text, and graphics or personal information
+        or other material (collectively, 'Contributions'). Contributions are
+        only viewable by other users of the Services in the same school. When
+        you create or make available any Contributions, you thereby represent
+        and warrant that:
         <ul>
           <li>
             The creation, distribution, transmission, public display, or
@@ -346,13 +345,7 @@ const Terms = () => {
             Contributions in any manner contemplated by the Services and these
             Legal Terms.
           </li>
-          <li>
-            You have the written consent, release, and/or permission of each and
-            every identifiable individual person in your Contributions to use
-            the name or likeness of each and every such identifiable individual
-            person to enable inclusion and use of your Contributions in any
-            manner contemplated by the Services and these Legal Terms.
-          </li>
+
           <li>Your Contributions are not false, inaccurate, or misleading.</li>
           <li>
             Your Contributions are not unsolicited or unauthorised advertising,
@@ -469,9 +462,9 @@ const Terms = () => {
       <p>
         We care about data privacy and security. By using the Services, you
         agree to be bound by our Privacy Policy posted on the Services, which is
-        incorporated into these Legal Terms. Please be advised the Services are
-        hosted in Germany. If you access the Services from any other region of
-        the world with laws or other requirements governing personal data
+        incorporated into these Legal Terms. Please be advised that the Services
+        are hosted in Germany. If you access the Services from any other region
+        of the world with laws or other requirements governing personal data
         collection, use, or disclosure that differ from applicable laws in
         Germany, then through your continued use of the Services, you are
         transferring your data to Germany, and you expressly consent to have
