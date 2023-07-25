@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
+      <Routes basename="/smg-website-official">
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/> 
         <Route path="/privacy" element={<Privacy/>}/> 
