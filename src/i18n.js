@@ -3,7 +3,6 @@ import { initReactI18next } from 'react-i18next';
 
 
 export const localStorageKey = 'preferredLanguage';
-const defaultLanguage = 'en'; // Set your default language here
 
 const storedLanguage = localStorage.getItem(localStorageKey);
 
