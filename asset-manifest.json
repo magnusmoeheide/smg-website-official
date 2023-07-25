@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e4a2a87.css",
-    "main.js": "/static/js/main.7ac9a7a1.js",
+    "main.css": "/static/css/main.449e3004.css",
+    "main.js": "/static/js/main.384e0b80.js",
     "static/media/teacher.png": "/static/media/teacher.aa07709390a234c7f2eb.png",
     "static/media/classroom.jpeg": "/static/media/classroom.2d734e925bc92d44f3ed.jpeg",
     "static/media/smg-logo-no.png": "/static/media/smg-logo-no.516133ce6412829966b1.png",
@@ -21,11 +21,11 @@
     "static/media/rocket.png": "/static/media/rocket.b58a9096fceb35409309.png",
     "static/media/graduation-hat.png": "/static/media/graduation-hat.b7ea4c3d423768c5938d.png",
     "index.html": "/index.html",
-    "main.7e4a2a87.css.map": "/static/css/main.7e4a2a87.css.map",
-    "main.7ac9a7a1.js.map": "/static/js/main.7ac9a7a1.js.map"
+    "main.449e3004.css.map": "/static/css/main.449e3004.css.map",
+    "main.384e0b80.js.map": "/static/js/main.384e0b80.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e4a2a87.css",
-    "static/js/main.7ac9a7a1.js"
+    "static/css/main.449e3004.css",
+    "static/js/main.384e0b80.js"
   ]
 }
