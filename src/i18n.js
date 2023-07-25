@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 
 export const localStorageKey = 'preferredLanguage';
-
+const defaultLanguage = 'no';
 const storedLanguage = localStorage.getItem(localStorageKey);
 
 i18n
