@@ -6,14 +6,13 @@ import {
   GetStarted, SeatingArrangement
 } from './container';
 
-import {HashRouter as Router, Route, Switch } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
+      <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/> 
         <Route path="/privacy" element={<Privacy/>}/> 
@@ -25,8 +24,7 @@ function App() {
         <Route path="/eula" element={<Eula />}/> 
         <Route path="/getstarted" element={<GetStarted />}/> 
         <Route path="/articles/seatingarrangement" element={<SeatingArrangement />}/> 
-        </Switch>
-      </Router>
+      </Routes>
     </div>
   );
 }
