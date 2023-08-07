@@ -25,7 +25,7 @@ a {
 /* ------- HEADER ------ */
 
 .header {
-  background-color: rgb(253,253,251);
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
 }
@@ -152,7 +152,7 @@ a {
 /* --------- HERO --------------- */
 
 .hero {
-  background-color: #f2f2f2;
+  background-color: transparent;
   padding: 2rem 0;
 }
 
@@ -741,6 +741,10 @@ a {
 /* ---------------------------------- */
 
 /* ---------- ARTICLES --------------- */
+
+.article {
+  margin: auto;
+}
 
 .article-section {
   background-color: rgb(253,253,251);
