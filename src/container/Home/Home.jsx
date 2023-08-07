@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -37,7 +38,7 @@ const Home = () => {
             </Link> */}
           </div>
           <div className="hero-image">
-            <img src={images.youtube} alt="Hero Image" />
+            <YoutubeEmbed embedId="miWLUxqapNE" />
           </div>
         </div>
       </section>

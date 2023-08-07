@@ -742,9 +742,6 @@ a {
 
 /* ---------- ARTICLES --------------- */
 
-.article {
-  margin: auto;
-}
 
 .article-section {
   background-color: rgb(253,253,251);
@@ -928,7 +925,8 @@ a {
 .article {
   max-width: 1400px;
   text-align: left;
-  margin: 3rem 6rem;
+  margin: 3rem auto;
+  padding: 0rem 4rem;
   line-height: 1.5rem;
 }
 
@@ -946,7 +944,8 @@ a {
 
 @media only screen and (max-width: 768px) {
   .article {
-    margin: 1.5rem;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .article h1 {
@@ -978,3 +977,21 @@ a {
 }
 
 
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  margin-top: 1em;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 0.3em solid rgb(255, 120, 1);
+  border-radius: 0.3em;
+}
