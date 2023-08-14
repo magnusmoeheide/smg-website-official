@@ -23,8 +23,10 @@ const Guide = () => {
         <h1>Brukerguide 📄</h1>
         <p className="userInfo">
           Her er en brukerguide til{" "}
-          <a href="app.klassekartgenerator.no.">app.klassekartgenerator.no</a>.
-          Om du står fast eller har spørsmål er det bare å ta kontakt på{" "}
+          <a href="app.klassekartgenerator.no." target="_blank">
+            app.klassekartgenerator.no
+          </a>
+          . Om du står fast eller har spørsmål er det bare å ta kontakt på{" "}
           <a href="mailto:hei@klassekartgenerator.no">
             hei@klassekartgenerator.no
           </a>
