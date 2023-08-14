@@ -1000,9 +1000,26 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
-  .article, .guide {
+  .article {
     margin: 1rem;
     padding: 0.5rem 1rem;
+  }  
+  
+  .guide {
+    margin: 0rem;
+    padding: 1rem 0rem;
+  }
+
+  .guide .flex-image-text img {
+    margin-top: 1em;
+  }
+
+  .userInfo {
+    margin: 1.5em;
+  }
+
+  .guide h1, .guide button {
+    margin: 1em;
   }
 
   .article h1, .guide h1 {

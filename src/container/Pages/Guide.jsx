@@ -16,12 +16,12 @@ const Guide = () => {
       <div className="guide">
         <Link to="/">
           <button className="goback-button">
-            <b>Back to page</b>
+            <b>Gå tilbake</b>
           </button>
         </Link>
 
         <h1>Brukerguide 📄</h1>
-        <p>
+        <p className="userInfo">
           Her er en brukerguide til{" "}
           <a href="app.klassekartgenerator.no.">app.klassekartgenerator.no</a>.
           Om du står fast eller har spørsmål er det bare å ta kontakt på{" "}
