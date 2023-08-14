@@ -920,7 +920,25 @@ a {
 
 /* ------------------------------- */
 
-/* ----------- ARTICLE ------------ */
+/* ----------- ARTICLE / GUIDE ------------ */
+
+.goback-button {
+  background-color: rgb(255, 120, 1);
+  color: rgb(253,253,251);
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1rem;
+  cursor: pointer;
+
+  border-bottom: 0.18em solid #1ba0f220;
+  border-bottom-style: groove;
+  transition: all 0.3s ease-in-out;
+}
+
+.goback-button:hover {
+  font-size: 1.1rem;
+}
 
 .article {
   max-width: 1400px;
@@ -930,25 +948,64 @@ a {
   line-height: 1.5rem;
 }
 
-.article p {
+.guide {
+  max-width: 1400px;
+  text-align: left;
+  line-height: 1.5rem;
+  margin: 3rem auto;
+}
+
+.article p, .guide p {
   margin-top: 1.5rem;
 }
 
-.article h1 {
+.article h1, .guide h1 {
   line-height: 2.5rem;
+}
+
+.guide h1 {
+  line-height: 2.5rem;
+  margin-top: 2em;
 }
 
 .article h2 {
   margin-top: 4rem;
 }
 
+.guide h2 {
+  color: rgb(255, 120, 1);
+}
+
+.guide .flex-image-text {
+  padding: 2em;
+  max-width: 100%; 
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
+
+.guide .flex-image-text img {
+  max-width: 25em;
+  max-height: 25em; 
+}
+
+.greyBg {
+  background-color: rgba(128, 128, 128, 0.150);
+}
+
+.lightGreyBg {
+  background-color: rgba(128, 128, 128, 0.080);
+}
+
 @media only screen and (max-width: 768px) {
-  .article {
+  .article, .guide {
     margin: 1rem;
     padding: 0.5rem 1rem;
   }
 
-  .article h1 {
+  .article h1, .guide h1 {
     font-size: 1.5rem;
     line-height: 1.8rem;
   }
@@ -976,8 +1033,6 @@ a {
   margin: 10px 0;
 }
 
-
-
 .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -995,3 +1050,4 @@ a {
   border: 0.3em solid rgb(255, 120, 1);
   border-radius: 0.3em;
 }
+

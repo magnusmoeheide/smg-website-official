@@ -30,12 +30,12 @@ const Header = ({ showAllLinks }) => {
                 <a href="#pricing" className="link">
                   {t("headerPricing")}
                 </a>
-                <a href="#testimonials" className="link">
-                  {t("headerTestimonials")}
-                </a>
                 <a href="#q&a" className="link">
                   {t("headerQA")}
                 </a>
+                <Link to="/pages/guide">
+                  <a className="link">Guide</a>
+                </Link>
               </>
             )}
           </div>
