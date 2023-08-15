@@ -380,7 +380,7 @@ const Home = () => {
               className="testimonial-image"
             />
             <p className="testimonial-text">{t("testimonial1Text")}</p>
-            <p className="testimonial-name">John Smith</p>
+            <p className="testimonial-name">Hans Petter</p>
           </div>
           <div className="testimonial">
             <img
@@ -389,7 +389,7 @@ const Home = () => {
               className="testimonial-image"
             />
             <p className="testimonial-text">{t("testimonial2Text")}</p>
-            <p className="testimonial-name">Jane Doe</p>
+            <p className="testimonial-name">Erik Larsen</p>
           </div>
         </div>
       </section>
