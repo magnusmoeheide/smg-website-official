@@ -45,7 +45,7 @@ const Header = ({ showAllLinks }) => {
               <div>
                 <LanguageSelector />
               </div>
-              <a href="http://app.klassekartgenerator.no/login">
+              <a href={t("loginLink")}>
                 <button className="login-button"> {t("headerLogin")}</button>
               </a>
             </div>
