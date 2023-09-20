@@ -31,7 +31,7 @@ const Home = () => {
               <span className="orange">{t("heroTitleOrange")}</span>
             </h1>
             <p className="hero-text">{t("heroText")}</p>
-            <a href="http://app.klassekartgenerator.no/signup">
+            <a href={t("signupLink")}>
               <button className="hero-button">{t("startBtn")}</button>
             </a>
             {/* <Link to="/getstarted">
@@ -232,7 +232,7 @@ const Home = () => {
               </li>
             </ul>
 
-            <a href="http://app.klassekartgenerator.no/signup">
+            <a href={t("signupLink")}>
               <button className="start-now-button">{t("startBtn")}</button>
             </a>
             {/* <Link to="/getstarted">

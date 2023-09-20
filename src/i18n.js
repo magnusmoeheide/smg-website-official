@@ -14,7 +14,7 @@ const hostnameLanguageMap = {
 const storedLanguage = localStorage.getItem(localStorageKey);
 const hostname = window.location.hostname;
 
-const getLanguageFromHostname = (hostname) => {
+export const getLanguageFromHostname = (hostname) => {
   return hostnameLanguageMap[hostname] || defaultLanguage
 }
 
@@ -31,6 +31,10 @@ i18n
     resources: {
       no: {
         translation: {
+
+          // ------------- LINKS ---------------- // 
+          signupLink: "https://app.klassekartgenerator.no/signup",
+          loginLink: "https://app.klassekartgenerator.no/login",
 
           // ------------- HEADER ---------------- //
           headerHome: "Hjem",
@@ -111,6 +115,10 @@ i18n
       },
       en: {
         translation: {
+
+          // ------------- LINKS ---------------- // 
+          signupLink: "https://app.seatmapgenerator.com/signup",
+          loginLink: "https://app.seatmapgenerator.com/login",
 
           // ------------- HEADER ---------------- //
           headerHome: "Home",

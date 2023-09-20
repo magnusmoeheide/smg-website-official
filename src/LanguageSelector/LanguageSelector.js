@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { localStorageKey } from '../i18n';
+import { localStorageKey, getLanguageFromHostname } from '../i18n';
 import './LanguageSelector.css';
 
 const LanguageSelector = () => {
@@ -13,7 +13,7 @@ const LanguageSelector = () => {
       i18n.changeLanguage(storedLanguage);
     } else {
 
-      const defaultLanguage = 'no'; 
+      const defaultLanguage = getLanguageFromHostname(window.location.hostname);
       i18n.changeLanguage(defaultLanguage);
       localStorage.setItem(localStorageKey, defaultLanguage);
     }
