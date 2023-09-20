@@ -4,14 +4,29 @@ import { initReactI18next } from 'react-i18next';
 
 export const localStorageKey = 'preferredLanguage';
 const defaultLanguage = 'no';
+
+
+const hostnameLanguageMap = {
+  'klassekartgenerator.no': 'no',
+  'seatmapgenerator.com': 'en'
+}
+
 const storedLanguage = localStorage.getItem(localStorageKey);
+const hostname = window.location.hostname;
+
+const getLanguageFromHostname = (hostname) => {
+  return hostnameLanguageMap[hostname] || defaultLanguage
+}
+
+const selectedLanguage = storedLanguage || getLanguageFromHostname(hostname)
+
 
 i18n
   .use(initReactI18next)
   .init({
     debug: true,
-    fallbackLng: 'no',
-    lng: storedLanguage || defaultLanguage,
+    fallbackLng: defaultLanguage,
+    lng: selectedLanguage,
 
     resources: {
       no: {
