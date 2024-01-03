@@ -11,10 +11,11 @@ import Eula from './Legal/Eula';
 import GetStarted from './GetStarted/GetStarted'
 import Header from './Header/Header';
 import SeatingArrangement from './Articles/SeatingArrangement';
+import PrivacyArticle from './Articles/PrivacyArticle';
 import Guide from './Pages/Guide'
 
 
 export {
     Home, About, Privacy, Terms, Navbar, Cookies, Return, 
-    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement, Guide
+    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement, PrivacyArticle, Guide
 }

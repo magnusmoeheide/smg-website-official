@@ -35,11 +35,21 @@ import viewMap from '../assets/viewMap.png'
 import editClass from '../assets/editClass.png'
 import editStudents from '../assets/editStudents.png'
 
+import privacy1 from '../assets/shutterstock_2292527159.jpg'
+import privacy2 from '../assets/shutterstock_2156918769.jpeg'
+import privacy3 from '../assets/shutterstock_2329333335.jpg'
+import privacy4 from '../assets/shutterstock_489852166.jpg'
+import privacy5 from '../assets/shutterstock_275251643.jpg'
+import privacy6 from '../assets/shutterstock_2302949453.jpg'
+import privacy7 from '../assets/shutterstock_1448047388.jpg'
+
 export default {
     easyToUse, algorithm, privacy, logoEn, logoNo, teacher, clock, profits, battery, 
     rocket, classroom, student, graduation, youtube, klassekart, socialAdacemic,
     teacherStudents, rotations, arrangements, signupAdmin, manageGradesBtn, schoolYearInput, 
     gradeInput, licenseCode, signupTeacher, registerClass, selectSeating, preview, 
     customArrangement, manuallyPlace, selectConditions, sitTogether, generatedMap,
-    viewMap, editClass, editStudents
+    viewMap, editClass, editStudents,
+
+    privacy1, privacy2, privacy3, privacy4, privacy5, privacy6, privacy7
 }

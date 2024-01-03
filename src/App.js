@@ -3,7 +3,7 @@ import './App.css';
 
 import {
   Home, About, Privacy, Terms, Cookies, Return, Disclaimer, AcceptableUse, Eula, 
-  GetStarted, SeatingArrangement, Guide
+  GetStarted, SeatingArrangement, PrivacyArticle, Guide
 } from './container';
 
 import {Routes, Route} from 'react-router-dom';
@@ -24,6 +24,7 @@ function App() {
         <Route path="/eula" element={<Eula />}/> 
         <Route path="/getstarted" element={<GetStarted />}/> 
         <Route path="/articles/seatingarrangement" element={<SeatingArrangement />}/> 
+        <Route path="/articles/privacy" element={<PrivacyArticle />}/> 
         <Route path="/pages/guide" element={<Guide />}/> 
       </Routes>
     </div>

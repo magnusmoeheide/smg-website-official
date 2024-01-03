@@ -490,14 +490,15 @@ const Home = () => {
           Research <span className="orange">Articles</span>
         </h2>
         <div className="article-container">
-          {/* <div className="article-preview">
-            <a href="#">
+          <div className="article-preview">
+            <Link to="/articles/privacy">
               <img src={images.classroom} alt="Article 1" />
               <h3 className="article-title">
-                The importance of frequent classroom seats changes
+                The importance of data privacy in education, and the essential
+                strategies.
               </h3>
-            </a>
-          </div> */}
+            </Link>
+          </div>
           <div className="article-preview">
             <Link to="/articles/seatingarrangement">
               <img src={images.student} alt="Article 2" />
