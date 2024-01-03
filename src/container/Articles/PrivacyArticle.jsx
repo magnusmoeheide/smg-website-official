@@ -5,9 +5,9 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const PrivacyArticle = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0); // Scroll to top of the page
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, []);
 
   return (
     <div>
