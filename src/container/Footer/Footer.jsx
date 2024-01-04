@@ -21,11 +21,11 @@ const Footer = () => {
           <div className="footer-copy">
             © 2023 {t("address")} |{" "}
             <a
-              href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=824325952"
+              href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=932761173"
               className="footer-business"
               target="_blank"
             >
-              Magnus Heide ENK.
+              Magnus Heide AS.
             </a>{" "}
             All rights reserved.
           </div>
