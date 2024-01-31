@@ -15,10 +15,10 @@ const Eula = () => {
       <i>Last updated April 7, 2023</i>
       <h3>END USER LICENSE AGREEMENT</h3>
       <p>
-        Klassekartgenerator.no is licensed to You (End-User) by Magnus Heide
-        ENK, located and registered at Manglebergveien 8E, 0678 Oslo, Norway (
+        Klassekartgenerator.no is licensed to You (End-User) by Magnus Heide AS,
+        located and registered at Manglebergveien 8E, 0678 Oslo, Norway (
         <b>'Licensor'</b>), for use only under the terms of this Licence
-        Agreement. Our organization number is 824 325 952.
+        Agreement. Our organization number is 932 761 173.
       </p>
       <p>
         By accessing the Licensed Application from, and any update thereto (as
@@ -32,13 +32,13 @@ const Eula = () => {
         not a Party to this Licence Agreement and are not bound by any
         provisions or obligations with regard to the Licensed Application, such
         as warranty, liability, maintenance and support thereof. Magnus Heide
-        ENK, not the Services, is solely responsible for the Licensed
-        Application and the content thereof.
+        AS, not the Services, is solely responsible for the Licensed Application
+        and the content thereof.
       </p>
       <p>
         This Licence Agreement may not provide for usage rules for the Licensed
         Application that are in conflict with the latest (<b>'Usage Rules'</b>).
-        Magnus Heide ENK acknowledges that it had the opportunity to review the
+        Magnus Heide AS acknowledges that it had the opportunity to review the
         Usage Rules and this Licence Agreement is not conflicting with them.
       </p>
       <p>
@@ -74,14 +74,14 @@ const Eula = () => {
       <p>
         2.3 You may not share or make the Licensed Application available to
         third parties (unless to the degree allowed by the Usage Rules, and with
-        Magnus Heide ENK's prior written consent), sell, rent, lend, lease or
+        Magnus Heide AS's prior written consent), sell, rent, lend, lease or
         otherwise redistribute the Licensed Application.
       </p>
       <p>
         2.4 You may not reverse engineer, translate, disassemble, integrate,
         decompile, remove, modify, combine, create derivative works or updates
         of, adapt, or attempt to derive the source code of the Licensed
-        Application, or any part thereof (except with Magnus Heide ENK's prior
+        Application, or any part thereof (except with Magnus Heide AS's prior
         written consent).
       </p>
       <p>
@@ -139,7 +139,7 @@ const Eula = () => {
         Application.
       </p>
       <p>
-        4.2 Magnus Heide ENK and the End-User acknowledge that the Services have
+        4.2 Magnus Heide AS and the End-User acknowledge that the Services have
         no obligation whatsoever to furnish any maintenance and support services
         with respect to the Licensed Application.
       </p>
@@ -281,12 +281,12 @@ const Eula = () => {
         inappropriately or culpably, combined or installed with inappropriate
         hardware or software, used with inappropriate accessories, regardless if
         by Yourself or by third parties, or if there are any other reasons
-        outside of Magnus Heide ENK's sphere of influence that affect the
+        outside of Magnus Heide AS's sphere of influence that affect the
         executability of the Licensed Application.
       </p>
       <p>
         9.3 You are required to inspect the Licensed Application immediately
-        after installing it and notify Magnus Heide ENK about issues discovered
+        after installing it and notify Magnus Heide AS about issues discovered
         without delay by email provided in <a href="">Contact Information</a>.
         The defect report will be taken into consideration and further
         investigated if it has been emailed within a period of ninety (90) days
@@ -294,7 +294,7 @@ const Eula = () => {
       </p>
       <p>
         9.4 If we confirm that the Licensed Application is defective, Magnus
-        Heide ENK reserves a choice to remedy the situation either by means of
+        Heide AS reserves a choice to remedy the situation either by means of
         solving the defect or substitute delivery.
       </p>
       <p>
@@ -317,7 +317,7 @@ const Eula = () => {
 
       <h3>10. PRODUCT CLAIMS</h3>
       <p>
-        Magnus Heide ENK and the End-User acknowledge that Magnus Heide ENK, and
+        Magnus Heide AS and the End-User acknowledge that Magnus Heide AS, and
         not the Services, is responsible for addressing any claims of the
         End-User or any third party relating to the Licensed Application or the
         End-User's possession and/or use of that Licensed Application,
@@ -347,19 +347,19 @@ const Eula = () => {
 
       <h3>12. TERMINATION</h3>
       <p>
-        The licence is valid until terminated by Magnus Heide ENK or by You.
-        Your rights under this licence will terminate automatically and without
-        notice from Magnus Heide ENK if You fail to adhere to any term(s) of
-        this licence. Upon Licence termination, You shall stop all use of the
+        The licence is valid until terminated by Magnus Heide AS or by You. Your
+        rights under this licence will terminate automatically and without
+        notice from Magnus Heide AS if You fail to adhere to any term(s) of this
+        licence. Upon Licence termination, You shall stop all use of the
         Licensed Application, and destroy all copies, full or partial, of the
         Licensed Application.
       </p>
 
       <h3>13. THIRD-PARTY TERMS OF AGREEMENTS AND BENEFICIARY</h3>
       <p>
-        Magnus Heide ENK represents and warrants that Magnus Heide ENK will
-        comply with applicable third-party terms of agreement when using
-        Licensed Application.
+        Magnus Heide AS represents and warrants that Magnus Heide AS will comply
+        with applicable third-party terms of agreement when using Licensed
+        Application.
       </p>
       <p>
         In Accordance with Section 9 of the 'Instructions for Minimum Terms of
@@ -373,10 +373,10 @@ const Eula = () => {
 
       <h3>14. INTELLECTUAL PROPERTY RIGHTS</h3>
       <p>
-        Magnus Heide ENK and the End-User acknowledge that, in the event of any
+        Magnus Heide AS and the End-User acknowledge that, in the event of any
         third- party claim that the Licensed Application or the End-User's
         possession and use of that Licensed Application infringes on the third
-        party's intellectual property rights, Magnus Heide ENK, and not the
+        party's intellectual property rights, Magnus Heide AS, and not the
         Services, will be solely responsible for the investigation, defence,
         settlement, and discharge or any such intellectual property infringement
         claims.

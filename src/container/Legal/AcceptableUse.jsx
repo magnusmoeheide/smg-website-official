@@ -32,7 +32,7 @@ const AcceptableUse = () => {
       </ul>
       <h3>WHO WE ARE</h3>
       <p>
-        We are Magnus Heide ENK, doing business as Klassekartgenerator.no
+        We are Magnus Heide AS, doing business as Klassekartgenerator.no
         ('Company', 'we', 'us', or 'our') a company registered in Norway at
         Manglebergveien 8E, Oslo, Oslo 0678. We operate the website
         http://klassekartgenerator.no (the 'Site'), as well as any other related
@@ -159,8 +159,8 @@ const AcceptableUse = () => {
           Engage in any use, including modification, copying, redistribution,
           publication, display, performance, or retransmission, of any portions
           of any Services, other than as expressly permitted by this Policy,
-          without the prior written consent of Magnus Heide ENK, which consent
-          Magnus Heide ENK may grant or refuse in its sole and absolute
+          without the prior written consent of Magnus Heide AS, which consent
+          Magnus Heide AS may grant or refuse in its sole and absolute
           discretion.
         </li>
         <li>

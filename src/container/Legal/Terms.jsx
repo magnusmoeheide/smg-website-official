@@ -15,7 +15,7 @@ const Terms = () => {
 
       <h3>AGREEMENT TO OUR LEGAL TERMS</h3>
       <p>
-        We are Magnus Heide ENK ('Company', 'we', 'us', or 'our'), a company
+        We are Magnus Heide AS ('Company', 'we', 'us', or 'our'), a company
         registered in Norway at Manglebergveien 8E, 0678 Oslo. Our organization
         number is 824 325 952. We operate the application Klassekartgenerator.no
         (the 'App'), as well as any other related products and services that
@@ -27,7 +27,7 @@ const Terms = () => {
       <p>
         These Legal Terms constitute a legally binding agreement made between
         you, whether personally or on behalf of an entity ('you'), and Magnus
-        Heide ENK, concerning your access to and use of the Services. You agree
+        Heide AS, concerning your access to and use of the Services. You agree
         that by accessing the Services, you have read, understood, and agreed to
         be bound by all of these Legal Terms.
       </p>
@@ -524,7 +524,7 @@ const Terms = () => {
         the International Sales of Goods is expressly excluded. If your habitual
         residence is in the EU, and you are a consumer, you additionally possess
         the protection provided to you by obligatory provisions of the law in
-        your country to residence. Magnus Heide ENK and yourself both agree to
+        your country to residence. Magnus Heide AS and yourself both agree to
         submit to the non-exclusive jurisdiction of the courts of Oslo, which
         means that you may make a claim to defend your consumer protection
         rights in regards to these Legal Terms in Norway, or in the EU country
@@ -720,7 +720,7 @@ const Terms = () => {
       </p>
 
       <p>
-        Magnus Heide ENK
+        Magnus Heide AS
         <br />
         Manglebergveien 8E
         <br />

@@ -15,7 +15,7 @@ const Disclaimer = () => {
       <i>Last updated April 7, 2023</i>
       <h3>WEBSITE DISCLAIMER</h3>
       <p>
-        The information provided by Magnus Heide ENK ("we," "us," or "our") on
+        The information provided by Magnus Heide AS ("we," "us," or "our") on
         Klassekartgenerator.no (the "Site") and our application is for general
         informational purposes only. All information on the Site and our
         application is provided in good faith, however we make no representation

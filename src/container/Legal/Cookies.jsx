@@ -15,7 +15,7 @@ const Cookies = () => {
       <i>Last updated April 7, 2023</i>
       <h3>AGREEMENT TO USE OF COOKIES</h3>
       <p>
-        This Cookie Policy explains how Magnus Heide ENK ("Company," "we," "us,"
+        This Cookie Policy explains how Magnus Heide AS ("Company," "we," "us,"
         and "our") uses cookies and similar technologies to recognize you when
         you visit our website at{" "}
         <a href="http://klassekartgenerator.no">Klassekartgenerator.no</a>{" "}
@@ -36,7 +36,7 @@ const Cookies = () => {
         efficiently, as well as to provide reporting information.
       </p>
       <p>
-        Cookies set by the website owner (in this case, Magnus Heide ENK) are
+        Cookies set by the website owner (in this case, Magnus Heide AS) are
         called "first-party cookies." Cookies set by parties other than the
         website owner are called "third-party cookies." Third-party cookies
         enable third-party features or functionality to be provided on or
@@ -214,7 +214,7 @@ const Cookies = () => {
         to:
       </p>
       <p>
-        Magnus Heide ENK
+        Magnus Heide AS
         <br />
         Manglebergveien 8E <br />
         0678 Oslo, Norway

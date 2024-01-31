@@ -15,7 +15,7 @@ const Privacy = () => {
       <i>Last updated April 7, 2023</i>
       <h3>PRIVACY NOTICE</h3>
       <p>
-        This privacy notice for Magnus Heide ENK ("Company," "we," "us," or
+        This privacy notice for Magnus Heide AS ("Company," "we," "us," or
         "our"), describes how and why we might collect, store, use, and/or share
         ("process") your information when you use our services ("Services").
       </p>
@@ -39,7 +39,7 @@ const Privacy = () => {
       <p>
         <b>What personal information do we process?</b> When you visit, use, or
         navigate our Services, we may process personal information depending on
-        how you interact with Magnus Heide ENK and the Services, the choices you
+        how you interact with Magnus Heide AS and the Services, the choices you
         make, and the products and features you use. Learn more about personal
         information you disclose to us.
       </p>
