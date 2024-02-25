@@ -12,7 +12,15 @@ const PrivacyArticle = () => {
   return (
     <div>
       <Header showAllLinks={false} />
+
       <div className="article">
+        <Link to="/">
+          <button className="goback-button">
+            <b>Gå tilbake</b>
+          </button>
+        </Link>
+        <br />
+        <br />
         <i>A study by Cem Kirciltepeli, 18.12.2023.</i>
         <h1>
           The importance of data privacy in education, and the essential

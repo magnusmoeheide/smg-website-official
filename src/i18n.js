@@ -87,7 +87,7 @@ i18n
           plan1Included4: "Se andre lærere sine klassekart",
           plan1Included5: "Rapporter og statistikk for din skole",
           plan1Included6: "Utmerket kundeservice",
-          plan1Comment: "Pris er eks. MVA.",
+          plan1Comment: "Pris eks. MVA.",
 
           // ------------- TESTIMONIALS ---------------- //
           testimonialsTitle1: "Hva",

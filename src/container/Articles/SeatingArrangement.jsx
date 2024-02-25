@@ -13,6 +13,13 @@ const SeatingArrangement = () => {
     <div>
       <Header showAllLinks={false} />
       <div className="article">
+        <Link to="/">
+          <button className="goback-button">
+            <b>Gå tilbake</b>
+          </button>
+        </Link>
+        <br />
+        <br />
         <i>A study by Magnus Heide, 10.06.2023.</i>
         <h1>
           What is the relationship between classroom seating arrangement and
