@@ -5,9 +5,9 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const Guide = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top of the page
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0); // Scroll to top of the page
+  // }, []);
 
   return (
     <div>
@@ -57,25 +57,20 @@ const Guide = () => {
           <div className="content">
             <h2>1. Registrere konto på Klassekartgeneratoren.no</h2>
             <p>
-              Skolen må bestemme seg for en adminperson for appen. Denne
-              personen registrerer en adminkonto på{" "}
+              Skolen må bestemme seg for en adminperson for appen. <br />
+              Denne personen registrerer en adminkonto på{" "}
               <a href="app.klassekartgenerator.no/signup">
                 app.klassekartgenerator.no/signup.
               </a>
             </p>
-            <p>Huk av for 'Adminkonto'.</p>
-            <p>
-              Skriv deretter inn skolens navn, e-postkontoen som skal brukes for
-              skolens adminkonto, og et passord for adminkontoen.
-            </p>
+            <p>Huk av for 'Admin-konto'.</p>
+            <p>Skriv deretter inn brukerens navn, e-postadresse og passord.</p>
             <i>
-              Merk at e-postadressen som brukes for å opprette en adminkonto
-              ikke vil kunne brukes for å opprette en lærerkonto. Dersom du som
-              admin også ønsker å opprette klassekart anbefaler vi anbefaler vi
-              å bruke en av skolens e-poster, for eksempel
-              dinskole.postmottak@osloskolen.no. E-posten brukes kun dersom du
-              må nullstille passordet ditt, så så lenge du har tilgang til
-              mailen står du fritt til å velge hva som passer deg.
+              Brukeren som oppretter adminkonto vil få både admin- og
+              lærerrettigheter. Vi anbefaler derfor ikke at en generell
+              skole-epost brukes. E-posten brukes likevel kun dersom du må
+              nullstille passordet ditt, så så lenge du har tilgang til mailen
+              står du fritt til å velge hva som passer deg.
             </i>
           </div>
           <img src={images.signupAdmin} alt="" />
@@ -84,20 +79,14 @@ const Guide = () => {
         <div className="flex-image-text lightGreyBg">
           <div className="content">
             <h2>2. Registrere skolen</h2>
-            <p>
-              Etter å ha trykket på opprett konto blir du videresendt til
-              adminsiden. <br />
-              Trykk på 'Administrer trinn' som du finner her.
-            </p>
-          </div>
-          <img src={images.manageGradesBtn} alt="" />
-        </div>
-
-        <div className="flex-image-text lightGreyBg">
-          <div className="content">
+            <br />
             <h3>Skoleår</h3>
             <p>
-              Her skriver du inn skoleåret for dette året. Trykk så på Lagre.
+              Etter å ha opprettet konto blir du videresendt til
+              Admin-dashboardet.
+              <br /> Her skriver du først inn skoleåret for dette året.
+              <br />
+              Trykk så på Lagre.
             </p>
           </div>
           <img src={images.schoolYearInput} alt="" />
@@ -107,13 +96,10 @@ const Guide = () => {
           <div className="content">
             <h3>Trinn</h3>
             <p>
-              Så legger du til alle skolens trinn. Dette brukes for å enkelt
-              kunne filtrere klassene når man skal se en klasses klassekart.
+              Så legger du til alle skolens trinn.
               <br />
               Skriv inn et trinn og trykk på Legg til. Gjør dette for alle
-              skolens trinn. <br />
-              Når det er gjort bruker du tilbakeknappen for å gå tilbake til
-              hjemsiden.
+              skolens trinn.
             </p>
           </div>
           <img src={images.gradeInput} alt="" />
@@ -123,13 +109,16 @@ const Guide = () => {
           <div className="content">
             <h3>Lisenskode</h3>
             <p>
-              Etter at minst ett klassetrinn er lagt til vil en lisenskode være
-              synlig. Denne kopieres og sendes til lærerne som skal opprette en
-              konto. Flere lærere kan bruke samme lisenskode.
+              Etter at du har lagt til skoleår og trinn finner du lisenskoden på
+              samme side.
+              <br />
+              Denne kopieres og sendes til lærerne som skal opprette en konto.{" "}
+              <br />
+              Flere lærere kan bruke samme lisenskode.
             </p>
             <p>
               Om du opplever at koden er kommet på avveie, eller ønsker å
-              'stenge' registrering av nye lærere, kan du opprette en ny kode.
+              'stenge' registrering av nye lærere, kan du generere en ny kode.
               Den gamle koden vil da ikke lenger fungere, men de lærerne som
               allerede har registrert seg med koden vil selvfølgelig fremdeles
               ha tilgang.
@@ -144,18 +133,12 @@ const Guide = () => {
             <p>
               Lærerne bruker lisenskoden tilsendt for å opprette en lærerkonto.
             </p>
+            <br />
             <h3>Lisenskode</h3>
             <p>
-              Etter at minst ett klassetrinn er lagt til vil en lisenskode være
-              synlig. Denne kopieres og sendes til lærerne som skal opprette en
-              konto. Flere lærere kan bruke samme lisenskode.
-            </p>
-            <p>
-              Om du opplever at koden er kommet på avveie, eller ønsker å
-              'stenge' registrering av nye lærere, kan du opprette en ny kode.
-              Den gamle koden vil da ikke lenger fungere, men de lærerne som
-              allerede har registrert seg med koden vil selvfølgelig fremdeles
-              ha tilgang.
+              Admin kopierer lisenskoden fra sitt dashbord og sender til lærerne
+              som skal opprette en konto. <br />
+              Flere lærere kan bruke samme lisenskode.
             </p>
           </div>
           <img src={images.signupTeacher} alt="" />
@@ -176,8 +159,7 @@ const Guide = () => {
               Tysk 8. trinn.
             </p>
             <p>
-              Så legger du inn elevene. Du kan velge mellom å skrive ett og ett
-              navn, eller laste opp et Excelskjema.
+              Så legger du inn elevene. Skriv ett og ett navn og trykk Enter.
             </p>
             <p>Når du har lagt til alle elevene trykker du på Lagre klasse.</p>
           </div>
@@ -189,11 +171,11 @@ const Guide = () => {
           <div className="content">
             <h2>1. Velg klasse</h2>
             <p>
-              Etter å ha opprettet en ny klasse blir du sendt til hjemskjermen.
-              Trykk på 'Opprett nytt klassekart' og velg klassen din.
+              Trykk på 'Lag nytt klassekart' og velg klassen din for å lage et
+              nytt klassekart.
             </p>
           </div>
-          <img src={images.selectSeating} alt="" />
+          <img src={images.selectClass} alt="" />
         </div>
 
         <div className="flex-image-text lightGreyBg">
@@ -230,16 +212,18 @@ const Guide = () => {
             <h3>Egendefinert klasserom</h3>
             <p>
               Om du har valgt egendefinert klasserom, trykk på 'Opprett nytt
-              klasserom'. Du vil så bli tatt til en side hvor du kan opprette
-              ditt eget klasserom.
+              klasserom'. <br />
+              Du vil så bli tatt til en side hvor du kan opprette ditt eget
+              klasserom.
             </p>
             <p>
-              Trykk på en celle for å opprette en pult. Du kan også holde
+              Trykk på en celle for å opprette en pult. <br /> Du kan også holde
               musepekeren inne og dra den over flere celler for å opprette flere
               pulter samtidig.
             </p>
             <i>
-              Hold øye med antallet sitteplasser som telles nederst på siden.
+              Hold øye med antallet sitteplasser som telles nederst på siden.{" "}
+              <br />
               Antallet sitteplasser bør samsvare med antallet elever i klassen
               din.
             </i>
@@ -271,10 +255,11 @@ const Guide = () => {
           <div className="content">
             <h3>Manuelt plassere en elev</h3>
             <p>
-              For å manuelt plassere en elev trykker du på 'Plasser elev
-              manuelt'. Deretter drar du eleven fra elevlista til venstre over i
-              klassekartet på ønsket plass. Du kan klikke på eleven for å fjerne
-              valget ditt.
+              For å manuelt plassere en elev trykker du på 'Plasser en elev
+              manuelt'. <br />
+              Deretter drar du eleven fra elevlista til venstre over i
+              klassekartet på ønsket plass. <br />
+              Du kan klikke på eleven for å fjerne valget ditt.
             </p>
             <p>Når du er fornyød trykker du på 'Lagre og gå tilbake'.</p>
           </div>
@@ -289,14 +274,15 @@ const Guide = () => {
               registrere en gruppe med minst to elever.
             </p>
             <p>
-              Velg en elev fra nedtrekksmenyen. Åpne nedtrekksmenyen igjen og
-              velg elev nummer to. Når du er fornøyd med gruppen trykker du
-              lagre gruppe.
+              Velg en elev fra nedtrekksmenyen. <br />
+              Åpne nedtrekksmenyen igjen og velg elev nummer to. <br />
+              Når du er fornøyd med gruppen trykker du lagre gruppe.
             </p>
             <i>
-              Det anbefales å lage grupper basert på hvordan elevene sitter. For
-              eksempel, hvis du har valgt at elevene skal sitte 2 og 2 anbefaler
-              vi at du lager grupper på 2 og 2 som skal sitte sammen.
+              Det anbefales å lage grupper basert på hvordan elevene sitter.{" "}
+              <br />
+              For eksempel, hvis du har valgt at elevene skal sitte 2 og 2
+              anbefaler vi at du lager grupper på 2 og 2 som skal sitte sammen.
             </i>
           </div>
           <img src={images.sitTogether} alt="" />
@@ -336,7 +322,7 @@ const Guide = () => {
               andre klassene på skolen og se de andre lærerne sine klassekart.
             </p>
           </div>
-          <img src={images.generatedMap} alt="" />
+          <img src={images.viewMap} alt="" />
         </div>
 
         <div className="flex-image-text greyBg">
@@ -351,7 +337,7 @@ const Guide = () => {
               eller Excelfil.
             </p>
           </div>
-          <img src={images.viewMap} alt="" />
+          <img src={images.selectMap} alt="" />
         </div>
 
         <h1 id="editClass">Endre klasse</h1>

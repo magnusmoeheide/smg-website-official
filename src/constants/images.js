@@ -17,7 +17,7 @@ import socialAdacemic from '../assets/social-academic.jpeg'
 import teacherStudents from '../assets/teacher-students.jpeg'
 import rotations from '../assets/rotations.jpeg'
 import arrangements from '../assets/arrangements.jpeg'
-import signupAdmin from '../assets/signupAdmin.png'
+import signupAdmin from '../assets/signupadmin.png'
 import manageGradesBtn from '../assets/manageGradesBtn.png'
 import schoolYearInput from '../assets/schoolYearInput.png'
 import gradeInput from '../assets/gradeInput.png'
@@ -25,6 +25,7 @@ import licenseCode from '../assets/licenseCode.png'
 import signupTeacher from '../assets/signupTeacher.png'
 import registerClass from '../assets/registerClass.png'
 import selectSeating from '../assets/selectSeating.png'
+import selectClass from '../assets/selectClass.png'
 import preview from '../assets/preview.png'
 import customArrangement from '../assets/customArrangement.png'
 import manuallyPlace from '../assets/manuallyPlace.png'
@@ -34,6 +35,7 @@ import generatedMap from '../assets/generatedMap.png'
 import viewMap from '../assets/viewMap.png'
 import editClass from '../assets/editClass.png'
 import editStudents from '../assets/editStudents.png'
+import selectMap from '../assets/selectMap.png'
 
 import privacy1 from '../assets/shutterstock_2292527159.jpg'
 import privacy2 from '../assets/shutterstock_2156918769.jpeg'
@@ -47,9 +49,9 @@ export default {
     easyToUse, algorithm, privacy, logoEn, logoNo, teacher, clock, profits, battery, 
     rocket, classroom, student, graduation, youtube, klassekart, socialAdacemic,
     teacherStudents, rotations, arrangements, signupAdmin, manageGradesBtn, schoolYearInput, 
-    gradeInput, licenseCode, signupTeacher, registerClass, selectSeating, preview, 
+    gradeInput, licenseCode, signupTeacher, registerClass, selectSeating, selectClass, preview, 
     customArrangement, manuallyPlace, selectConditions, sitTogether, generatedMap,
-    viewMap, editClass, editStudents,
+    viewMap, editClass, editStudents, selectMap,
 
     privacy1, privacy2, privacy3, privacy4, privacy5, privacy6, privacy7
 }
