@@ -17,7 +17,7 @@ const Terms = () => {
       <p>
         We are Magnus Heide AS ('Company', 'we', 'us', or 'our'), a company
         registered in Norway at Manglebergveien 8E, 0678 Oslo. Our organization
-        number is 824 325 952. We operate the application Klassekartgenerator.no
+        number is 932 761 173. We operate the application Klassekartgenerator.no
         (the 'App'), as well as any other related products and services that
         refer or link to these legal terms (the 'Legal Terms') (collectively,
         the 'Services'). You can contact us by phone at +47 958 85 852, email at
