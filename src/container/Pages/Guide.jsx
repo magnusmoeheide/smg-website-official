@@ -55,7 +55,7 @@ const Guide = () => {
         <h1 id="createAccounts">Opprette kontoer</h1>
         <div className="flex-image-text greyBg">
           <div className="content">
-            <h2>1. Registrere konto på Klassekartgeneratoren.no</h2>
+            <h2>1. Registrere konto på Klassekartgenerator.no</h2>
             <p>
               Skolen må bestemme seg for en adminperson for appen. <br />
               Denne personen registrerer en adminkonto på{" "}
