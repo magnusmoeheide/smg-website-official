@@ -131,6 +131,7 @@ const Home = () => {
               <span className="plan-cost-period"> {t("plan1PricePeriod")}</span>
             </h3>
             <p className="plan-description">{t("plan1PriceDescription")}</p>
+            <i className="plan-description">{t("plan1PriceDescription2")}</i>
             <p className="plan-title-included">{t("plan1IncludedTitle")}</p>
             <ul className="plan-details">
               <li>
