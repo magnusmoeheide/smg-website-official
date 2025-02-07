@@ -33,7 +33,7 @@ export default function Reasons() {
         <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 flex gap-16 flex-col lg:flex-row justify-center items-center">
           <div className="grid grid-cols-1 gap-y-8 lg:w-2/3">
             {features.map((feature) => (
-                <div className="max-w-2xl lg:max-w-none overflow-hidden rounded-lg bg-gray-100 shadow">
+                <div className="max-w-2xl lg:max-w-none overflow-hidden rounded-lg bg-gray-50 shadow">
                     <div className="px-4 py-5 sm:p-6">
 
                         <div key={feature.name} className="flex flex-col">

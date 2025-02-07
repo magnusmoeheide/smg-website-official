@@ -7,6 +7,7 @@ import Hero from "../Hero/Hero";
 import Features from "../Features/Features";
 import Reasons from "../Reasons/Reasons";
 import Pricing from "../Pricing/Pricing";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -30,55 +31,7 @@ const Home = () => {
 
       <Pricing />
 
-      <section className="testimonials-section" id="testimonials">
-        <h2 className="testimonials-title">
-          {t("testimonialsTitle1")}{" "}
-          <span className="orange">{t("testimonialsTitleOrange")}</span>{" "}
-          {t("testimonialsTitle2")}
-        </h2>
-
-        <div className="testimonials-container">
-          <div className="testimonial">
-            <img
-              src={images.graduation}
-              alt="Testimonial image"
-              className="testimonial-image"
-            />
-            <p className="testimonial-text">{t("testimonial1Text")}</p>
-            <p className="testimonial-name">Hans Petter</p>
-          </div>
-          <div className="testimonial">
-            <img
-              src={images.graduation}
-              alt="Testimonial image"
-              className="testimonial-image"
-            />
-            <p className="testimonial-text">{t("testimonial2Text")}</p>
-            <p className="testimonial-name">Erik Larsen</p>
-          </div>
-        </div>
-      </section>
-
-      <div
-        className="trustpilot-widget center"
-        data-locale="en-GB"
-        data-template-id="5419b6a8b0d04a076446a9ad"
-        data-businessunit-id="6431713917cc990a6d1b67ae"
-        data-style-height="24px"
-        data-style-width="100%"
-        data-theme="light"
-        data-min-review-count="10"
-        data-without-reviews-preferred-string-id="3"
-        data-style-alignment="center"
-      >
-        <a
-          href="https://uk.trustpilot.com/review/klassekartgenerator.no"
-          target="_blank"
-          rel="noopener"
-        >
-          Trustpilot
-        </a>
-      </div>
+      <Testimonials />
 
       <section className="qa-section" id="q&a">
         <h2 className="qa-title">

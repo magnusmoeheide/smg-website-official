@@ -93,12 +93,9 @@ i18n
           plan1Comment: "Pris eks. MVA.",
 
           // ------------- TESTIMONIALS ---------------- //
-          testimonialsTitle1: "Hva",
-          testimonialsTitleOrange: "skolene",
-          testimonialsTitle2: "sier",
+          testimonialsTitle: "Hva skolene sier",
           testimonial1Text: "Det jeg liker best med appen er at den passer for alle typer klasserom. Enten om elevene skal sitte 2 og 2 eller i hestesko, så klarer appen å anbefale hvordan de best bør sitte sammen basert på kravene mine. Super generator!",
           testimonial2Text: "Et flott verktøy for lærere som ønsker å lage gode klassekart for klasserommene eller andre arrangementer. Appen er enkel å bruke, og det er flott at man kan se klassekartene i andre klasser hvis man tar vikartimer der og ikke vet hvor elevene skal sitte.",
-
           // ------------- Q&A ---------------- //
           qaTitle: "Ofte spurte",
           qaTitleOrange: "Q&A",
@@ -235,9 +232,7 @@ i18n
           plan1Comment: "Price is VAT excluded.",
 
           // ------------- TESTIMONIALS ---------------- //
-          testimonialsTitle1: "What The",
-          testimonialsTitleOrange: "Schools",
-          testimonialsTitle2: "Say",
+          testimonialsTitle: "What The Schools Say",
           testimonial1Text: "One of the standout features of the app is its ability to accommodate a wide range of classroom sizes and seating arrangements. Whether you're dealing with a 1 and 1 or 3 and 3 configuration, the app provides a variety of customization options to help you create the perfect seating plan for your needs.",
           testimonial2Text: "After testing the app, I found it to be a highly useful tool for schools looking to create custom seating arrangements for their classrooms or other events. The app is user-friendly and intuitive, with a simple interface that makes it easy for teachers and administrators to create detailed seating plans in a matter of minutes",
 
