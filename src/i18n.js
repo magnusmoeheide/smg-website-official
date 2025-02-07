@@ -113,7 +113,62 @@ i18n
           contactButton: "Kontakt oss",
           termsButton: "Vilkår for bruk",
           address: "Klassekartgenerator.no",
-          contactEmail: "hei@klassekartgenerator.no"
+          contactEmail: "hei@klassekartgenerator.no",
+
+          // ------------- PRICING ---------------- //
+          pricing: "Pris",
+          pricingTitle: "Pris som passer dine behov",
+          pricingText: "Velg abonnementet som passer dine behov. Hvis du trenger et tilpasset abonnement, vennligst kontakt oss.",
+          pricingCTA: "Kjøp abonnement",
+          monthly: "månedlig",
+          yearly: "årlig",
+          monthSuffix: "/mnd",
+          yearSuffix: "/år",
+          tiers: {
+            teacher: {
+              name: "Lærer",
+              description: "Et abonnement for individuelle lærere som ønsker en enkel løsning.",
+              features: [
+                "30 dagers gratis prøve",
+                "ubegrensede klasser",
+                "ubegrensede kart",
+                "tilpassbare kart"
+              ]
+            },
+            schoolS: {
+              name: "Skole S",
+              description: "Et abonnement for skoler som vil gi tilgang for opptil 20 lærere.",
+              features: [
+                "30 dagers gratis prøve",
+                "opptil 20 lærere",
+                "ubegrensede klasser",
+                "ubegrensede kart",
+                "tilpassbare kart"
+              ]
+            },
+            schoolM: {
+              name: "Skole M",
+              description: "Et abonnement for skoler som vil gi tilgang for opptil 35 lærere.",
+              features: [
+                "30 dagers gratis prøve",
+                "opptil 35 lærere",
+                "ubegrensede klasser",
+                "ubegrensede kart",
+                "tilpassbare kart"
+              ]
+            },
+            schoolL: {
+              name: "Skole L",
+              description: "Et abonnement for skoler som vil gi tilgang for opptil 50 lærere.",
+              features: [
+                "30 dagers gratis prøve",
+                "opptil 50 lærere",
+                "ubegrensede klasser",
+                "ubegrensede kart",
+                "tilpassbare kart"
+              ]
+            }
+          }
         }
       },
       en: {
@@ -200,18 +255,65 @@ i18n
           contactButton: "Contact us",
           termsButton: "Terms of Service & Policies",
           address: "SeatMapGenerator.com",
-          contactEmail: "hi@seatmapgenerator.com"
+          contactEmail: "hi@seatmapgenerator.com",
 
+          // ------------- PRICING ---------------- //
+          pricing: "Pricing",
+          pricingTitle: "Pricing that fits your needs",
+          pricingText: "Choose the plan that fits your needs. If you need a custom plan, please contact us.",
+          pricingCTA: "Buy plan",
+          monthly: "Monthly",
+          yearly: "Yearly",
+          monthSuffix: "/month",
+          yearSuffix: "/year",
+          tiers: {
+            teacher: {
+              name: "Teacher",
+              description: "A plan for individual teachers who just want an easy solution.",
+              features: [
+                "30 days free trial",
+                "unlimited classes",
+                "unlimited maps",
+                "customizable maps"
+              ]
+            },
+            schoolS: {
+              name: "School S",
+              description: "A plan for schools that want access for up to 20 teachers.",
+              features: [
+                "30 days free trial",
+                "up to 20 teachers",
+                "unlimited classes",
+                "unlimited maps",
+                "customizable maps"
+              ]
+            },
+            schoolM: {
+              name: "School M",
+              description: "A plan for schools that want access for up to 35 teachers.",
+              features: [
+                "30 days free trial",
+                "up to 35 teachers",
+                "unlimited classes",
+                "unlimited maps",
+                "customizable maps"
+              ]
+            },
+            schoolL: {
+              name: "School L",
+              description: "A plan for schools that want access for up to 50 teachers.",
+              features: [
+                "30 days free trial",
+                "up to 50 teachers",
+                "unlimited classes",
+                "unlimited maps",
+                "customizable maps"
+              ]
+            }
+          }
         }
       }
     }
-
-
-
-
-
-
-
   });
 
 export default i18n;
