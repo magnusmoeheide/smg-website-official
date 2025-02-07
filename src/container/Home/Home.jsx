@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
 import Hero from "../Hero/Hero";
+import Features from "../Features/Features";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -21,35 +22,7 @@ const Home = () => {
     <div>
       <Hero />
 
-      <section className="features-section" id="about">
-        <h2 className="features-title">
-          {t("featuresTitle")}{" "}
-          <span className="orange">{t("featuresTitleOrange")}</span>
-        </h2>
-        <div className="features-container">
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.easyToUse} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature1Title")}</h3>
-            <p className="feature-text">{t("feature1Text")}</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.algorithm} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature2Title")}</h3>
-            <p className="feature-text">{t("feature2Text")}</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.privacy} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature3Title")}</h3>
-            <p className="feature-text">{t("feature3Text")}</p>
-          </div>
-        </div>
-      </section>
+      <Features />
 
       <section className="reasons-section">
         <h2 className="reasons-title">

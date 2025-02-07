@@ -54,8 +54,8 @@ i18n
           startBtn: "Start nå",
 
           // ------------- FEATURES SECTION ---------------- //
-          featuresTitle: "Om",
-          featuresTitleOrange: "Generatoren",
+          ourfeatures: "Våre funksjoner",
+          featuresTitle: "Om Generatoren",
           feature1Title: "Enkel og brukervennlig",
           feature1Text: "Vår klassekartgenerator er den perfekte løsningen for å lage et klassekart på få minutter. Vi har designet den med et spesielt fokus på brukervennlighet og intuitivt design. Alle lærere skal enkelt kunne forstå og bruke appen, uavhengig av teknisk kompetanse.",
           feature2Title: "Vi har tenkt på alt",
@@ -141,8 +141,8 @@ i18n
           startBtn: "Start now",
 
           // ------------- FEATURES SECTION ---------------- //
-          featuresTitle: "About The",
-          featuresTitleOrange: "Generator",
+          ourfeatures: "Our features",
+          featuresTitle: "About The Generator",
           feature1Title: "Simple and easy",
           feature1Text: "Our Seat Map Generator is the perfect solution for creating a classroom seat map in just minutes. We have designed it with a particular focus on user-friendliness and intuitive design. This means that anyone can use it with ease, regardless of their technical expertise.",
           feature2Title: "We have thought of everything",
