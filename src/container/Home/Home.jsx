@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
 import Hero from "../Hero/Hero";
 import Features from "../Features/Features";
+import Reasons from "../Reasons/Reasons";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -24,47 +25,7 @@ const Home = () => {
 
       <Features />
 
-      <section className="reasons-section">
-        <h2 className="reasons-title">
-          {t("reasonsTitle")}{" "}
-          <span className="orange">{t("reasonsTitleOrange")}</span>
-        </h2>
-        <div className="reasons">
-          <div className="reasons-container">
-            <div className="reason">
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.clock} />
-                  <span>{t("reason1Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason1Text")}</p>
-              </div>
-
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.profits} />
-                  <span>{t("reason2Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason2Text")}</p>
-              </div>
-
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.battery} />
-                  <span>{t("reason3Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason3Text")}</p>
-              </div>
-            </div>
-
-            <div className="reason-side">
-              <div className="reason-image">
-                <img src={images.teacher} alt="Reasons Image" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Reasons />
 
       <section className="pricing-section" id="pricing">
         <div className="pricing-container">

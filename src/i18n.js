@@ -64,8 +64,8 @@ i18n
           feature3Text: "Vi lagrer kun elevenes fornavn. All data lagres på europeiske servere, som er underlagt strenge EU-forskrifter for databeskyttelse. Våre retningslinjer og prosedyrer har blitt grundig gjennomgått og vurdert av ledende bransjeeksperter, og vi gjennomgår og oppdaterer dem kontinuerlig.",
 
           // ------------- REASONS SECTION ---------------- //
-          reasonsTitle: "Hvorfor bruke vår",
-          reasonsTitleOrange: "Generator?",
+          yourBenefits: "Dine fordeler",
+          reasonsTitle: "Hvorfor bruke vår Generator?",
           reason1Title: "Spar tid",
           reason1Text: "I gjennomsnitt tar det rundt 20 minutter å lage et manuelt kart. Å bruke generatoren tar mindre enn 2 minutter. Du velger ganske enkelt en av klassene dine, velger betingelsene dine, og vipps så har du et generert kart, fullt tilpassbart og eksporterbart.",
           reason2Title: "Spar budsjettet",
@@ -151,8 +151,8 @@ i18n
           feature3Text: "We only store students' first names. All data is stored on European servers, which are subject to strict EU data protection regulations. Our policies and procedures have been thoroughly vetted and assessed by leading industry experts, and we continually review and update them.",
 
           // ------------- REASONS SECTION ---------------- //
-          reasonsTitle: "Why use our",
-          reasonsTitleOrange: "Generator?",
+          yourBenefits: "Your benefits",
+          reasonsTitle: "Why use our Generator?",
           reason1Title: "Save Time",
           reason1Text: "On average, to make a manual map takes around 20 minutes. To use the generator takes less than 2 minutes. You simply select one of your classes, choose your conditions, and there you have a generated map, fully customizable and exportable.",
           reason2Title: "Save Money",
