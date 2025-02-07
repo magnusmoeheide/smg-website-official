@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { images } from "../../constants";
 import { Link } from "react-router-dom";
-import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useTranslation } from "react-i18next";
-import YoutubeEmbed from "./YoutubeEmbed";
+import Hero from "../Hero/Hero";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -17,32 +15,11 @@ const Home = () => {
     });
   }
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div>
-      <Header showAllLinks={true} />
-
-      <section className="hero" id="/">
-        <div className="hero-container">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              {t("heroTitle")}{" "}
-              <span className="orange">{t("heroTitleOrange")}</span>
-            </h1>
-            <p className="hero-text">{t("heroText")}</p>
-            <a href={t("signupLink")}>
-              <button className="hero-button">{t("startBtn")}</button>
-            </a>
-            {/* <Link to="/getstarted">
-              <button className="hero-button">{t("startBtn")}</button>
-            </Link> */}
-          </div>
-          <div className="hero-image">
-            <YoutubeEmbed embedId="r0YQjwqJhNA" />
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       <section className="features-section" id="about">
         <h2 className="features-title">
