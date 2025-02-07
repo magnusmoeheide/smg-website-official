@@ -41,8 +41,10 @@ i18n
           headerAbout: "Om",
           headerPricing: "Pris",
           headerTestimonials: "Anmeldelser",
+          headerGuide: "Guide",
           headerQA: "Q&A",
           headerLogin: "Logg inn",
+          headerSignup: "Registrer deg",
           logo: "logoNo",
 
           // ------------- HERO SECTION ---------------- //
@@ -96,7 +98,7 @@ i18n
           testimonialsTitle2: "sier",
           testimonial1Text: "Det jeg liker best med appen er at den passer for alle typer klasserom. Enten om elevene skal sitte 2 og 2 eller i hestesko, så klarer appen å anbefale hvordan de best bør sitte sammen basert på kravene mine. Super generator!",
           testimonial2Text: "Et flott verktøy for lærere som ønsker å lage gode klassekart for klasserommene eller andre arrangementer. Appen er enkel å bruke, og det er flott at man kan se klassekartene i andre klasser hvis man tar vikartimer der og ikke vet hvor elevene skal sitte.",
-        
+
           // ------------- Q&A ---------------- //
           qaTitle: "Ofte spurte",
           qaTitleOrange: "Q&A",
@@ -106,7 +108,7 @@ i18n
           qaAnswer2: "Først registrerer du klassen din med elevene dine. Klassen din lagret for fremtidig bruk. For å lage et kart velger du klassen din, og deretter hvordan de skal sitte. Du kan velge mellom våre standard '1 og 1', '2 og 2' osv. eller du kan lage din egen. Etter det kan du velge hvem som skal sitte foran eller bak i klasserommet, hvem som skal eller ikke skal sitte sammen, og du kan manuelt plassere elever. Algoritmen sørger for at betingelsene er oppfylt og at resten blir tilfeldig plassert. Du får et generert kart som du laste ned og eksportere, både som pdf og Excel. Kartet er registrert på skolen din, og andre lærere på skolen din kan se kartene dine, noe som spesielt er nyttig hvis de tar vikartimer.",
           qaQuestion3: "Hvordan fungerer prøveperioden og betalingen hvis jeg velger å fortsette?",
           qaAnswer3: "Vi gir alle skoler appen gratis ut 2023 for å teste den ut og se om det er noe de vil kunne ta nytte av. En uke før planen utgår sender vi en mail og minner deg om å kansellere hvis du ikke ønsker å fortsette. Dette er en simpel prosess, og det er bare å skrive en mail om at du ikke ønsker å fortsette med appen, så er alt ordnet. Om du ønsker å fortsette med abonnementet vil du motta en faktura hvert semester som standard, men abonnementet kan også tilpasses din skoles behov.",
-        
+
           // ------------- FOOTER ---------------- //
           contactButton: "Kontakt oss",
           termsButton: "Vilkår for bruk",
@@ -126,8 +128,10 @@ i18n
           headerAbout: "About",
           headerPricing: "Pricing",
           headerTestimonials: "Testimonials",
+          headerGuide: "Guide",
           headerQA: "Q&A",
           headerLogin: "Log in",
+          headerSignup: "Sign up",
           logo: "logoEn",
 
           // ------------- HERO SECTION ---------------- //
@@ -145,7 +149,7 @@ i18n
           feature2Text: "Our algorithm allows you to specify who should or should not sit together, who should sit in front or back of the classroom, and who should sit in a specific place. You can also choose between our many seat configurations or design your own.",
           feature3Title: "Data privacy",
           feature3Text: "We only store students' first names. All data is stored on European servers, which are subject to strict EU data protection regulations. Our policies and procedures have been thoroughly vetted and assessed by leading industry experts, and we continually review and update them.",
-        
+
           // ------------- REASONS SECTION ---------------- //
           reasonsTitle: "Why use our",
           reasonsTitleOrange: "Generator?",
@@ -181,7 +185,7 @@ i18n
           testimonialsTitle2: "Say",
           testimonial1Text: "One of the standout features of the app is its ability to accommodate a wide range of classroom sizes and seating arrangements. Whether you're dealing with a 1 and 1 or 3 and 3 configuration, the app provides a variety of customization options to help you create the perfect seating plan for your needs.",
           testimonial2Text: "After testing the app, I found it to be a highly useful tool for schools looking to create custom seating arrangements for their classrooms or other events. The app is user-friendly and intuitive, with a simple interface that makes it easy for teachers and administrators to create detailed seating plans in a matter of minutes",
-        
+
           // ------------- Q&A ---------------- //
           qaTitle: "Frequently asked",
           qaTitleOrange: "Q&A",
@@ -191,7 +195,7 @@ i18n
           qaAnswer2: "First you register your class with your students. Then your class is saved for future use. To create a map you select your class, then what configuration they are supposed to sit. You can choose between our defualt '1 and 1', '2 and 2' etc. or you can create your own. After that, you select the conditions such as who should sit in front or back of the classroom, who should or should not sit together, and you can manually place students. The algorithm makes sure the conditions are met and the rest is randomized. From there you can download and export your map however you like. The map is registered to your school and other teachers in your school can see your most recent maps, which is beneficial for when the class has a substitute teacher.",
           qaQuestion3: "How does the trial and payment work if I choose to continue?",
           qaAnswer3: "We are giving all schools the app for free in 2023 to test it out and see if it is something they will be able to benefit from. A week before the plan expires, we send an email reminding you to cancel if you do not wish to continue. This is a simple process, and all you have to do is write that you do not want to continue with the app, then everything is sorted. If you wish to continue with the subscription, you will receive an invoice every semester as standard, but the subscription can also be adapted to your school's needs.",
-        
+
           // ------------- FOOTER ---------------- //
           contactButton: "Contact us",
           termsButton: "Terms of Service & Policies",
@@ -201,11 +205,11 @@ i18n
         }
       }
     }
-    
 
 
 
-    
+
+
 
 
   });
