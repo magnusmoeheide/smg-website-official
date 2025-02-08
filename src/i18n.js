@@ -105,6 +105,10 @@ i18n
           qaQuestion3: "Hvordan fungerer prøveperioden og betalingen hvis jeg velger å fortsette?",
           qaAnswer3: "Vi gir alle skoler appen gratis ut 2023 for å teste den ut og se om det er noe de vil kunne ta nytte av. En uke før planen utgår sender vi en mail og minner deg om å kansellere hvis du ikke ønsker å fortsette. Dette er en simpel prosess, og det er bare å skrive en mail om at du ikke ønsker å fortsette med appen, så er alt ordnet. Om du ønsker å fortsette med abonnementet vil du motta en faktura hvert semester som standard, men abonnementet kan også tilpasses din skoles behov.",
 
+          // ------------- BLOG ---------------- //
+          blogTitle: "Forskningsartikler",
+          blogText: "Les forskningsartikler fra vårt team av eksperter. (Kun tilgjengelig på engelsk)",
+
           // ------------- FOOTER ---------------- //
           contactButton: "Kontakt oss",
           termsButton: "Vilkår for bruk",
@@ -243,6 +247,10 @@ i18n
           qaAnswer2: "First you register your class with your students. Then your class is saved for future use. To create a map you select your class, then what configuration they are supposed to sit. You can choose between our defualt '1 and 1', '2 and 2' etc. or you can create your own. After that, you select the conditions such as who should sit in front or back of the classroom, who should or should not sit together, and you can manually place students. The algorithm makes sure the conditions are met and the rest is randomized. From there you can download and export your map however you like. The map is registered to your school and other teachers in your school can see your most recent maps, which is beneficial for when the class has a substitute teacher.",
           qaQuestion3: "How does the trial and payment work if I choose to continue?",
           qaAnswer3: "We are giving all schools the app for free in 2023 to test it out and see if it is something they will be able to benefit from. A week before the plan expires, we send an email reminding you to cancel if you do not wish to continue. This is a simple process, and all you have to do is write that you do not want to continue with the app, then everything is sorted. If you wish to continue with the subscription, you will receive an invoice every semester as standard, but the subscription can also be adapted to your school's needs.",
+
+          // ------------- BLOG ---------------- //
+          blogTitle: "Research Articles",
+          blogText: "Read research articles from our team of experts. (Only available in English)",
 
           // ------------- FOOTER ---------------- //
           contactButton: "Contact us",
