@@ -22,7 +22,7 @@ export default function Reasons() {
       },
     ]
   return (
-    <div className="bg-white pb-24 sm:pb-32" id="reasons">
+    <div className="bg-white pt-24 sm:pt-32" id="reasons">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-smg_orange">{t("yourBenefits")}</h2>

@@ -21,7 +21,7 @@ export default function FAQs() {
     ];
   return (
     <div className="bg-white" id="faq">
-      <div className="mx-auto max-w-7xl px-6 pb-24 sm:pb-32 lg:px-8 lg:pb-40">
+      <div className="mx-auto max-w-7xl px-6 pt-24 sm:pt-32 lg:px-8 lg:pt-40">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
             {t("qaTitle")}

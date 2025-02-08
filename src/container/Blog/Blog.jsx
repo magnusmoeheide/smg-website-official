@@ -29,7 +29,7 @@ const posts = [
   export default function Blog() {
     const { t } = useTranslation()
     return (
-      <div className="bg-white pb-24 sm:pb-32">
+      <div className="bg-white pt-24 sm:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
