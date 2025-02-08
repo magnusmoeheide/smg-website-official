@@ -3,7 +3,7 @@ import './App.css';
 
 import {
   Home, About, Privacy, Terms, Cookies, Return, Disclaimer, AcceptableUse, Eula,
-  GetStarted, SeatingArrangement, PrivacyArticle, Guide
+  GetStarted, SeatingArrangement, PrivacyArticle, Guide, PricingDetail
 } from './container';
 
 import { Routes, Route } from 'react-router-dom';
@@ -39,6 +39,7 @@ function App() {
         <Route path="/articles/seatingarrangement" element={<SeatingArrangement />} />
         <Route path="/articles/privacy" element={<PrivacyArticle />} />
         <Route path="/pages/guide" element={<Guide />} />
+        <Route path="/pricing/:slug" element={<PricingDetail />} />
       </Routes>
     </div>
   );

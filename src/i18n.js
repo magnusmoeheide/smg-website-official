@@ -125,6 +125,8 @@ i18n
           yearly: "årlig",
           monthSuffix: "/mnd",
           yearSuffix: "/år",
+          // Added new translation key for price including VAT:
+          priceInclVAT: "Pris inkl. MVA: {{price}}",
           tiers: {
             teacher: {
               name: "Lærer",
@@ -169,7 +171,17 @@ i18n
                 "tilpassbare kart"
               ]
             }
-          }
+          },
+          planDetails: "Abonnementsdetaljer",
+          exclusiveVippsPayment: "Eksklusiv betaling via Vipps.",
+          invoicePayment: "Velg abonnement og vent på faktura.",
+          trialInfo: "Start med en 30-dagers gratis prøveperiode.",
+          whatIsIncluded: "Hva er inkludert",
+          payOnceVipps: "Betal en gang med Vipps",
+          payWithVipps: "Betal med Vipps",
+          payInvoice: "Fakturabetaling",
+          selectPlan: "Velg abonnement",
+          cancelInfo: "Du kan kansellere abonnementet ditt når som helst.",
         }
       },
       en: {
@@ -269,6 +281,8 @@ i18n
           yearly: "Yearly",
           monthSuffix: "/month",
           yearSuffix: "/year",
+          // Added new translation key for price including VAT:
+          priceInclVAT: "Price incl. VAT: {{price}}",
           tiers: {
             teacher: {
               name: "Teacher",
@@ -313,7 +327,17 @@ i18n
                 "customizable maps"
               ]
             }
-          }
+          },
+          planDetails: "Plan Details",
+          exclusiveVippsPayment: "Exclusive payment via Vipps.",
+          invoicePayment: "Select the plan and wait for the invoice.",
+          trialInfo: "Start with a 30-day free trial.",
+          whatIsIncluded: "What’s included",
+          payOnceVipps: "Pay once with Vipps",
+          payWithVipps: "Pay with Vipps",
+          payInvoice: "Invoice payment",
+          selectPlan: "Select plan",
+          cancelInfo: "You can cancel your subscription at any time.",
         }
       }
     }

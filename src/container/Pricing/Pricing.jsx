@@ -4,37 +4,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Radio, RadioGroup } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { useTranslation } from 'react-i18next'
+import { tiers } from '../../constants/subscriptionTiers'
 
-const tiers = [
-    {
-        slug: 'teacher',
-        id: 'tier-hobby',
-        href: '#',
-        price: { monthly: 'NOK 29', yearly: 'NOK 199' },
-        mostPopular: false,
-    },
-    {
-        slug: 'schoolS',
-        id: 'tier-freelancer',
-        href: '#',
-        price: { yearly: 'NOK 999' },
-        mostPopular: true,
-    },
-    {
-        slug: 'schoolM',
-        id: 'tier-startup',
-        href: '#',
-        price: { yearly: 'NOK 1299' },
-        mostPopular: false,
-    },
-    {
-        slug: 'schoolL',
-        id: 'tier-enterprise',
-        href: '#',
-        price: { yearly: 'NOK 1499' },
-        mostPopular: false,
-    },
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -114,7 +85,7 @@ export default function Pricing() {
                   <span className="text-sm/6 font-semibold text-gray-600">{frequency.priceSuffix}</span>
                 </p>
                 <a
-                  href={tier.href}
+                  href={`/pricing/${tier.slug}?frequency=${frequency.value}`}
                   aria-describedby={tier.id}
                   className={classNames(
                     tier.mostPopular
@@ -126,7 +97,7 @@ export default function Pricing() {
                     {t('pricingCTA')}
                 </a>
                 <p className="text-xs text-gray-400 pt-2">{t("plan1Comment")}</p>
-                <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600">
+                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600">
                   {tierFeatures.map((feature, index) => (
                     <li key={index} className="flex gap-x-3">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-smg_orange" />

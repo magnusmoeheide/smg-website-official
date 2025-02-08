@@ -13,9 +13,10 @@ import Header from './Header/Header';
 import SeatingArrangement from './Articles/SeatingArrangement';
 import PrivacyArticle from './Articles/PrivacyArticle';
 import Guide from './Pages/Guide'
+import PricingDetail from './Pages/pricing/[slug]';
 
 
 export {
-    Home, About, Privacy, Terms, Navbar, Cookies, Return, 
-    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement, PrivacyArticle, Guide
+    Home, About, Privacy, Terms, Navbar, Cookies, Return,
+    Disclaimer, AcceptableUse, Eula, GetStarted, Header, SeatingArrangement, PrivacyArticle, Guide, PricingDetail
 }
