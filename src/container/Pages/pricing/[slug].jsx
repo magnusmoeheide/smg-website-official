@@ -1,13 +1,14 @@
 'use client'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useParams, useSearchParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useMemo } from 'react'
-import { CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon, ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { tiers } from '../../../constants/subscriptionTiers'
 import { useTranslation } from 'react-i18next'
 
 export default function PricingDetail() {
   const { slug } = useParams()
   const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
   const { t } = useTranslation()
 
   const selectedTier = tiers.find((tier) => tier.slug === slug)
@@ -51,10 +52,20 @@ export default function PricingDetail() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl sm:text-center">
-          <h2 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-balance sm:text-6xl">
-            {tierName} {t('planDetails')}
-          </h2>
+        <div className="mx-auto max-w-7xl sm:text-center w-full">
+          {/* Header with switch plan button */}
+          <div className="flex items-center justify-center space-x-4 relative">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center text-sm text-gray-400 hover:text-smg_orange focus:outline-none absolute left-0"
+            >
+              <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
+              <span className="ml-1">{t('goBack')}</span>
+            </button>
+            <h2 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-balance sm:text-6xl">
+              {tierName} {t('planDetails')}
+            </h2>
+          </div>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
             {tierDescription}
           </p>
