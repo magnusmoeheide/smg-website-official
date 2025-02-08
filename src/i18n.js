@@ -108,6 +108,7 @@ i18n
           // ------------- BLOG ---------------- //
           blogTitle: "Forskningsartikler",
           blogText: "Les forskningsartikler fra vårt team av eksperter. (Kun tilgjengelig på engelsk)",
+          goBack: "Gå tilbake",
 
           // ------------- FOOTER ---------------- //
           contactButton: "Kontakt oss",
@@ -251,6 +252,7 @@ i18n
           // ------------- BLOG ---------------- //
           blogTitle: "Research Articles",
           blogText: "Read research articles from our team of experts. (Only available in English)",
+          goBack: "Go back",
 
           // ------------- FOOTER ---------------- //
           contactButton: "Contact us",

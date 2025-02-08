@@ -3,20 +3,22 @@ import { images } from "../../constants";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 const PrivacyArticle = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top of the page
   }, []);
 
   return (
-    <div>
+    <div className="pt-8">
       <Header showAllLinks={false} />
 
       <div className="article">
         <Link to="/">
           <button className="goback-button">
-            <b>Gå tilbake</b>
+            <b>{t("goBack")}</b>
           </button>
         </Link>
         <br />
