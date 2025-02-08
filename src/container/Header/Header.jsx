@@ -15,7 +15,7 @@ export default function Header() {
     { name: t("headerHome"), href: '/' },
     { name: t("headerAbout"), href: '#about' },
     { name: t("headerPricing"), href: '#pricing' },
-    { name: t("headerQA"), href: '#q&a' },
+    { name: t("headerFaq"), href: '#faq' },
     { name: t("headerGuide"), href: '/pages/guide' },
   ]
 

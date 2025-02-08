@@ -8,6 +8,7 @@ import Features from "../Features/Features";
 import Reasons from "../Reasons/Reasons";
 import Pricing from "../Pricing/Pricing";
 import Testimonials from "../Testimonials/Testimonials";
+import FAQs from "../FAQs/FAQs";
 
 const Home = () => {
   const [answersVisible, setAnswersVisible] = useState({});
@@ -33,74 +34,7 @@ const Home = () => {
 
       <Testimonials />
 
-      <section className="qa-section" id="q&a">
-        <h2 className="qa-title">
-          {t("qaTitle")} <span className="orange">{t("qaTitleOrange")}</span>
-        </h2>
-        <div className="qa-container">
-          <div className="qa" onClick={() => toggleAnswer("qa1")}>
-            <h3 className="qa-question">{t("qaQuestion1")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa1"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer1")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa1"] ? "active" : ""}`}
-            >
-              {answersVisible["qa1"] ? "-" : "+"}
-            </button>
-          </div>
-          <div className="qa" onClick={() => toggleAnswer("qa2")}>
-            <h3 className="qa-question">{t("qaQuestion2")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa2"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer2")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa2"] ? "active" : ""}`}
-            >
-              {answersVisible["qa2"] ? "-" : "+"}
-            </button>
-          </div>
-
-          {/*
-          <div className="qa" onClick={() => toggleAnswer("qa3")}>
-            <h3 className="qa-question">
-              What are the benefits of the generator?
-            </h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa3"] ? "block" : "none" }}
-            >
-              <p></p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa3"] ? "active" : ""}`}
-            >
-              {answersVisible["qa3"] ? "-" : "+"}
-            </button>
-          </div>
-          */}
-          <div className="qa" onClick={() => toggleAnswer("qa4")}>
-            <h3 className="qa-question">{t("qaQuestion3")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa4"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer3")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa4"] ? "active" : ""}`}
-            >
-              {answersVisible["qa4"] ? "-" : "+"}
-            </button>
-          </div>
-        </div>
-      </section>
+      <FAQs />
 
       <section className="article-section">
         <h2 className="section-heading">

@@ -42,7 +42,7 @@ i18n
           headerPricing: "Pris",
           headerTestimonials: "Anmeldelser",
           headerGuide: "Guide",
-          headerQA: "Q&A",
+          headerFaq: "FAQ",
           headerLogin: "Logg inn",
           headerSignup: "Registrer deg",
           logo: "logoNo",
@@ -97,8 +97,7 @@ i18n
           testimonial1Text: "Det jeg liker best med appen er at den passer for alle typer klasserom. Enten om elevene skal sitte 2 og 2 eller i hestesko, så klarer appen å anbefale hvordan de best bør sitte sammen basert på kravene mine. Super generator!",
           testimonial2Text: "Et flott verktøy for lærere som ønsker å lage gode klassekart for klasserommene eller andre arrangementer. Appen er enkel å bruke, og det er flott at man kan se klassekartene i andre klasser hvis man tar vikartimer der og ikke vet hvor elevene skal sitte.",
           // ------------- Q&A ---------------- //
-          qaTitle: "Ofte spurte",
-          qaTitleOrange: "Q&A",
+          qaTitle: "Ofte spurte spørsmål",
           qaQuestion1: "Hva er Klassekartgeneratoren?",
           qaAnswer1: "Klassekartgeneratoren er en app som tar klassens elever, lar deg sette kravene du ønsker for hvordan de bør sitte, og deretter får et generert klassekart. Dette fjerner styret med å manuelt måtte få alt til å passe sammen. Algoritmen vår finner den beste løsningen for deg i løpet av sekunder.",
           qaQuestion2: "Hvordan fungerer appen?",
@@ -181,7 +180,7 @@ i18n
           headerPricing: "Pricing",
           headerTestimonials: "Testimonials",
           headerGuide: "Guide",
-          headerQA: "Q&A",
+          headerFAQ: "FAQ",
           headerLogin: "Log in",
           headerSignup: "Sign up",
           logo: "logoEn",
@@ -237,8 +236,7 @@ i18n
           testimonial2Text: "After testing the app, I found it to be a highly useful tool for schools looking to create custom seating arrangements for their classrooms or other events. The app is user-friendly and intuitive, with a simple interface that makes it easy for teachers and administrators to create detailed seating plans in a matter of minutes",
 
           // ------------- Q&A ---------------- //
-          qaTitle: "Frequently asked",
-          qaTitleOrange: "Q&A",
+          qaTitle: "Frequently asked Questions",
           qaQuestion1: "What is the Seat Map Generator?",
           qaAnswer1: "The Seat Map Generator is an app that takes your class' students, allowes you to select the conditions you want and then get a map with your conditions and the rest is randomized. This removes the struggle of having you manually make everything work and finds the best solution for you in a matter of seconds.",
           qaQuestion2: "How does the app work?",
