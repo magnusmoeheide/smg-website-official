@@ -10,7 +10,7 @@ const Guide = () => {
   // }, []);
 
   return (
-    <div>
+    <div className="pt-8">
       <Header showAllLinks={false} />
 
       <div className="guide">
