@@ -4,12 +4,19 @@ import { useState, useEffect, useMemo } from 'react'
 import { CheckIcon, ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { tiers } from '../../../constants/subscriptionTiers'
 import { useTranslation } from 'react-i18next'
+import { useAuth } from '../../../contexts/authContext'
+import Login from '../../Login/Login'
+import { signOut } from 'firebase/auth'
+import { auth } from '../../../auth'
 
 export default function PricingDetail() {
   const { slug } = useParams()
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const { t } = useTranslation()
+  const { isAuthenticated, currentUser } = useAuth()
+
+  const [loginOpen, setLoginOpen] = useState(false)
 
   const selectedTier = tiers.find((tier) => tier.slug === slug)
 
@@ -46,10 +53,21 @@ export default function PricingDetail() {
     return `${currency} ${(numericPrice * 1.25).toFixed(2)}`
   }
 
+  // Logout function
+  const logout = async () => {
+    try {
+      await signOut(auth)
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
+  }
+
   if (!selectedTier) {
     return <div>{t('tierNotFound')}</div>
   }
   return (
+    <>
+    <Login open={loginOpen} setOpen={setLoginOpen} />
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-7xl sm:text-center w-full">
@@ -70,7 +88,7 @@ export default function PricingDetail() {
             {tierDescription}
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+        <div className="mx-auto mt-8 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-12 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-3xl font-semibold tracking-tight text-gray-900">
               {tierName}
@@ -103,7 +121,7 @@ export default function PricingDetail() {
               <div className="mx-auto max-w-xs px-8">
                 {selectedTier.slug === 'teacher' ? (
                   <>
-                    <p className="text-base font-semibold text-gray-600">{t('payOnceVipps')}</p>
+                    <p className="text-base font-semibold text-gray-600">{t('mobilePayment')}</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
                       <span className="text-5xl font-semibold tracking-tight text-gray-900">{price}</span>
                       <span className="text-sm/6 font-semibold tracking-wide text-gray-600">
@@ -114,12 +132,21 @@ export default function PricingDetail() {
                     <p className="mt-2 text-sm text-gray-600">
                       {t('priceInclVAT', { price: computePriceVAT(price) })}
                     </p>
-                    <a
-                      href="/"
-                      className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
-                    >
-                      {t('payWithVipps')}
-                    </a>
+                    {isAuthenticated && currentUser ? (
+                      <a
+                        href="/"
+                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                      >
+                        {t('payWithVipps')}
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => setLoginOpen(true)}
+                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                      >
+                        {t('loginToContinue')}
+                      </button>
+                    )}
                   </>
                 ) : (
                   <>
@@ -134,12 +161,21 @@ export default function PricingDetail() {
                     <p className="mt-2 text-sm text-gray-600">
                       {t('priceInclVAT', { price: computePriceVAT(price) })}
                     </p>
-                    <a
-                      href="/"
-                      className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
-                    >
-                      {t('selectPlan')}
-                    </a>
+                    {isAuthenticated && currentUser ? (
+                      <a
+                        href="/"
+                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                      >
+                        {t('selectPlan')}
+                      </a>
+                    ): (
+                      <button
+                        onClick={() => setLoginOpen(true)}
+                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                      >
+                        {t('loginToContinue')}
+                      </button>
+                    )}
                   </>
                 )}
                 <p className="mt-6 text-xs/5 text-gray-600">
@@ -149,7 +185,18 @@ export default function PricingDetail() {
             </div>
           </div>
         </div>
+        <div>
+          {isAuthenticated && currentUser && (
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center rounded-lg bg-gray-50 px-4 py-2 text-sm text-gray-600">
+                <span>{t('loggedInAs')}: </span>
+                <span className="ml-1 font-medium">{currentUser.email}</span>&nbsp;| <button onClick={() => logout()} className="text-smg_orange hover:text-smg_orange_light ml-1">{t('logout')}</button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
+    </>
   )
 }
