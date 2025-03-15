@@ -5,7 +5,6 @@ import './App.css';
 import {
   Home, About, Privacy, Terms, Cookies, Return, Disclaimer, AcceptableUse, Eula,
   GetStarted, SeatingArrangement, PrivacyArticle, Guide, PricingDetail,
-  Login
 } from './container';
 
 import { Routes, Route } from 'react-router-dom';

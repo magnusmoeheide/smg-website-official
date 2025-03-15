@@ -14,7 +14,7 @@ export default function PricingDetail() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const { t } = useTranslation()
-  const { isAuthenticated, currentUser } = useAuth()
+  const { isAuthenticated, currentUser, subscription } = useAuth()
 
   const [loginOpen, setLoginOpen] = useState(false)
 

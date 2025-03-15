@@ -1,7 +1,8 @@
-// src/context/AuthContext.js
+// src/contexts/AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../auth';
+import { useApiAuth } from '../hooks/useApiAuth';
 
 const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const { userInfo, sessionExpired, subscription, error } = useApiAuth(currentUser);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -26,7 +28,10 @@ export function AuthProvider({ children }) {
     const value = {
         currentUser,
         isAuthenticated: !!currentUser,
-        userId: currentUser?.uid
+        userId: currentUser?.uid,
+        userInfo,
+        sessionExpired,
+        subscription
     };
 
     return (
