@@ -13,7 +13,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const { userInfo, sessionExpired, subscription, error } = useApiAuth(currentUser);
+    const { userInfo, subscription, error } = useApiAuth(currentUser);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -30,7 +30,6 @@ export function AuthProvider({ children }) {
         isAuthenticated: !!currentUser,
         userId: currentUser?.uid,
         userInfo,
-        sessionExpired,
         subscription
     };
 

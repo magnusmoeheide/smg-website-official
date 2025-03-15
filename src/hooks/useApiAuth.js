@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { apiRequest, authorize, startAccessTokenTimer } from '../services/authService';
+import { authorize } from '../services/authService';
+import api from '../services/api';
 
 export function useApiAuth(user) {
     const [userInfo, setUserInfo] = useState(null);
-    const [sessionExpired, setSessionExpired] = useState(false);
     const [subscription, setSubscription] = useState(null);
     const [error, setError] = useState(null);
 
@@ -15,17 +15,21 @@ export function useApiAuth(user) {
                     const firebaseIdToken = await user.getIdToken();
                     await authorize(userEmail, 'teacher', firebaseIdToken);
 
-                    const teacher = await apiRequest(`/teachers/email/${userEmail}`);
+                    const teacher = await api.get(`/teachers/email/${userEmail}`);
                     if (!teacher || teacher.length === 0) throw new Error('User not found in database');
-                    const admin = await apiRequest(`/admins/email/${userEmail}`);
+
+                    const admin = await api.get(`/admins/email/${userEmail}`);
                     const isAdmin = admin.length > 0;
 
                     if (isAdmin) await authorize(userEmail, 'admin', firebaseIdToken);
-                    startAccessTokenTimer(setSessionExpired);
 
-                    apiRequest(`/teachers/ull/${teacher[0].id}`); // This is to update the last login time in the database
+                    // Update last login time
+                    api.get(`/teachers/ull/${teacher[0].id}`);
 
-                    const subscription = teacher[0].school_id ? await apiRequest(`/subscriptions/school/latest/${teacher[0].school_id}`) : await apiRequest(`/subscriptions/user/latest/${teacher[0].id}`);
+                    const subscription = teacher[0].school_id
+                        ? await api.get(`/subscriptions/school/latest/${teacher[0].school_id}`)
+                        : await api.get(`/subscriptions/user/latest/${teacher[0].id}`);
+
                     setSubscription({
                         status: subscription[0]?.status,
                         subscription_id: subscription[0]?.id,
@@ -56,7 +60,6 @@ export function useApiAuth(user) {
 
     return {
         userInfo,
-        sessionExpired,
         subscription,
         error,
     };

@@ -8,6 +8,7 @@ import { useAuth } from '../../../contexts/authContext'
 import Login from '../../Login/Login'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../../auth'
+import { clearTokens } from '../../../services/tokenService'
 
 export default function PricingDetail() {
   const { slug } = useParams()
@@ -57,6 +58,7 @@ export default function PricingDetail() {
   const logout = async () => {
     try {
       await signOut(auth)
+      clearTokens()
     } catch (error) {
       console.error('Logout error:', error)
     }
