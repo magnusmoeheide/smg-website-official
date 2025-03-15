@@ -1,42 +1,48 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { apiEvents } from '../services/api';
 import { useNotification, NOTIFICATION_TYPES } from '../contexts/NotificationContext';
 
 export function ApiNotificationListener() {
   const { showNotification } = useNotification();
+  const callbackRef = useRef(null);
+
+  // Use useCallback to maintain the same function reference
+  const handleTokenRefresh = useCallback((data) => {
+    if (data.success) {
+      showNotification(
+        `Authentication refreshed using ${data.method} method`,
+        NOTIFICATION_TYPES.SUCCESS,
+        5000,
+        'Authentication Refreshed'
+      );
+    } else {
+      showNotification(
+        `Failed to refresh authentication: ${data.error || 'Unknown error'}`,
+        NOTIFICATION_TYPES.ERROR,
+        8000,
+        'Authentication Error'
+      );
+    }
+  }, [showNotification]);
 
   useEffect(() => {
-    const handleTokenRefresh = (data) => {
-      if (data.success) {
-        showNotification(
-          `Authentication refreshed using ${data.method} method`,
-          NOTIFICATION_TYPES.SUCCESS,
-          5000,
-          'Authentication Refreshed'
-        );
-      } else {
-        showNotification(
-          `Failed to refresh authentication: ${data.error || 'Unknown error'}`,
-          NOTIFICATION_TYPES.ERROR,
-          8000,
-          'Authentication Error'
-        );
-      }
-    };
-
+    // Store the callback reference for cleanup
+    callbackRef.current = handleTokenRefresh;
+    
     // Subscribe to token refresh events
     apiEvents.on('tokenRefreshed', handleTokenRefresh);
 
-    // Cleanup
+    // Proper cleanup function
     return () => {
-      // This is a simplified cleanup - in a real implementation,
-      // you'd need to maintain a reference to the callback to remove it
-      apiEvents.listeners['tokenRefreshed'] = 
-        apiEvents.listeners['tokenRefreshed']?.filter(cb => cb !== handleTokenRefresh) || [];
+      // Remove only this specific listener
+      if (apiEvents.listeners['tokenRefreshed'] && callbackRef.current) {
+        apiEvents.listeners['tokenRefreshed'] = 
+          apiEvents.listeners['tokenRefreshed'].filter(cb => cb !== callbackRef.current);
+      }
     };
-  }, [showNotification]);
+  }, [handleTokenRefresh]);
 
   return null; // This component doesn't render anything
 }
