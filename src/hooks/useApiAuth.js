@@ -30,6 +30,24 @@ export function useApiAuth(user) {
                         ? await api.get(`/subscriptions/school/latest/${teacher[0].school_id}`)
                         : await api.get(`/subscriptions/user/latest/${teacher[0].id}`);
 
+                    const planSlug = (() => {
+                        switch (subscription[0]?.name) {
+                            case 'trial':
+                                return 'trial';
+                            case 'teacher_plan_monthly':
+                            case 'teacher_plan_yearly':
+                                return 'teacher';
+                            case 'school_plan_s':
+                                return 'schoolS';
+                            case 'school_plan_m':
+                                return 'schoolM';
+                            case 'school_plan_l':
+                                return 'schoolL';
+                            default:
+                                return 'inactive';
+                        }
+                    })();
+
                     setSubscription({
                         status: subscription[0]?.status,
                         subscription_id: subscription[0]?.id,
@@ -38,6 +56,7 @@ export function useApiAuth(user) {
                         end_date: subscription[0]?.end_date,
                         amount: subscription[0]?.amount,
                         school_id: subscription[0]?.school_id,
+                        planSlug: planSlug,
                     });
 
                     setUserInfo({

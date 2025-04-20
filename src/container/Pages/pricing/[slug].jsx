@@ -15,7 +15,7 @@ export default function PricingDetail() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const { t } = useTranslation()
-  const { isAuthenticated, currentUser, subscription } = useAuth()
+  const { isAuthenticated, currentUser, subscription, userInfo } = useAuth()
 
   const [loginOpen, setLoginOpen] = useState(false)
 
@@ -24,10 +24,10 @@ export default function PricingDetail() {
   // Determine available frequencies based on selectedTier pricing
   const availableFrequencies = useMemo(() => {
     const frequencies = []
-    if (selectedTier.price.monthly) frequencies.push('monthly')
-    if (selectedTier.price.yearly) frequencies.push('yearly')
+    if (selectedTier?.price.monthly) frequencies.push('monthly')
+    if (selectedTier?.price.yearly) frequencies.push('yearly')
     return frequencies
-  }, [selectedTier.price])
+  }, [selectedTier?.price])
 
   // Get frequency from URL param if valid
   const urlFrequency = searchParams.get('frequency')
@@ -41,10 +41,63 @@ export default function PricingDetail() {
     }
   }, [urlFrequency, availableFrequencies])
 
-  const tierName = t(`tiers.${selectedTier.slug}.name`)
-  const tierDescription = t(`tiers.${selectedTier.slug}.description`)
-  const tierFeatures = t(`tiers.${selectedTier.slug}.features`, { returnObjects: true })
-  const price = selectedTier.price[frequency]
+  // Check if the current subscription is a trial
+  const isTrialSubscription = useMemo(() => {
+    return subscription?.isTrial === true
+  }, [subscription])
+  
+  // Check if the current subscription matches the selected tier (but not if it's a trial)
+  const isCurrentPlan = useMemo(() => {
+    if (isTrialSubscription) return false
+    return subscription?.planSlug === selectedTier?.slug
+  }, [subscription, selectedTier, isTrialSubscription])
+
+  // Check if the selected tier is a school plan
+  const isSchoolPlan = useMemo(() => {
+    return selectedTier?.slug?.startsWith('school')
+  }, [selectedTier])
+
+  // Check if current plan is a school plan
+  const isCurrentSchoolPlan = useMemo(() => {
+    return subscription?.planSlug?.startsWith('school')
+  }, [subscription])
+
+  // Check if current plan is a teacher plan
+  const isCurrentTeacherPlan = useMemo(() => {
+    return subscription?.planSlug === 'teacher'
+  }, [subscription])
+
+  // Check if user has a school
+  const hasSchool = useMemo(() => {
+    return userInfo?.school_id != null
+  }, [userInfo])
+
+  // Check if user is school admin
+  const isSchoolAdmin = useMemo(() => {
+    return userInfo?.role === 'admin'
+  }, [userInfo])
+
+  // Check if the selected tier is an upgrade from the current subscription
+  const isUpgrade = useMemo(() => {
+    if (!subscription || !selectedTier || isTrialSubscription) return false
+    
+    // Prevent upgrades between teacher and school plans
+    if ((isCurrentTeacherPlan && isSchoolPlan) || (isCurrentSchoolPlan && selectedTier.slug === 'teacher')) {
+      return false
+    }
+    
+    // Get index of current plan and selected plan
+    const currentTierIndex = tiers.findIndex(tier => tier.slug === subscription.planSlug)
+    const selectedTierIndex = tiers.findIndex(tier => tier.slug === selectedTier.slug)
+    
+    // If selected tier has a higher index, it's an upgrade
+    return selectedTierIndex > currentTierIndex
+  }, [subscription, selectedTier, isTrialSubscription, isCurrentTeacherPlan, isSchoolPlan, isCurrentSchoolPlan])
+
+  const tierName = selectedTier ? t(`tiers.${selectedTier.slug}.name`) : ''
+  const tierDescription = selectedTier ? t(`tiers.${selectedTier.slug}.description`) : ''
+  const tierFeatures = selectedTier ? t(`tiers.${selectedTier.slug}.features`, { returnObjects: true }) : []
+  const price = selectedTier?.price[frequency]
   
   // Helper to compute price including 25% VAT
   const computePriceVAT = (priceStr) => {
@@ -64,9 +117,43 @@ export default function PricingDetail() {
     }
   }
 
+  // Get the appropriate button text based on subscription status
+  const getActionButtonText = () => {
+    // Handle school plan restrictions
+    if (isSchoolPlan) {
+      if (!hasSchool) return t('createSchoolFirst')
+      if (!isSchoolAdmin) return t('contactSchoolAdmin')
+    }
+    
+    // Handle plan type switching restrictions
+    if ((isCurrentTeacherPlan && isSchoolPlan) || (isCurrentSchoolPlan && selectedTier?.slug === 'teacher')) {
+      return t('cannotSwitchPlanType')
+    }
+    
+    // Handle regular subscription status
+    if (isCurrentPlan) return t('currentPlan')
+    if (isUpgrade) return t('upgradePlan')
+    return selectedTier?.slug === 'teacher' ? t('payWithVipps') : t('selectPlan')
+  }
+
+  // Determine if the action button should be disabled
+  const isActionButtonDisabled = useMemo(() => {
+    // Current non-trial plan
+    if (isCurrentPlan && !isTrialSubscription) return true
+    
+    // School plan restrictions
+    if (isSchoolPlan && (!hasSchool || !isSchoolAdmin)) return true
+    
+    // Plan type switching restrictions
+    if ((isCurrentTeacherPlan && isSchoolPlan) || (isCurrentSchoolPlan && selectedTier?.slug === 'teacher')) return true
+    
+    return false
+  }, [isCurrentPlan, isTrialSubscription, isSchoolPlan, hasSchool, isSchoolAdmin, isCurrentTeacherPlan, isCurrentSchoolPlan, selectedTier])
+
   if (!selectedTier) {
     return <div>{t('tierNotFound')}</div>
   }
+  
   return (
     <>
     <Login open={loginOpen} setOpen={setLoginOpen} />
@@ -130,16 +217,22 @@ export default function PricingDetail() {
                         {frequency === 'monthly' ? t('monthSuffix') : t('yearSuffix')}
                       </span>
                     </p>
-                    {/* New line to show price including 25% VAT */}
+                    {/* Price including VAT */}
                     <p className="mt-2 text-sm text-gray-600">
                       {t('priceInclVAT', { price: computePriceVAT(price) })}
                     </p>
                     {isAuthenticated && currentUser ? (
                       <a
-                        href="/"
-                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                        href={isActionButtonDisabled ? "#" : "/"}
+                        className={`mt-10 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange ${
+                          isActionButtonDisabled
+                            ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            : 'bg-smg_orange text-white hover:bg-smg_orange_light'
+                        }`}
+                        aria-disabled={isActionButtonDisabled}
+                        onClick={(e) => isActionButtonDisabled && e.preventDefault()}
                       >
-                        {t('payWithVipps')}
+                        {getActionButtonText()}
                       </a>
                     ) : (
                       <button
@@ -154,21 +247,27 @@ export default function PricingDetail() {
                   <>
                     <p className="text-base font-semibold text-gray-600">{t('payInvoice')}</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-semibold tracking-tight text-gray-900">{price}</span>
+                      <span className="text-5xl font-semibold tracking-tight text-gray-900 whitespace-nowrap">{price}</span>
                       <span className="text-sm/6 font-semibold tracking-wide text-gray-600">
                         {frequency === 'monthly' ? t('monthSuffix') : t('yearSuffix')}
                       </span>
                     </p>
-                    {/* New line to show price including 25% VAT */}
+                    {/* Price including VAT */}
                     <p className="mt-2 text-sm text-gray-600">
                       {t('priceInclVAT', { price: computePriceVAT(price) })}
                     </p>
                     {isAuthenticated && currentUser ? (
                       <a
-                        href="/"
-                        className="mt-10 block w-full rounded-md bg-smg_orange px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                        href={isActionButtonDisabled ? "#" : "/"}
+                        className={`mt-10 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange ${
+                          isActionButtonDisabled
+                            ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            : 'bg-smg_orange text-white hover:bg-smg_orange_light'
+                        }`}
+                        aria-disabled={isActionButtonDisabled}
+                        onClick={(e) => isActionButtonDisabled && e.preventDefault()}
                       >
-                        {t('selectPlan')}
+                        {getActionButtonText()}
                       </a>
                     ): (
                       <button
@@ -190,9 +289,26 @@ export default function PricingDetail() {
         <div>
           {isAuthenticated && currentUser && (
             <div className="mt-8 text-center">
-              <div className="inline-flex items-center rounded-lg bg-gray-50 px-4 py-2 text-sm text-gray-600">
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-lg bg-gray-50 px-4 py-2 text-sm text-gray-600">
                 <span>{t('loggedInAs')}: </span>
-                <span className="ml-1 font-medium">{currentUser.email}</span>&nbsp;| <button onClick={() => logout()} className="text-smg_orange hover:text-smg_orange_light ml-1">{t('logout')}</button>
+                <span className="font-medium">{currentUser.email}</span>
+                {subscription && (
+                  <>
+                    <span className="mx-1">|</span>
+                    <span>{t('currentSubscription')}: </span>
+                    <span className="font-medium">
+                      {subscription.planSlug && t(`tiers.${subscription.planSlug}.name`)}
+                      {isTrialSubscription && ` (${t('trial')})`}
+                    </span>
+                  </>
+                )}
+                <span className="mx-1">|</span>
+                <button 
+                  onClick={() => logout()} 
+                  className="text-smg_orange hover:text-smg_orange_light"
+                >
+                  {t('logout')}
+                </button>
               </div>
             </div>
           )}

@@ -128,6 +128,9 @@ i18n
           // Added new translation key for price including VAT:
           priceInclVAT: "Pris inkl. MVA: {{price}}",
           tiers: {
+            trial: {
+              name: "Prøve"
+            },
             teacher: {
               name: "Lærer",
               description: "Et abonnement for individuelle lærere som ønsker en enkel løsning.",
@@ -183,6 +186,12 @@ i18n
           selectPlan: "Velg abonnement",
           cancelInfo: "Du kan kansellere abonnementet ditt når som helst.",
           loginToContinue: "Logg inn for å fortsette",
+          currentPlan: "Nåværende abonnement",
+          currentSubscription: "Nåværende abonnement",
+          upgradePlan: "Oppgrader abonnement",
+          createSchoolFirst: "Opprett en skole først",
+          contactSchoolAdmin: "Kontakt skoleadministrasjonen din",
+          cannotSwitchPlanType: "Du kan ikke bytte abonnementstype",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Logg inn på kontoen din",
@@ -311,6 +320,9 @@ i18n
           // Added new translation key for price including VAT:
           priceInclVAT: "Price incl. VAT: {{price}}",
           tiers: {
+            trial: {
+              name: "Trial"
+            },
             teacher: {
               name: "Teacher",
               description: "A plan for individual teachers who just want an easy solution.",
@@ -366,6 +378,12 @@ i18n
           selectPlan: "Select plan",
           cancelInfo: "You can cancel your subscription at any time.",
           loginToContinue: "Log in to continue",
+          currentPlan: "Current Plan",
+          currentSubscription: "Current Subscription",
+          upgradePlan: "Upgrade Plan",
+          createSchoolFirst: "Create a school first",
+          contactSchoolAdmin: "Contact your school admin",
+          cannotSwitchPlanType: "You cannot switch plans",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Sign in to your account",
