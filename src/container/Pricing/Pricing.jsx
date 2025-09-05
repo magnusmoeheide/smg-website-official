@@ -14,14 +14,13 @@ function classNames(...classes) {
 export default function Pricing() {
     const { t } = useTranslation()
     const frequencies = useMemo(() => [
-        { value: 'monthly', label: t('monthly'), priceSuffix: t('monthSuffix') },
         { value: 'yearly', label: t('yearly'), priceSuffix: t('yearSuffix') },
     ], [t])
-    const [frequency, setFrequency] = useState(frequencies[1])
-    const filteredTiers = tiers.filter(tier => frequency.value !== 'monthly' || tier.price.monthly)
+    const [frequency, setFrequency] = useState(frequencies[0])
+    const filteredTiers = tiers
 
     useEffect(() => {
-        setFrequency(prev => frequencies.find(f => f.value === prev.value) || frequencies[1])
+        setFrequency(prev => frequencies.find(f => f.value === prev.value) || frequencies[0])
     }, [frequencies])
 
     return (
@@ -36,25 +35,27 @@ export default function Pricing() {
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
               {t("pricingText")}
           </p>
-          <div className="mt-16 flex justify-center">
-            <fieldset aria-label="Payment frequency">
-              <RadioGroup
-                value={frequency}
-                onChange={setFrequency}
-                className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-gray-200"
-              >
-                {frequencies.map((option) => (
-                  <Radio
-                    key={option.value}
-                    value={option}
-                    className="cursor-pointer rounded-full px-2.5 py-1 text-gray-500 data-[checked]:bg-smg_orange data-[checked]:text-white"
-                  >
-                    {option.label}
-                  </Radio>
-                ))}
-              </RadioGroup>
-            </fieldset>
-          </div>
+          {frequencies.length > 1 && (
+            <div className="mt-16 flex justify-center">
+              <fieldset aria-label="Payment frequency">
+                <RadioGroup
+                  value={frequency}
+                  onChange={setFrequency}
+                  className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-gray-200"
+                >
+                  {frequencies.map((option) => (
+                    <Radio
+                      key={option.value}
+                      value={option}
+                      className="cursor-pointer rounded-full px-2.5 py-1 text-gray-500 data-[checked]:bg-smg_orange data-[checked]:text-white"
+                    >
+                      {option.label}
+                    </Radio>
+                  ))}
+                </RadioGroup>
+              </fieldset>
+            </div>
+          )}
           <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
             {filteredTiers.map((tier) => {
                 const tierName = t(`tiers.${tier.slug}.name`)

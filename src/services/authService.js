@@ -2,9 +2,14 @@
 import axios from 'axios';
 import { setTokens, getRefreshToken } from './tokenService';
 
-const API_URL = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3001/api'
-    : 'https://api.klassekartgenerator.no/api';
+let baseApiUrl;
+if (process.env.NODE_ENV === 'development') {
+    baseApiUrl = 'http://localhost:3001/api';
+} else {
+    baseApiUrl = 'https://api.klassekartgenerator.no/api';
+}
+
+const API_URL = process.env.API_BASE_URL ? process.env.API_BASE_URL : baseApiUrl;
 
 // Create a separate axios instance for auth calls to avoid circular dependency
 const authApi = axios.create({

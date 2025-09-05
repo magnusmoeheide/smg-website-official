@@ -31,6 +31,9 @@ export function useApiAuth(user) {
                         : await api.get(`/subscriptions/user/latest/${teacher[0].id}`);
 
                     const planSlug = (() => {
+                        if (!subscription || subscription.length === 0 || subscription[0]?.status === 'inactive' || subscription[0]?.status === 'cancelled' || subscription[0]?.status === 'expired') {
+                            return 'inactive';
+                        }
                         switch (subscription[0]?.name) {
                             case 'trial':
                                 return 'trial';

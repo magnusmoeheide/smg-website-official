@@ -25,9 +25,14 @@ export const apiEvents = {
     }
 };
 
-const API_URL = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3001/api'
-    : 'https://api.klassekartgenerator.no/api';
+let baseApiUrl;
+if (process.env.NODE_ENV === 'development') {
+    baseApiUrl = 'http://localhost:3001/api';
+} else {
+    baseApiUrl = 'https://api.klassekartgenerator.no/api';
+}
+
+const API_URL = process.env.API_BASE_URL ? process.env.API_BASE_URL : baseApiUrl;
 
 const api = axios.create({
     baseURL: API_URL,
