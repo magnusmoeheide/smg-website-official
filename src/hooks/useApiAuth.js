@@ -26,50 +26,57 @@ export function useApiAuth(user) {
                     // Update last login time
                     api.get(`/teachers/ull/${teacher[0].id}`);
 
-                    const subscription = teacher[0].school_id
-                        ? await api.get(`/subscriptions/school/latest/${teacher[0].school_id}`)
-                        : await api.get(`/subscriptions/user/latest/${teacher[0].id}`);
+                    // Stripe-based entitlement: compute trial/personal/school from teacher/school
+                    const now = new Date();
+                    const teacherRow = Array.isArray(teacher) ? teacher[0] : teacher?.data?.[0] || teacher;
 
-                    const planSlug = (() => {
-                        if (!subscription || subscription.length === 0 || subscription[0]?.status === 'inactive' || subscription[0]?.status === 'cancelled' || subscription[0]?.status === 'expired') {
-                            return 'inactive';
-                        }
-                        switch (subscription[0]?.name) {
-                            case 'trial':
-                                return 'trial';
-                            case 'teacher_plan_monthly':
-                            case 'teacher_plan_yearly':
-                                return 'teacher';
-                            case 'school_plan_s':
-                                return 'schoolS';
-                            case 'school_plan_m':
-                                return 'schoolM';
-                            case 'school_plan_l':
-                                return 'schoolL';
-                            default:
-                                return 'inactive';
-                        }
-                    })();
+                    // Fetch school if present
+                    let schoolRow = null;
+                    if (teacherRow.school_id) {
+                        try {
+                            const schoolRes = await api.get(`/schools/${teacherRow.school_id}`);
+                            schoolRow = Array.isArray(schoolRes) ? schoolRes[0] : schoolRes?.data?.[0] || schoolRes;
+                        } catch {}
+                    }
+
+                    const trialEnd = teacherRow.trial_expires_at ? new Date(teacherRow.trial_expires_at) : null;
+                    const personalEnd = teacherRow.personal_subscription_current_period_end ? new Date(teacherRow.personal_subscription_current_period_end) : null;
+                    const schoolEnd = schoolRow?.subscription_current_period_end ? new Date(schoolRow.subscription_current_period_end) : null;
+
+                    const trialActive = !!trialEnd && trialEnd > now;
+                    const personalActive = !!teacherRow.has_active_personal_subscription && (!personalEnd || personalEnd > now);
+                    const schoolActive = !!schoolRow?.has_active_subscription && (!schoolEnd || schoolEnd > now);
+
+                    // Prefer paid subs over trial
+                    let planSlug = 'inactive';
+                    if (schoolActive) {
+                        const mapBySeat = { 20: 'schoolS', 35: 'schoolM', 50: 'schoolL' };
+                        planSlug = mapBySeat[Number(schoolRow?.seat_limit)] || 'schoolS';
+                    } else if (personalActive) {
+                        planSlug = 'teacher';
+                    } else if (trialActive) {
+                        planSlug = 'trial';
+                    }
 
                     setSubscription({
-                        status: subscription[0]?.status,
-                        subscription_id: subscription[0]?.id,
-                        plan_id: subscription[0]?.plan_id,
-                        start_date: subscription[0]?.start_date,
-                        end_date: subscription[0]?.end_date,
-                        amount: subscription[0]?.amount,
-                        school_id: subscription[0]?.school_id,
-                        planSlug: planSlug,
+                        planSlug,
+                        trialActive,
+                        personalActive,
+                        schoolActive,
+                        seat_limit: schoolRow?.seat_limit ?? null,
+                        school_id: teacherRow.school_id ?? null,
+                        personal_period_end: teacherRow.personal_subscription_current_period_end ?? null,
+                        school_period_end: schoolRow?.subscription_current_period_end ?? null,
                     });
 
                     setUserInfo({
-                        id: teacher[0].id,
-                        name: teacher[0].name,
-                        email: teacher[0].email,
-                        role: isAdmin ? 'admin' : teacher[0].role,
-                        school_id: teacher[0].school_id,
-                        joined_on: teacher[0].created_at,
-                        admin_id: isAdmin ? admin[0].id : null,
+                        id: teacherRow.id,
+                        name: teacherRow.name,
+                        email: teacherRow.email,
+                        role: isAdmin ? 'admin' : teacherRow.role,
+                        school_id: teacherRow.school_id,
+                        joined_on: teacherRow.created_at,
+                        admin_id: isAdmin ? (Array.isArray(admin) ? admin[0]?.id : admin?.data?.[0]?.id) : null,
                     });
                 } catch (error) {
                     console.error(`Error getting user info: ${error}`);

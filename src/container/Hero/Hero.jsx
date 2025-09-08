@@ -26,7 +26,7 @@ export default function Hero() {
               <div className="mt-10 flex items-center gap-x-6">
                 <a
                   href={t("signupLink")}
-                  className="rounded-md bg-smg_orange px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+                  className="rounded-full bg-smg_orange px-10 py-3.5 text-base font-semibold text-white shadow-md hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange transition-transform duration-150 hover:-translate-y-0.5"
                 >
                   {t("startBtn")}
                 </a>

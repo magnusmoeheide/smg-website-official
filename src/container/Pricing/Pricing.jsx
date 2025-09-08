@@ -79,11 +79,34 @@ export default function Pricing() {
                   {tierName}
                 </h3>
                 <p className="mt-4 text-sm/6 text-gray-600">{tierDescription}</p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-gray-900">
-                    {tier.price[frequency.value]}
-                  </span>
-                  <span className="text-sm/6 font-semibold text-gray-600">{frequency.priceSuffix}</span>
+                <p className="mt-6 flex flex-col items-baseline gap-x-2">
+                  <div className="flex items-center gap-x-2">
+                    {tier.originalPrice?.[frequency.value] && (
+                      <span className="text-xl font-semibold tracking-tight text-gray-400 line-through">
+                        {tier.originalPrice[frequency.value]}
+                      </span>
+                    )}
+                    {tier.originalPrice?.[frequency.value] && (
+                      <span className="ml-1 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-700">
+                        {/* Compute discount percent in a safe way */}
+                        {(() => {
+                          const p = parseFloat(String(tier.price[frequency.value]).replace(/[^0-9.]/g, ''))
+                          const o = parseFloat(String(tier.originalPrice[frequency.value]).replace(/[^0-9.]/g, ''))
+                          if (!isNaN(p) && !isNaN(o) && o > 0 && p < o) {
+                            const pct = Math.round((1 - p / o) * 100)
+                            return `-${pct}%`
+                          }
+                          return 'SALE'
+                        })()}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-baseline gap-x-1">
+                    <span className="text-4xl font-semibold tracking-tight text-gray-900">
+                      {tier.price[frequency.value]}
+                    </span>
+                    <span className="text-sm/6 font-semibold text-gray-600">{frequency.priceSuffix}</span>
+                  </div>
                 </p>
                 <a
                   href={`/pricing/${tier.slug}?frequency=${frequency.value}`}
@@ -97,7 +120,7 @@ export default function Pricing() {
                 >
                     {t('pricingCTA')}
                 </a>
-                <p className="text-xs text-gray-400 pt-2">{t("plan1Comment")}</p>
+                <p className="text-xs text-gray-400 pt-2">{tier.slug == 'teacher' ? t("plan1Comment") : t("plan1Comment2")}</p>
                 <ul className="mt-8 space-y-3 text-sm/6 text-gray-600">
                   {tierFeatures.map((feature, index) => (
                     <li key={index} className="flex gap-x-3">

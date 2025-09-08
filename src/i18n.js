@@ -35,6 +35,8 @@ i18n
           // ------------- LINKS ---------------- // 
           signupLink: "https://app.klassekartgenerator.no/signup",
           loginLink: "https://app.klassekartgenerator.no/login",
+          goToApp: "Gå til appen",
+          goToApp: "Go to the app",
 
           // ------------- HEADER ---------------- //
           headerHome: "Hjem",
@@ -90,7 +92,8 @@ i18n
           plan1Included4: "Se andre lærere sine klassekart",
           plan1Included5: "Rapporter og statistikk for din skole",
           plan1Included6: "Utmerket kundeservice",
-          plan1Comment: "Pris eks. MVA.",
+          plan1Comment: "Pris inkl. MVA.",
+          plan1Comment2: "Pris eks. MVA.",
 
           // ------------- TESTIMONIALS ---------------- //
           testimonialsTitle: "Hva skolene sier",
@@ -121,6 +124,7 @@ i18n
           pricingTitle: "Pris som passer dine behov",
           pricingText: "Velg abonnementet som passer dine behov. Hvis du trenger et tilpasset abonnement, vennligst kontakt oss.",
           pricingCTA: "Velg abonnement",
+          vatIncluded: "MVA inkludert",
           monthly: "månedlig",
           yearly: "årlig",
           monthSuffix: "/mnd",
@@ -145,7 +149,6 @@ i18n
               name: "Skole S",
               description: "Et abonnement for skoler som vil gi tilgang for opptil 20 lærere.",
               features: [
-                "30 dagers gratis prøve",
                 "opptil 20 lærere",
                 "ubegrensede klasser",
                 "ubegrensede kart",
@@ -156,7 +159,6 @@ i18n
               name: "Skole M",
               description: "Et abonnement for skoler som vil gi tilgang for opptil 35 lærere.",
               features: [
-                "30 dagers gratis prøve",
                 "opptil 35 lærere",
                 "ubegrensede klasser",
                 "ubegrensede kart",
@@ -167,7 +169,6 @@ i18n
               name: "Skole L",
               description: "Et abonnement for skoler som vil gi tilgang for opptil 50 lærere.",
               features: [
-                "30 dagers gratis prøve",
                 "opptil 50 lærere",
                 "ubegrensede klasser",
                 "ubegrensede kart",
@@ -190,6 +191,7 @@ i18n
           currentSubscription: "Nåværende abonnement",
           upgradePlan: "Oppgrader abonnement",
           createSchoolFirst: "Opprett en skole først",
+          leaveSchoolFirst: "Forlat skolen",
           contactSchoolAdmin: "Kontakt skoleadministrasjonen din",
           cannotSwitchPlanType: "Du kan ikke bytte abonnementstype",
 
@@ -212,6 +214,9 @@ i18n
           invoiceEmailRequired: "E-postadresse for faktura er påkrevd",
           subscriptionUpdateSuccess: "Abonnementet ble oppdatert",
           subscriptionUpdateError: "Noe gikk galt ved oppdatering av abonnement",
+          checkoutSuccess: "Betalingen var vellykket. Abonnementet ditt er nå aktivt.",
+          checkoutCanceled: "Betalingen ble avbrutt. Ingen endringer ble gjort.",
+          checkoutFailed: "Betalingen feilet. Prøv igjen eller kontakt support.",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Logg inn på kontoen din",
@@ -301,7 +306,8 @@ i18n
           plan1Included4: "See other teachers' maps",
           plan1Included5: "Reports and school stats",
           plan1Included6: "Excellent support",
-          plan1Comment: "Price is VAT excluded.",
+          plan1Comment: "Price is VAT included.",
+          plan1Comment2: "Price is VAT excluded.",
 
           // ------------- TESTIMONIALS ---------------- //
           testimonialsTitle: "What The Schools Say",
@@ -333,6 +339,7 @@ i18n
           pricingTitle: "Pricing that fits your needs",
           pricingText: "Choose the plan that fits your needs. If you need a custom plan, please contact us.",
           pricingCTA: "Select plan",
+          vatIncluded: "VAT included",
           monthly: "Monthly",
           yearly: "Yearly",
           monthSuffix: "/month",
@@ -357,7 +364,6 @@ i18n
               name: "School S",
               description: "A plan for schools that want access for up to 20 teachers.",
               features: [
-                "30 days free trial",
                 "up to 20 teachers",
                 "unlimited classes",
                 "unlimited maps",
@@ -368,7 +374,6 @@ i18n
               name: "School M",
               description: "A plan for schools that want access for up to 35 teachers.",
               features: [
-                "30 days free trial",
                 "up to 35 teachers",
                 "unlimited classes",
                 "unlimited maps",
@@ -379,7 +384,6 @@ i18n
               name: "School L",
               description: "A plan for schools that want access for up to 50 teachers.",
               features: [
-                "30 days free trial",
                 "up to 50 teachers",
                 "unlimited classes",
                 "unlimited maps",
@@ -402,6 +406,7 @@ i18n
           currentSubscription: "Current Subscription",
           upgradePlan: "Upgrade Plan",
           createSchoolFirst: "Create a school first",
+          leaveSchoolFirst: "Leave school",
           contactSchoolAdmin: "Contact your school admin",
           cannotSwitchPlanType: "You cannot switch plans",
 
@@ -424,6 +429,9 @@ i18n
           invoiceEmailRequired: "Invoice email address is required",
           subscriptionUpdateSuccess: "Subscription updated successfully",
           subscriptionUpdateError: "Something went wrong updating the subscription",
+          checkoutSuccess: "Checkout successful. Your subscription is now active.",
+          checkoutCanceled: "Checkout canceled. No changes were made.",
+          checkoutFailed: "Checkout failed. Please try again or contact support.",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Sign in to your account",
