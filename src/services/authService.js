@@ -21,7 +21,13 @@ const authApi = axios.create({
 // New: Exchange Firebase ID token for an HttpOnly session cookie
 export async function sessionLogin(idToken) {
     try {
-        await authApi.post('/sessionLogin', { idToken }, { withCredentials: true });
+        // Obtain CSRF token (always call; backend will set cookie and return it)
+        let csrfToken;
+        try {
+            const res = await authApi.get('/session/csrf', { withCredentials: true });
+            csrfToken = res?.csrfToken;
+        } catch {}
+        await authApi.post('/sessionLogin', { idToken, csrfToken }, { withCredentials: true });
         if (typeof window !== 'undefined' && window.dispatchEvent) {
             window.dispatchEvent(new Event('auth-session-changed'));
         }
