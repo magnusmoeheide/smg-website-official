@@ -3,6 +3,7 @@ import { images } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
+import { sessionLogin } from '../../services/authService'
 
 export default function FirebaseLoginDialog({ open, setOpen }) {
     const { t } = useTranslation();
@@ -20,8 +21,11 @@ export default function FirebaseLoginDialog({ open, setOpen }) {
         
         try {
             const auth = getAuth();
-            await signInWithEmailAndPassword(auth, email, password);
-            setOpen(false); // Close dialog on successful login
+            const cred = await signInWithEmailAndPassword(auth, email, password);
+            // Exchange Firebase ID token for an HTTP-only session cookie
+            const idToken = await cred.user.getIdToken();
+            await sessionLogin(idToken);
+            setOpen(false);
         } catch (error) {
             // Handle specific Firebase error codes
             switch (error.code) {

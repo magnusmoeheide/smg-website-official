@@ -27,7 +27,8 @@ export function AuthProvider({ children }) {
 
     const value = {
         currentUser,
-        isAuthenticated: !!currentUser,
+        // Consider cookie session bootstrap too
+        isAuthenticated: !!currentUser || !!userInfo,
         userId: currentUser?.uid,
         userInfo,
         subscription

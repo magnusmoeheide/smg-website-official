@@ -327,7 +327,7 @@ export default function PricingDetail() {
                     </div>
                     {/* Teacher price is VAT included; show note without extra total */}
                     <p className="mt-2 text-sm text-gray-600">{t('vatIncluded')}</p>
-                    {isAuthenticated && currentUser ? (
+                    {isAuthenticated ? (
                       <>
                         <button
                           onClick={isActionButtonDisabled || isProcessing ? undefined : (primaryActionIsOpenApp ? () => { window.location.href = t('loginLink') } : handleCreateCheckout)}
@@ -381,7 +381,7 @@ export default function PricingDetail() {
                     <p className="mt-2 text-sm text-gray-600">
                       {t('priceInclVAT', { price: computePriceVAT(price) })}
                     </p>
-                    {isAuthenticated && currentUser ? (
+                    {isAuthenticated ? (
                       <button
                         onClick={isActionButtonDisabled ? undefined : (primaryActionIsOpenApp ? () => { window.location.href = t('loginLink') } : handleCreateCheckout)}
                         disabled={isActionButtonDisabled || isProcessing}
@@ -416,11 +416,11 @@ export default function PricingDetail() {
         </div>
         
         <div>
-          {isAuthenticated && currentUser && (
+          {isAuthenticated && (
             <div className="mt-8 text-center">
               <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-lg bg-gray-50 px-4 py-2 text-sm text-gray-600">
                 <span>{t('loggedInAs')}: </span>
-                <span className="font-medium">{currentUser.email}</span>
+                <span className="font-medium">{(currentUser && currentUser.email) || (userInfo && userInfo.email) || ''}</span>
                 {currentPlanText && (
                   <>
                     <span className="mx-1">|</span>

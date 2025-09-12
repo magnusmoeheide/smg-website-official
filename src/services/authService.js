@@ -59,3 +59,22 @@ export async function refreshAccessToken() {
         throw error;
     }
 }
+
+// New: Exchange Firebase ID token for an HttpOnly session cookie
+export async function sessionLogin(idToken) {
+    try {
+        await authApi.post('/sessionLogin', { idToken }, { withCredentials: true });
+    } catch (error) {
+        console.error('Error creating session cookie:', error);
+        throw error;
+    }
+}
+
+export async function sessionLogout() {
+    try {
+        await authApi.post('/sessionLogout', {}, { withCredentials: true });
+    } catch (error) {
+        console.error('Error clearing session cookie:', error);
+        // swallow errors
+    }
+}
