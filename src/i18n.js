@@ -216,6 +216,7 @@ i18n
           checkoutSuccess: "Betalingen var vellykket. Abonnementet ditt er nå aktivt.",
           checkoutCanceled: "Betalingen ble avbrutt. Ingen endringer ble gjort.",
           checkoutFailed: "Betalingen feilet. Prøv igjen eller kontakt support.",
+          close: "Lukk",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Logg inn på kontoen din",
@@ -432,6 +433,7 @@ i18n
           checkoutSuccess: "Checkout successful. Your subscription is now active.",
           checkoutCanceled: "Checkout canceled. No changes were made.",
           checkoutFailed: "Checkout failed. Please try again or contact support.",
+          close: "Close",
 
           // ------------- LOGIN ---------------- //
           signInToYourAccount: "Sign in to your account",

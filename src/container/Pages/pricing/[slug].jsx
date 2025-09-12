@@ -23,7 +23,6 @@ export default function PricingDetail() {
   const [teacherHasActive, setTeacherHasActive] = useState(false)
   const [schoolHasActive, setSchoolHasActive] = useState(false)
   const [schoolSeatLimit, setSchoolSeatLimit] = useState(null)
-  const [message, setMessage] = useState(null)
   const [schoolTeacherCount, setSchoolTeacherCount] = useState(null)
 
   // Create Stripe Checkout session and redirect
@@ -49,19 +48,6 @@ export default function PricingDetail() {
     }
   }
 
-  // Success/Cancel/Failure messages from Stripe redirect
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search)
-      if (params.get('success') === 'true') {
-        setMessage({ type: 'success', text: t('checkoutSuccess') })
-      } else if (params.get('canceled') === 'true') {
-        setMessage({ type: 'canceled', text: t('checkoutCanceled') })
-      } else if (params.get('error')) {
-        setMessage({ type: 'error', text: t('checkoutFailed') })
-      }
-    } catch {}
-  }, [t])
 
   // Use subscription flags from Auth context (Stripe-driven)
   useEffect(() => {
@@ -256,16 +242,6 @@ export default function PricingDetail() {
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
             {tierDescription}
           </p>
-          {message && (
-            <div className={`${message.type === 'success' ? 'bg-green-50 text-green-700' : message.type === 'canceled' ? 'bg-yellow-50 text-yellow-700' : 'bg-red-50 text-red-700'} mx-auto mt-6 max-w-2xl rounded-md p-3`}>
-              <div className="flex items-center justify-between">
-                <span>{message.text}</span>
-                {message.type === 'success' && (
-                  <a href={t('loginLink')} className="underline font-medium">{t('goToApp')}</a>
-                )}
-              </div>
-            </div>
-          )}
         </div>
         
         <div className="mx-auto mt-8 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-12 lg:mx-0 lg:flex lg:max-w-none">
