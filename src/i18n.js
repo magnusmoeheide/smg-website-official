@@ -249,8 +249,8 @@ i18n
         translation: {
 
           // ------------- LINKS ---------------- // 
-          signupLink: "https://app.seatmapgenerator.com/signup",
-          loginLink: "https://app.seatmapgenerator.com/login",
+          signupLink: "https://app.klassekartgenerator.com/signup",
+          loginLink: "https://app.klassekartgenerator.com/login",
           goToApp: "Open app",
 
           // ------------- HEADER ---------------- //
@@ -332,8 +332,8 @@ i18n
           // ------------- FOOTER ---------------- //
           contactButton: "Contact us",
           termsButton: "Terms of Service & Policies",
-          address: "SeatMapGenerator.com",
-          contactEmail: "hi@seatmapgenerator.com",
+          address: "Klassekartgenerator.com",
+          contactEmail: "hi@klassekartgenerator.com",
 
           // ------------- PRICING ---------------- //
           pricing: "Pricing",
