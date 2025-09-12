@@ -6,10 +6,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { images } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import LanguageSelector from '../../LanguageSelector/LanguageSelector'
+import { useAuth } from '../../contexts/authContext'
 
 export default function Header() {
   const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { isAuthenticated } = useAuth()
 
   const navigation = [
     { name: t("headerHome"), href: '/' },
@@ -44,15 +46,26 @@ export default function Header() {
           <div className="hidden lg:block">
             <LanguageSelector />
           </div>
-          <a href={t("loginLink")} className="hidden text-sm/6 font-semibold text-gray-900 lg:block hover:text-smg_orange">
-            {t("headerLogin")}
-          </a>
-          <a
-            href={t("signupLink")}
-            className="rounded-md bg-smg_orange px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
-          >
-            {t("headerSignup")}
-          </a>
+          {isAuthenticated ? (
+            <a
+              href={t("loginLink")}
+              className="rounded-md bg-smg_orange px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+            >
+              {t("goToApp")}
+            </a>
+          ) : (
+            <>
+              <a href={t("loginLink")} className="hidden text-sm/6 font-semibold text-gray-900 lg:block hover:text-smg_orange">
+                {t("headerLogin")}
+              </a>
+              <a
+                href={t("signupLink")}
+                className="rounded-md bg-smg_orange px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-smg_orange"
+              >
+                {t("headerSignup")}
+              </a>
+            </>
+          )}
         </div>
         <div className="flex lg:hidden">
           <button
@@ -113,12 +126,23 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href={t("loginLink")}
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-smg_orange"
-                >
-                  {t("headerLogin")}
-                </a>
+                {isAuthenticated ? (
+                  <a
+                    href={t("loginLink")}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-smg_orange"
+                  >
+                    {t("goToApp")}
+                  </a>
+                ) : (
+                  <a
+                    href={t("loginLink")}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-smg_orange"
+                  >
+                    {t("headerLogin")}
+                  </a>
+                )}
               </div>
               <div className='py-6'>
                 <LanguageSelector />

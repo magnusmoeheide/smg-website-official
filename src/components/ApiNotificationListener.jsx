@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useCallback, useRef } from 'react';
-import { apiEvents } from '../services/api';
 import { useNotification, NOTIFICATION_TYPES } from '../contexts/NotificationContext';
 
 export function ApiNotificationListener() {
@@ -9,40 +8,27 @@ export function ApiNotificationListener() {
   const callbackRef = useRef(null);
 
   // Use useCallback to maintain the same function reference
-  const handleTokenRefresh = useCallback((data) => {
-    if (data.success) {
-      showNotification(
-        `Authentication refreshed using ${data.method} method`,
-        NOTIFICATION_TYPES.SUCCESS,
-        5000,
-        'Authentication Refreshed'
-      );
-    } else {
-      showNotification(
-        `Failed to refresh authentication: ${data.error || 'Unknown error'}`,
-        NOTIFICATION_TYPES.ERROR,
-        8000,
-        'Authentication Error'
-      );
-    }
+  const handleSessionChanged = useCallback(() => {
+    showNotification(
+      'Authentication session updated',
+      NOTIFICATION_TYPES.SUCCESS,
+      3000,
+      'Authentication'
+    );
   }, [showNotification]);
 
   useEffect(() => {
     // Store the callback reference for cleanup
-    callbackRef.current = handleTokenRefresh;
-    
-    // Subscribe to token refresh events
-    apiEvents.on('tokenRefreshed', handleTokenRefresh);
-
-    // Proper cleanup function
+    callbackRef.current = handleSessionChanged;
+    if (typeof window !== 'undefined') {
+      window.addEventListener('auth-session-changed', handleSessionChanged);
+    }
     return () => {
-      // Remove only this specific listener
-      if (apiEvents.listeners['tokenRefreshed'] && callbackRef.current) {
-        apiEvents.listeners['tokenRefreshed'] = 
-          apiEvents.listeners['tokenRefreshed'].filter(cb => cb !== callbackRef.current);
+      if (typeof window !== 'undefined' && callbackRef.current) {
+        window.removeEventListener('auth-session-changed', callbackRef.current);
       }
     };
-  }, [handleTokenRefresh]);
+  }, [handleSessionChanged]);
 
   return null; // This component doesn't render anything
 }

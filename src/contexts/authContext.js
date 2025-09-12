@@ -1,7 +1,5 @@
 // src/contexts/AuthContext.js
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../auth';
+import React, { createContext, useContext } from 'react';
 import { useApiAuth } from '../hooks/useApiAuth';
 
 const AuthContext = createContext();
@@ -11,32 +9,18 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const { userInfo, subscription, error } = useApiAuth(currentUser);
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setCurrentUser(user);
-            setLoading(false);
-        });
-
-        // Cleanup subscription on unmount
-        return unsubscribe;
-    }, []);
+    const { userInfo, subscription, error } = useApiAuth();
 
     const value = {
-        currentUser,
-        // Consider cookie session bootstrap too
-        isAuthenticated: !!currentUser || !!userInfo,
-        userId: currentUser?.uid,
+        // Cookie-session only auth state
+        isAuthenticated: !!userInfo,
         userInfo,
         subscription
     };
 
     return (
         <AuthContext.Provider value={value}>
-            {!loading && children}
+            {children}
         </AuthContext.Provider>
     );
 }

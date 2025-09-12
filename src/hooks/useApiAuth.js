@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { authorize } from '../services/authService';
 import api from '../services/api';
 
-export function useApiAuth(user) {
+export function useApiAuth() {
     const [userInfo, setUserInfo] = useState(null);
     const [subscription, setSubscription] = useState(null);
     const [error, setError] = useState(null);
@@ -74,21 +73,13 @@ export function useApiAuth(user) {
 
         async function getUserInfo() {
             try {
-                if (user) {
-                    // Legacy flow: Firebase user present
-                    const userEmail = user.email ?? '';
-                    const firebaseIdToken = await user.getIdToken();
-                    await authorize(userEmail, 'teacher', firebaseIdToken);
-                    await hydrateFromEmail(userEmail);
+                // Cookie session only
+                const session = await api.get('/session/me').catch(() => null);
+                if (session && session.email) {
+                    await hydrateFromEmail(session.email);
                 } else {
-                    // Cookie session fallback
-                    const session = await api.get('/session/me').catch(() => null);
-                    if (session && session.email) {
-                        await hydrateFromEmail(session.email);
-                    } else {
-                        setUserInfo(null);
-                        setSubscription(null);
-                    }
+                    setUserInfo(null);
+                    setSubscription(null);
                 }
             } catch (error) {
                 console.error(`Error getting user info: ${error}`);
@@ -96,7 +87,20 @@ export function useApiAuth(user) {
             }
         }
         getUserInfo();
-    }, [user]);
+
+        // Re-hydrate on session changes and when window gains focus
+        const onChange = () => getUserInfo();
+        if (typeof window !== 'undefined') {
+            window.addEventListener('auth-session-changed', onChange);
+            window.addEventListener('focus', onChange);
+        }
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('auth-session-changed', onChange);
+                window.removeEventListener('focus', onChange);
+            }
+        };
+    }, []);
 
     return {
         userInfo,

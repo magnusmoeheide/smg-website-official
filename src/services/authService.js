@@ -1,6 +1,5 @@
 // filepath: src/services/authService.js
 import axios from 'axios';
-import { setTokens, getRefreshToken } from './tokenService';
 
 let baseApiUrl;
 if (process.env.NODE_ENV === 'development') {
@@ -19,51 +18,13 @@ const authApi = axios.create({
     }
 });
 
-export async function authorize(email, role, firebaseToken) {
-    try {
-        const response = await authApi.post('/login',
-            { email },
-            {
-                headers: {
-                    'authorization': `Bearer ${firebaseToken}`,
-                    'x-user-role': role,
-                }
-            }
-        );
-
-        const { accessToken, refreshToken } = response.data;
-        setTokens(accessToken, refreshToken, role);
-
-        return response.data;
-    } catch (error) {
-        console.error('Error authorizing user:', error);
-        throw error;
-    }
-}
-
-export async function refreshAccessToken() {
-    const refreshToken = getRefreshToken();
-    if (!refreshToken) throw new Error('No refresh token available');
-
-    try {
-        const response = await authApi.post('/token',
-            { token: refreshToken.replace('Bearer ', '') }
-        );
-
-        const { accessToken, expired } = response.data;
-        setTokens(accessToken);
-
-        return { expired };
-    } catch (error) {
-        console.error('Error refreshing token:', error);
-        throw error;
-    }
-}
-
 // New: Exchange Firebase ID token for an HttpOnly session cookie
 export async function sessionLogin(idToken) {
     try {
         await authApi.post('/sessionLogin', { idToken }, { withCredentials: true });
+        if (typeof window !== 'undefined' && window.dispatchEvent) {
+            window.dispatchEvent(new Event('auth-session-changed'));
+        }
     } catch (error) {
         console.error('Error creating session cookie:', error);
         throw error;
@@ -73,6 +34,9 @@ export async function sessionLogin(idToken) {
 export async function sessionLogout() {
     try {
         await authApi.post('/sessionLogout', {}, { withCredentials: true });
+        if (typeof window !== 'undefined' && window.dispatchEvent) {
+            window.dispatchEvent(new Event('auth-session-changed'));
+        }
     } catch (error) {
         console.error('Error clearing session cookie:', error);
         // swallow errors

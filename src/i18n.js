@@ -35,8 +35,7 @@ i18n
           // ------------- LINKS ---------------- // 
           signupLink: "https://app.klassekartgenerator.no/signup",
           loginLink: "https://app.klassekartgenerator.no/login",
-          goToApp: "Gå til appen",
-          goToApp: "Go to the app",
+          goToApp: "Åpne appen",
 
           // ------------- HEADER ---------------- //
           headerHome: "Hjem",
@@ -251,6 +250,7 @@ i18n
           // ------------- LINKS ---------------- // 
           signupLink: "https://app.seatmapgenerator.com/signup",
           loginLink: "https://app.seatmapgenerator.com/login",
+          goToApp: "Open app",
 
           // ------------- HEADER ---------------- //
           headerHome: "Home",

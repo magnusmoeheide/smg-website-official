@@ -8,7 +8,7 @@ import { useAuth } from '../../../contexts/authContext'
 import Login from '../../Login/Login'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../../auth'
-import { clearTokens } from '../../../services/tokenService'
+import { sessionLogout } from '../../../services/authService'
 import api from '../../../services/api'
 
 export default function PricingDetail() {
@@ -16,7 +16,7 @@ export default function PricingDetail() {
   
   const navigate = useNavigate()
   const { t } = useTranslation()
-  const { isAuthenticated, currentUser, subscription, userInfo } = useAuth()
+  const { isAuthenticated, subscription, userInfo } = useAuth()
 
   const [loginOpen, setLoginOpen] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
@@ -193,8 +193,10 @@ export default function PricingDetail() {
   // Logout function
   const logout = async () => {
     try {
+      // Clear Firebase client state (used only for obtaining ID token during login)
       await signOut(auth)
-      clearTokens()
+      // Invalidate server session cookie
+      await sessionLogout()
     } catch (error) {
       console.error('Logout error:', error)
     }
@@ -420,7 +422,7 @@ export default function PricingDetail() {
             <div className="mt-8 text-center">
               <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-lg bg-gray-50 px-4 py-2 text-sm text-gray-600">
                 <span>{t('loggedInAs')}: </span>
-                <span className="font-medium">{(currentUser && currentUser.email) || (userInfo && userInfo.email) || ''}</span>
+                <span className="font-medium">{userInfo?.email || ''}</span>
                 {currentPlanText && (
                   <>
                     <span className="mx-1">|</span>
