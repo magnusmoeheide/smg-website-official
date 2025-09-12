@@ -1,520 +1,117 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { images } from "../../constants";
-import { Link } from "react-router-dom";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import { useTranslation } from "react-i18next";
-import YoutubeEmbed from "./YoutubeEmbed";
+import React, { useEffect, useState } from 'react'
+import Footer from "../Footer/Footer"
+import Hero from "../Hero/Hero"
+import Features from "../Features/Features"
+import Reasons from "../Reasons/Reasons"
+import Pricing from "../Pricing/Pricing"
+import Testimonials from "../Testimonials/Testimonials"
+import FAQs from "../FAQs/FAQs"
+import Blog from "../Blog/Blog"
+import '../../styles/animations.css'
+import FadeInSection from '../../components/FadeInSection'  // new import
+import { useTranslation } from 'react-i18next'
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 
 const Home = () => {
-  const [answersVisible, setAnswersVisible] = useState({});
+  const { t } = useTranslation();
+  const [message, setMessage] = useState(null);
 
-  function toggleAnswer(qaId) {
-    setAnswersVisible({
-      ...answersVisible,
-      [qaId]: !answersVisible[qaId],
-    });
-  }
-
-  const { t, i18n } = useTranslation();
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('success') === 'true') {
+        setMessage({ type: 'success', text: t('checkoutSuccess') });
+      } else if (params.get('canceled') === 'true') {
+        setMessage({ type: 'canceled', text: t('checkoutCanceled') });
+      } else if (params.get('error')) {
+        setMessage({ type: 'error', text: t('checkoutFailed') });
+      }
+      if (params.get('success') || params.get('canceled') || params.get('error')) {
+        if (typeof window !== 'undefined') {
+          const url = window.location.origin + window.location.pathname + window.location.hash;
+          window.history.replaceState({}, document.title, url);
+        }
+      }
+    } catch {}
+  }, [t]);
 
   return (
     <div>
-      <Header showAllLinks={true} />
-
-      <section className="hero" id="/">
-        <div className="hero-container">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              {t("heroTitle")}{" "}
-              <span className="orange">{t("heroTitleOrange")}</span>
-            </h1>
-            <p className="hero-text">{t("heroText")}</p>
-            <a href={t("signupLink")}>
-              <button className="hero-button">{t("startBtn")}</button>
-            </a>
-            {/* <Link to="/getstarted">
-              <button className="hero-button">{t("startBtn")}</button>
-            </Link> */}
-          </div>
-          <div className="hero-image">
-            <YoutubeEmbed embedId="r0YQjwqJhNA" />
-          </div>
-        </div>
-      </section>
-
-      <section className="features-section" id="about">
-        <h2 className="features-title">
-          {t("featuresTitle")}{" "}
-          <span className="orange">{t("featuresTitleOrange")}</span>
-        </h2>
-        <div className="features-container">
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.easyToUse} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature1Title")}</h3>
-            <p className="feature-text">{t("feature1Text")}</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.algorithm} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature2Title")}</h3>
-            <p className="feature-text">{t("feature2Text")}</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={images.privacy} alt="" />
-            </div>
-            <h3 className="feature-header">{t("feature3Title")}</h3>
-            <p className="feature-text">{t("feature3Text")}</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="reasons-section">
-        <h2 className="reasons-title">
-          {t("reasonsTitle")}{" "}
-          <span className="orange">{t("reasonsTitleOrange")}</span>
-        </h2>
-        <div className="reasons">
-          <div className="reasons-container">
-            <div className="reason">
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.clock} />
-                  <span>{t("reason1Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason1Text")}</p>
+      {/* Stripe checkout status modal at root */}
+      <Dialog open={!!message} onClose={() => setMessage(null)} className="relative z-50">
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-black/30 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150"
+        />
+        <div className="fixed inset-0 z-50 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <DialogPanel
+              transition
+              className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-md sm:p-6 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+            >
+              <div className="sm:flex sm:items-start">
+                <div className={`mx-auto flex size-12 shrink-0 items-center justify-center rounded-full sm:mx-0 sm:size-10 ${
+                  message?.type === 'success' ? 'bg-green-100' : message?.type === 'canceled' ? 'bg-yellow-100' : 'bg-red-100'
+                }`}>
+                  <svg className={`size-6 ${message?.type === 'success' ? 'text-green-600' : message?.type === 'canceled' ? 'text-yellow-600' : 'text-red-600'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    {message?.type === 'success' ? (
+                      <path d="M20 6L9 17l-5-5" />
+                    ) : message?.type === 'canceled' ? (
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    ) : (
+                      <path d="M12 9v4m0 4h.01M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                    )}
+                  </svg>
+                </div>
+                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3 className="text-base font-semibold leading-6 text-gray-900">
+                    {message?.type === 'success' ? t('currentSubscription') : message?.type === 'canceled' ? t('checkoutCanceled') : t('checkoutFailed')}
+                  </h3>
+                  <div className="mt-2">
+                    <p className="text-sm text-gray-600">{message?.text}</p>
+                  </div>
+                </div>
               </div>
-
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.profits} />
-                  <span>{t("reason2Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason2Text")}</p>
+              <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                <button
+                  type="button"
+                  onClick={() => setMessage(null)}
+                  className="inline-flex w-full justify-center rounded-md bg-smg_orange px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-smg_orange_light sm:ml-3 sm:w-auto"
+                >
+                  {t('close')}
+                </button>
               </div>
-
-              <div className="reason-text">
-                <h3 className="reason-title">
-                  <img src={images.battery} />
-                  <span>{t("reason3Title")}</span>
-                </h3>
-                <p className="reason-description">{t("reason3Text")}</p>
-              </div>
-            </div>
-
-            <div className="reason-side">
-              <div className="reason-image">
-                <img src={images.teacher} alt="Reasons Image" />
-              </div>
-            </div>
+            </DialogPanel>
           </div>
         </div>
-      </section>
+      </Dialog>
 
-      <section className="pricing-section" id="pricing">
-        <div className="pricing-container">
-          <h2 className="pricing-title">
-            {t("pricingTitle1")}
-            <span className="orange"> {t("pricingTitleOrange")}</span>{" "}
-            {t("pricingTitle2")}
-          </h2>
-          <div className="pricing-plan">
-            <h2 className="plan-title">{t("plan1Title")}</h2>
-            <p className="plan-description">{t("plan1Description")}</p>
-            <h3 className="plan-cost">
-              {t("plan1Price")}
-              <span className="plan-cost-period"> {t("plan1PricePeriod")}</span>
-            </h3>
-            <p className="plan-description">{t("plan1PriceDescription")}</p>
-            <i className="plan-description">{t("plan1PriceDescription2")}</i>
-            <p className="plan-title-included">{t("plan1IncludedTitle")}</p>
-            <ul className="plan-details">
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("plan1Included1")}</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("plan1Included2")}</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-
-                <span>{t("plan1Included3")}</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("plan1Included4")}</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("plan1Included5")}</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("plan1Included6")}</span>
-              </li>
-            </ul>
-
-            <a href={t("signupLink")}>
-              <button className="start-now-button">{t("startBtn")}</button>
-            </a>
-            {/* <Link to="/getstarted">
-              <a
-                href="app.klassekartgenerator.no"
-                target="_blank"
-                className="start-now-button"
-              >
-                {t("startBtn")}
-              </a>
-            </Link> */}
-            <p className="plan-description mva">{t("plan1Comment")}</p>
-          </div>
-
-          {/* <div className="pricing-plan">
-            <h2 className="plan-title">Demo</h2>
-            <p className="plan-description">
-              Our demo version is meant for testing purposes only. It will not
-              save you a significant amount of time.
-            </p>
-            <h3 className="plan-cost">€0</h3>
-            <p className="plan-title-included">What's included:</p>
-            <ul className="plan-details">
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>All conditions and arrangements</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="red"
-                    fill-rule="evenodd"
-                    d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Unlimited classes and maps</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="red"
-                    fill-rule="evenodd"
-                    d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-
-                <span>Save your classes and conditions</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="red"
-                    fill-rule="evenodd"
-                    d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>See other teachers' maps</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="red"
-                    fill-rule="evenodd"
-                    d="M15.414 5.586a1 1 0 00-1.414 0L10 8.586l-4.586-3.586a1 1 0 00-1.414 1.414L8.586 10l-4.586 4.586a1 1 0 001.414 1.414L10 11.414l4.586 4.586a1 1 0 001.414-1.414L11.414 10l4.586-4.586z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Reports and school stats</span>
-              </li>
-              <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 28 8"
-                >
-                  <path
-                    fill="rgb(255, 120, 1)"
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Excellent support</span>
-              </li>
-            </ul>
-            <br />
-            <a
-              href="app.klassekartgenerator.no"
-              target="_blank"
-              className="start-now-button"
-            >
-              Try Demo
-            </a>
-          </div> */}
-        </div>
-      </section>
-
-      <section className="testimonials-section" id="testimonials">
-        <h2 className="testimonials-title">
-          {t("testimonialsTitle1")}{" "}
-          <span className="orange">{t("testimonialsTitleOrange")}</span>{" "}
-          {t("testimonialsTitle2")}
-        </h2>
-
-        <div className="testimonials-container">
-          <div className="testimonial">
-            <img
-              src={images.graduation}
-              alt="Testimonial image"
-              className="testimonial-image"
-            />
-            <p className="testimonial-text">{t("testimonial1Text")}</p>
-            <p className="testimonial-name">Hans Petter</p>
-          </div>
-          <div className="testimonial">
-            <img
-              src={images.graduation}
-              alt="Testimonial image"
-              className="testimonial-image"
-            />
-            <p className="testimonial-text">{t("testimonial2Text")}</p>
-            <p className="testimonial-name">Erik Larsen</p>
-          </div>
-        </div>
-      </section>
-
-      <div
-        className="trustpilot-widget center"
-        data-locale="en-GB"
-        data-template-id="5419b6a8b0d04a076446a9ad"
-        data-businessunit-id="6431713917cc990a6d1b67ae"
-        data-style-height="24px"
-        data-style-width="100%"
-        data-theme="light"
-        data-min-review-count="10"
-        data-without-reviews-preferred-string-id="3"
-        data-style-alignment="center"
-      >
-        <a
-          href="https://uk.trustpilot.com/review/klassekartgenerator.no"
-          target="_blank"
-          rel="noopener"
-        >
-          Trustpilot
-        </a>
-      </div>
-
-      <section className="qa-section" id="q&a">
-        <h2 className="qa-title">
-          {t("qaTitle")} <span className="orange">{t("qaTitleOrange")}</span>
-        </h2>
-        <div className="qa-container">
-          <div className="qa" onClick={() => toggleAnswer("qa1")}>
-            <h3 className="qa-question">{t("qaQuestion1")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa1"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer1")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa1"] ? "active" : ""}`}
-            >
-              {answersVisible["qa1"] ? "-" : "+"}
-            </button>
-          </div>
-          <div className="qa" onClick={() => toggleAnswer("qa2")}>
-            <h3 className="qa-question">{t("qaQuestion2")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa2"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer2")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa2"] ? "active" : ""}`}
-            >
-              {answersVisible["qa2"] ? "-" : "+"}
-            </button>
-          </div>
-
-          {/*
-          <div className="qa" onClick={() => toggleAnswer("qa3")}>
-            <h3 className="qa-question">
-              What are the benefits of the generator?
-            </h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa3"] ? "block" : "none" }}
-            >
-              <p></p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa3"] ? "active" : ""}`}
-            >
-              {answersVisible["qa3"] ? "-" : "+"}
-            </button>
-          </div>
-          */}
-          <div className="qa" onClick={() => toggleAnswer("qa4")}>
-            <h3 className="qa-question">{t("qaQuestion3")}</h3>
-            <div
-              className="qa-answer"
-              style={{ display: answersVisible["qa4"] ? "block" : "none" }}
-            >
-              <p>{t("qaAnswer3")}</p>
-            </div>
-            <button
-              className={`qa-button ${answersVisible["qa4"] ? "active" : ""}`}
-            >
-              {answersVisible["qa4"] ? "-" : "+"}
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="article-section">
-        <h2 className="section-heading">
-          Research <span className="orange">Articles</span>
-        </h2>
-        <div className="article-container">
-          <div className="article-preview">
-            <Link to="/articles/privacy">
-              <img src={images.classroom} alt="Article 1" />
-              <h3 className="article-title">
-                The importance of data privacy in education, and the essential
-                strategies.
-              </h3>
-            </Link>
-          </div>
-          <div className="article-preview">
-            <Link to="/articles/seatingarrangement">
-              <img src={images.student} alt="Article 2" />
-              <h3 className="article-title">
-                The relationship between classroom seating arrangement and
-                maximized academic and social development of students.
-              </h3>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
+      <FadeInSection>
+        <Hero />
+      </FadeInSection>
+      <FadeInSection>
+        <Features />
+      </FadeInSection>
+      <FadeInSection>
+        <Reasons />
+      </FadeInSection>
+      <FadeInSection>
+        <Pricing />
+      </FadeInSection>
+      <FadeInSection>
+        <Testimonials />
+      </FadeInSection>
+      <FadeInSection>
+        <FAQs />
+      </FadeInSection>
+      <FadeInSection>
+        <Blog />
+      </FadeInSection>
+      <FadeInSection>
+        <Footer />
+      </FadeInSection>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

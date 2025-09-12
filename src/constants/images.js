@@ -17,7 +17,7 @@ import socialAdacemic from '../assets/social-academic.jpeg'
 import teacherStudents from '../assets/teacher-students.jpeg'
 import rotations from '../assets/rotations.jpeg'
 import arrangements from '../assets/arrangements.jpeg'
-import signupAdmin from '../assets/signupadmin.png'
+import signupAdmin from '../assets/signupAdmin.png'
 import manageGradesBtn from '../assets/manageGradesBtn.png'
 import schoolYearInput from '../assets/schoolYearInput.png'
 import gradeInput from '../assets/gradeInput.png'
@@ -46,10 +46,10 @@ import privacy6 from '../assets/shutterstock_2302949453.jpg'
 import privacy7 from '../assets/shutterstock_1448047388.jpg'
 
 export default {
-    easyToUse, algorithm, privacy, logoEn, logoNo, teacher, clock, profits, battery, 
+    easyToUse, algorithm, privacy, logoEn, logoNo, teacher, clock, profits, battery,
     rocket, classroom, student, graduation, youtube, klassekart, socialAdacemic,
-    teacherStudents, rotations, arrangements, signupAdmin, manageGradesBtn, schoolYearInput, 
-    gradeInput, licenseCode, signupTeacher, registerClass, selectSeating, selectClass, preview, 
+    teacherStudents, rotations, arrangements, signupAdmin, manageGradesBtn, schoolYearInput,
+    gradeInput, licenseCode, signupTeacher, registerClass, selectSeating, selectClass, preview,
     customArrangement, manuallyPlace, selectConditions, sitTogether, generatedMap,
     viewMap, editClass, editStudents, selectMap,
 
