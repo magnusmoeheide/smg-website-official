@@ -5,7 +5,7 @@ let baseApiUrl;
 if (process.env.NODE_ENV === 'development') {
     baseApiUrl = 'http://localhost:3001/api';
 } else {
-    baseApiUrl = 'https://api.klassekartgenerator.no/api';
+    baseApiUrl = 'https://smg-server.fly.dev/api';
 }
 
 const API_URL = process.env.API_BASE_URL ? process.env.API_BASE_URL : baseApiUrl;
@@ -26,7 +26,7 @@ export async function sessionLogin(idToken) {
         try {
             const res = await authApi.get('/session/csrf', { withCredentials: true });
             csrfToken = res?.csrfToken;
-        } catch {}
+        } catch { }
         await authApi.post('/sessionLogin', { idToken, csrfToken }, { withCredentials: true });
         if (typeof window !== 'undefined' && window.dispatchEvent) {
             window.dispatchEvent(new Event('auth-session-changed'));
