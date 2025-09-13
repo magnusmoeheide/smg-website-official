@@ -25,7 +25,8 @@ export async function sessionLogin(idToken) {
         let csrfToken;
         try {
             const res = await authApi.get('/session/csrf', { withCredentials: true });
-            csrfToken = res?.csrfToken;
+            // axios returns data under res.data for this instance
+            csrfToken = res?.data?.csrfToken;
         } catch { }
         await authApi.post('/sessionLogin', { idToken, csrfToken }, { withCredentials: true });
         if (typeof window !== 'undefined' && window.dispatchEvent) {
