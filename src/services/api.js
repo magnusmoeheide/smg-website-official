@@ -6,7 +6,7 @@ let baseApiUrl;
 if (process.env.NODE_ENV === 'development') {
     baseApiUrl = 'http://localhost:3001/api';
 } else {
-    baseApiUrl = 'https://smg-server.fly.dev/api';
+    baseApiUrl = 'https://api.klassekartgenerator.no/api';
 }
 
 const API_URL = process.env.API_BASE_URL ? process.env.API_BASE_URL : baseApiUrl;
