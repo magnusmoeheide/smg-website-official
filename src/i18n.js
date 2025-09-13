@@ -249,8 +249,8 @@ i18n
         translation: {
 
           // ------------- LINKS ---------------- // 
-          signupLink: "https://app.klassekartgenerator.com/signup",
-          loginLink: "https://app.klassekartgenerator.com/login",
+          signupLink: "https://app.klassekartgenerator.no/signup",
+          loginLink: "https://app.klassekartgenerator.no/login",
           goToApp: "Open app",
 
           // ------------- HEADER ---------------- //
