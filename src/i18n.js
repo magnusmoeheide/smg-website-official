@@ -105,7 +105,7 @@ i18n
           qaQuestion2: "Hvordan fungerer appen?",
           qaAnswer2: "Først registrerer du klassen din med elevene dine. Klassen din lagret for fremtidig bruk. For å lage et kart velger du klassen din, og deretter hvordan de skal sitte. Du kan velge mellom våre standard '1 og 1', '2 og 2' osv. eller du kan lage din egen. Etter det kan du velge hvem som skal sitte foran eller bak i klasserommet, hvem som skal eller ikke skal sitte sammen, og du kan manuelt plassere elever. Algoritmen sørger for at betingelsene er oppfylt og at resten blir tilfeldig plassert. Du får et generert kart som du laste ned og eksportere, både som pdf og Excel. Kartet er registrert på skolen din, og andre lærere på skolen din kan se kartene dine, noe som spesielt er nyttig hvis de tar vikartimer.",
           qaQuestion3: "Hvordan fungerer prøveperioden og betalingen hvis jeg velger å fortsette?",
-          qaAnswer3: "Vi gir alle skoler appen gratis ut 2023 for å teste den ut og se om det er noe de vil kunne ta nytte av. En uke før planen utgår sender vi en mail og minner deg om å kansellere hvis du ikke ønsker å fortsette. Dette er en simpel prosess, og det er bare å skrive en mail om at du ikke ønsker å fortsette med appen, så er alt ordnet. Om du ønsker å fortsette med abonnementet vil du motta en faktura hvert semester som standard, men abonnementet kan også tilpasses din skoles behov.",
+          qaAnswer3: "Alle lærere kan teste ut appen gratis i en måned med individuell konto for å se om det er noe de vil kunne ta nytte av. En uke før perioden utgår sender vi en mail og minner om å enten gå over på betalt abonnement om man ønsker å fortsette, eller å opprette et skoleabonnement dersom skolen ønsker å gi tilgang til alle lærere. Om du ikke ønsker å fortsette med appen er det bare å trykke slett konto i appen.",
 
           // ------------- BLOG ---------------- //
           blogTitle: "Forskningsartikler",
@@ -223,7 +223,7 @@ i18n
           emailAddress: "E-postadresse",
           password: "Passord",
           signIn: "Logg inn",
-          noAccount: "Ingen Account?",
+          noAccount: "Ingen konto?",
           createAccount: "Opprett en konto",
           forgotPassword: "Glemt passordet?",
           signingIn: "Logger inn...",
@@ -238,7 +238,7 @@ i18n
           resetYourPassword: "Tilbakestill passordet ditt",
           resetPasswordInstructions: "Skriv inn e-postadressen din, så sender vi deg en lenke for å tilbakestille passordet ditt.",
           resetPassword: "Tilbakestill passord",
-          backToLogin: "Tilbake til login",
+          backToLogin: "Tilbake til",
           sending: "Sender...",
           resetEmailSent: "E-post for tilbakestilling av passord sendt! Sjekk innboksen din for instruksjoner.",
           errorEmailRequired: "E-postadresse er påkrevd",
@@ -322,7 +322,7 @@ i18n
           qaQuestion2: "How does the app work?",
           qaAnswer2: "First you register your class with your students. Then your class is saved for future use. To create a map you select your class, then what configuration they are supposed to sit. You can choose between our defualt '1 and 1', '2 and 2' etc. or you can create your own. After that, you select the conditions such as who should sit in front or back of the classroom, who should or should not sit together, and you can manually place students. The algorithm makes sure the conditions are met and the rest is randomized. From there you can download and export your map however you like. The map is registered to your school and other teachers in your school can see your most recent maps, which is beneficial for when the class has a substitute teacher.",
           qaQuestion3: "How does the trial and payment work if I choose to continue?",
-          qaAnswer3: "We are giving all schools the app for free in 2023 to test it out and see if it is something they will be able to benefit from. A week before the plan expires, we send an email reminding you to cancel if you do not wish to continue. This is a simple process, and all you have to do is write that you do not want to continue with the app, then everything is sorted. If you wish to continue with the subscription, you will receive an invoice every semester as standard, but the subscription can also be adapted to your school's needs.",
+          qaAnswer3: "All teachers can try the app free for one month with an individual account to see if it is useful for them. One week before the period ends we send an email reminding you to either switch to a paid subscription if you wish to continue, or create a school subscription if your school wants to give access to all teachers. If you do not wish to continue you can simply delete your account in the app.",
 
           // ------------- BLOG ---------------- //
           blogTitle: "Research Articles",

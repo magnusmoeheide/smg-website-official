@@ -121,7 +121,7 @@ export default function Pricing() {
                     {t('pricingCTA')}
                 </a>
                 <p className="text-xs text-gray-400 pt-2">{tier.slug == 'teacher' ? t("plan1Comment") : t("plan1Comment2")}</p>
-                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600">
+                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 whitespace-nowrap">
                   {tierFeatures.map((feature, index) => (
                     <li key={index} className="flex gap-x-3">
                       <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-smg_orange" />
